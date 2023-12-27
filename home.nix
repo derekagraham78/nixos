@@ -96,7 +96,6 @@
 	discord
 	betterdiscord-installer
 	vlc
-	signal-desktop
 	nodejs_latest
 	xscreensaver
 	kitty
