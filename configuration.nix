@@ -164,7 +164,7 @@ system.autoUpgrade = {
 # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 	git
 	gh
-	xscreensaverx
+	xscreensaver
 	neofetch
 	xwayland
 	geekbench
