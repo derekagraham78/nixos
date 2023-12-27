@@ -12,7 +12,7 @@ home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-home-manager.users.dgraham.service;
+home-manager.users.dgraham.service
 }; 
 
   outputs = { self, nixpkgs, home-manager, kde2nix, ... }@inputs: {
