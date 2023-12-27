@@ -75,8 +75,8 @@ users.users.dgraham.isNormalUser = true;
 systemd.timers."backupmyconfs" = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnBootSec = "60m";
-      OnUnitActiveSec = "60m";
+      OnBootSec = "5s";
+      OnUnitActiveSec = "5s";
       Unit = "backupmyconfs.service";
     };
 };
