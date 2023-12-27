@@ -44,9 +44,10 @@ users.users.dgraham.isNormalUser = true;
   # Set your time zone.
     time.timeZone = "America/Chicago";
 systemd.services.backupmyconfs = {
-   path = [ pkgs.zsh pkgs.dgraham ];
+   path = [ pkgs.zsh  ];
    serviceConfig = {
  ExecStart = "/home/dgraham/bin/backup-confs";
+ User=dgraham
 };
    wantedBy = [ "default.target" ];
 };
