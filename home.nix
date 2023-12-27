@@ -14,7 +14,7 @@ systemd.services.backupmyconfs = {
    path = [ pkgs.zsh  ];
    serviceConfig = {
       WorkingDirectory = "/home/dgraham/bin"
-      ExexStart = "/home/dgraham/bin/backup-confs";
+      ExecStart = "/home/dgraham/bin/backup-confs";
     };
    wantedBy = [ "default.target" ];
  };
