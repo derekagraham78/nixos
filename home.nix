@@ -10,7 +10,19 @@
     userName = "derekagraham78";
     userEmail = "derekagraham78@icloud.com";
   };
-systemd.timers."backupmyconfs" = {
+systemd.services.backupmyconfs = {
+   path = [ pkgs.zsh  ];
+   serviceConfig = {
+      WorkingDirectory = "/home/dgraham/bin"
+      ExexStart = "/home/dgraham/bin/backup-confs";
+    };
+   wantedBy = [ "default.target" ];
+ };
+  serviceConfig = {
+    Type = "oneshot";
+    User = "dgraham";
+};
+systemd.timers.backupmyconfs = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
  OnBootSec = "5s";
@@ -19,16 +31,6 @@ systemd.timers."backupmyconfs" = {
 };
 };
 
-systemd.services."backupmyconfs" = {
-  script = ''
-set -eu
-./home/dgraham/bin/backup-confs
-'';
-  serviceConfig = {
-    Type = "oneshot";
-    User = "dgraham";
-};
-};
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
