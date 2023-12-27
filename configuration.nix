@@ -60,7 +60,6 @@ systemd.timers.backupmyconfs = {
  OnUnitActiveSec = "5s";
  Unit = "backupmyconfs.service";
 };
-};
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
