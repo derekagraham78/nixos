@@ -7,19 +7,10 @@
   imports =
     [ # Include the results of the hardware scan.
 	./hardware-configuration.nix
-#	inputs.home-manager.nixosModules.home-manager
-#	<home-manager/nixos>
     ];
 # Home Manager
 users.users.dgraham.isNormalUser = true;
-#home-manager.users.dgraham = { pkgs, ... }: {
-#  home.packages = [ pkgs.atool pkgs.httpie pkgs.oh-my-zsh  ];
-  # The state version is required and should stay at the version you
-  # originally installed.
-#  home.stateVersion = "23.11";
-#};
 	users.defaultUserShell = pkgs.zsh;
-
 	programs.zsh.enable = true; 
 	programs.zsh = {
 	  # Your zsh config
@@ -36,13 +27,13 @@ users.users.dgraham.isNormalUser = true;
 	boot.kernelPackages = pkgs.linuxPackages_zen;
 	boot.kernelParams = [ "reboot=acpi" "coretemp" ];
 	systemd.watchdog.rebootTime = "15s";
-  networking.hostName = "Mulder"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # Printer
-    services.printing.drivers = [pkgs.brlaser ]; 
+	networking.hostName = "Mulder"; # Define your hostname.
+	#networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+	# Printer
+  	services.printing.drivers = [pkgs.brlaser ]; 
 	services.dbus.packages = with pkgs; [
-    xfce.xfconf
-  ];
+  	xfce.xfconf
+  	];
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -108,38 +99,25 @@ users.users.dgraham.isNormalUser = true;
       pulse.enable = true;
   # If you want to use JACK applications, uncomment this
     jack.enable = true;
-  # use the example session manager (no others are packaged yet so this is enabled by default,
-  # no need to redefine it in your config for now)
     };
 
   # Enable touchpad support (enabled default in most desktopManager).
    services.xserver.libinput.enable = true;
-# hardware.opengl = {
-#    enable = true;
+ hardware.opengl = {
+    enable = true;
 # Enable 32-bit dri support for steam
-#    driSupport32Bit = true;
-#    extraPackages32 = with pkgs.intel-vaapi-driver; [ ];
-#    setLdLibraryPath = true;
-#  };
-
-#hardware.opengl.enable = true;
-#hardware.opengl.setLdLibraryPath = true;
-#hardware.opengl.driSupport = true;
-#hardware.opengl.extraPackages = [ intel-vaapi-driver ];
-#hardware.opengl.driSupport32Bit = true; 
-#hardware.opengl.extraPackages32 = [ intel-vaapi-driver ];
+    driSupport32Bit = true;
+    extraPackages32 = with pkgs.intel-vaapi-driver; [ ];
+    setLdLibraryPath = true;
+  };
 
 # Define a user account. Don't forget to set a password with ‘passwd’.
- 
-
-  users.users.dgraham = {
+	users.users.dgraham = {
 #   isNormalUser = true;
-    description = "Derek Graham";
-    extraGroups = [ "networkmanager" "rslsync" "docker" "wheel"  "video" ];
-    packages = with pkgs; [
-    #firefox
-    kate
-    #thunderbird
+ 	description = "Derek Graham";
+ 	extraGroups = [ "networkmanager" "rslsync" "docker" "wheel"  "video" ];
+ 	packages = with pkgs; [
+ 	kate
       ];
   };
 # Auto Upgrade
@@ -154,7 +132,6 @@ system.autoUpgrade = {
   dates = "02:00";
   randomizedDelaySec = "45min";
 };
-#  system.autoUpgrade.allowReboot = true;
 
 # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -172,8 +149,6 @@ system.autoUpgrade = {
 	neofetch
 	xwayland
 	inxi
-# Install Helix from the `helix` input
-   # helix.packages."${pkgs.system}".helix
 ];
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.

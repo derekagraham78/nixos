@@ -58,7 +58,6 @@
     # productivity
 	hugo # static site generator
 	glow # markdown previewer in terminal
-
 	btop  # replacement of htop/nmon
 	iotop # io monitoring
 	iftop # network monitoring
@@ -92,7 +91,6 @@
 	libsForQt5.qt5.qtwayland
 	vim
 	vscode-with-extensions
-	firefox
 	telegram-desktop
 	betterdiscordctl
 	discord
@@ -108,12 +106,9 @@
 	yarn
 	moc
 	qt6.qt5compat
-	#qt6.qtsvg
 	qt6.wrapQtAppsHook
 	qt6.qttools
-
 	pkgs.qt6.full
-	#python3Full
 	qt6.qtwayland
 	pkgs.nodePackages_latest.pnpm
 	libuvc
@@ -123,16 +118,10 @@
 	fontconfig
 	gnumake
 	gcc13
-	#pkgs.python311Packages.ninja
-	#pkgs.python311Packages.pip
 	resilio-sync
 	xorg.libxcb
 	python311Packages.qpageview
 	libsForQt5.qt5.wrapQtAppsHook	
-	#perl538Packages.X11XCB
-	#pkgs.python311Packages.pillow
-	#pkgs.python311Packages.dbus-python
-	#pkgs.python311Packages.meson-python
 	neofetch
   ];
 
