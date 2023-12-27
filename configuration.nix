@@ -47,14 +47,12 @@ systemd.services.backupmyconfs = {
    path = [ pkgs.zsh  ];
    serviceConfig = {
  ExecStart = "/home/dgraham/bin/backup-confs";
- User=dgraham
 };
    wantedBy = [ "default.target" ];
+  serviceConfig = {
+    Type = "oneshot";
+    User = "dgraham";
 };
-#  serviceConfig = {
-#    Type = "oneshot";
-#    User = "dgraham";
-#};
 systemd.timers.backupmyconfs = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
