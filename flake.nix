@@ -6,7 +6,7 @@
  inputs = {
  	kde2nix.url = "github:nix-community/kde2nix";
 helix.url = "github:helix-editor/helix/23.10";
-
+home-manager.users.dgraham.systemd.services
   # The nixpkgs entry in the flake registry.
   nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 home-manager = {
