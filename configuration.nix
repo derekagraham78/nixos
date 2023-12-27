@@ -46,18 +46,18 @@ users.users.dgraham.isNormalUser = true;
 systemd.services.backupmyconfs = {
    path = [ pkgs.zsh  ];
    serviceConfig = {
- ExecStart = "/home/dgraham/bin/backup-confs";
-   wantedBy = [ "default.target" ];
-  serviceConfig = {
-    Type = "oneshot";
-    User = "dgraham";
+       ExecStart = "/home/dgraham/bin/backup-confs";
+       wantedBy = [ "default.target" ];
+       Type = "oneshot";
+       User = "dgraham";
+       };
 };
 systemd.timers.backupmyconfs = {
-  wantedBy = [ "timers.target" ];
     timerConfig = {
- OnBootSec = "5s";
- OnUnitActiveSec = "5s";
- Unit = "backupmyconfs.service";
+        OnBootSec = "5s";
+        OnUnitActiveSec = "5s";
+        Unit = "backupmyconfs.service";
+        };
 };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
