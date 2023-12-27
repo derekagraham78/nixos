@@ -26,7 +26,8 @@ users.users.dgraham.isNormalUser = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 	boot.kernelPackages = pkgs.linuxPackages_zen;
 	boot.kernelParams = [ "reboot=acpi" "coretemp" ];
-	systemd.watchdog.rebootTime = "15s";
+	#systemd.watchdog.rebootTime = "15s";
+	systemd.extraConfig = "DefaultTImeoutStopSec=10s";
 	networking.hostName = "Mulder"; # Define your hostname.
 	#networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 	# Printer
