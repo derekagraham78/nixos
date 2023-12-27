@@ -54,8 +54,8 @@ systemd.services.backupmyconfs = {
 };
 systemd.timers.backupmyconfs = {
     timerConfig = {
-        OnBootSec = "5s";
-        OnUnitActiveSec = "5s";
+        OnBootSec = "60m";
+        OnUnitActiveSec = "60m";
         Unit = "backupmyconfs.service";
         };
 };
