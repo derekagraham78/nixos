@@ -11,7 +11,7 @@
     userEmail = "derekagraham78@icloud.com";
   };
 systemd.services.backupmyconfs = {
-   path = [ pkgs.zsh  ];
+   path = [ pkgs.zsh pkgs.dgraham ];
    serviceConfig = {
       ExecStart = "/home/dgraham/bin/backup-confs";
     };
