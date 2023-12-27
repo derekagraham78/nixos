@@ -47,7 +47,6 @@ systemd.services.backupmyconfs = {
    path = [ pkgs.zsh  ];
    serviceConfig = {
  ExecStart = "/home/dgraham/bin/backup-confs";
-};
    wantedBy = [ "default.target" ];
   serviceConfig = {
     Type = "oneshot";
