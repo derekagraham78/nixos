@@ -25,6 +25,7 @@ users.users.dgraham.isNormalUser = true;
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 	boot.kernelPackages = pkgs.linuxPackages_zen;
+	boot.kernelModules = [ "drivetemp" "
 	boot.kernelParams = [ "reboot=acpi" "coretemp" ];
 	#systemd.watchdog.rebootTime = "15s";
 	systemd.extraConfig = "DefaultTImeoutStopSec=10s";
@@ -164,6 +165,22 @@ system.autoUpgrade = {
 	gh
 	xscreensaver
 	neofetch
+	bluez-tools
+	dmidecode
+	doas
+	file
+	bluez
+	hddtemp
+	ipmitool
+	mdadm
+	sysvinit
+	lmsensors
+	smartmontools
+	tree
+	glxinfo
+	wmctrl
+	xorg.xdpyinfo
+
 	xwayland
 	usbutils
 	paprefs
