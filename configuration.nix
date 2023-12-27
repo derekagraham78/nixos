@@ -50,10 +50,10 @@ systemd.services.backupmyconfs = {
 };
    wantedBy = [ "default.target" ];
 };
-  serviceConfig = {
-    Type = "oneshot";
-    User = "dgraham";
-};
+#  serviceConfig = {
+#    Type = "oneshot";
+#    User = "dgraham";
+#};
 systemd.timers.backupmyconfs = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
