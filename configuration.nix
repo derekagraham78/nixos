@@ -174,7 +174,7 @@ system.autoUpgrade = {
 	ipmitool
 	mdadm
 	sysvinit
-	lmsensors
+	lm_sensors
 	smartmontools
 	tree
 	glxinfo
