@@ -10,25 +10,6 @@
     userName = "derekagraham78";
     userEmail = "derekagraham78@icloud.com";
   };
-systemd.services.backupmyconfs = {
-   path = [ pkgs.zsh pkgs.dgraham ];
-   serviceConfig = {
-      ExecStart = "/home/dgraham/bin/backup-confs";
-    };
-   wantedBy = [ "default.target" ];
- };
-  serviceConfig = {
-    Type = "oneshot";
-    User = "dgraham";
-};
-systemd.timers.backupmyconfs = {
-  wantedBy = [ "timers.target" ];
-    timerConfig = {
- OnBootSec = "5s";
- OnUnitActiveSec = "5s";
- Unit = "backupmyconfs.service";
-};
-};
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [

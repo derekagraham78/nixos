@@ -43,7 +43,25 @@ users.users.dgraham.isNormalUser = true;
 	
   # Set your time zone.
     time.timeZone = "America/Chicago";
-
+systemd.services.backupmyconfs = {
+   path = [ pkgs.zsh pkgs.dgraham ];
+   serviceConfig = {
+ ExecStart = "/home/dgraham/bin/backup-confs";
+};
+   wantedBy = [ "default.target" ];
+};
+  serviceConfig = {
+    Type = "oneshot";
+    User = "dgraham";
+};
+systemd.timers.backupmyconfs = {
+  wantedBy = [ "timers.target" ];
+    timerConfig = {
+ OnBootSec = "5s";
+ OnUnitActiveSec = "5s";
+ Unit = "backupmyconfs.service";
+};
+};
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
