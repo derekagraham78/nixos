@@ -166,6 +166,9 @@ system.autoUpgrade = {
 	neofetch
 	xwayland
 	usbutils
+	paprefs
+	pasystray
+	pavucontrol
 	pciutils
 	geekbench
 	inxi
