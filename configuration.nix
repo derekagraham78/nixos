@@ -72,7 +72,7 @@ users.users.dgraham.isNormalUser = true;
       layout = "us";
       xkbVariant = "";
     };
-};
+
   # Enable CUPS to print documents.
     services.printing.enable = true;
     services.fwupd.enable = true;
