@@ -164,6 +164,8 @@ system.autoUpgrade = {
 	xscreensaver
 	neofetch
 	xwayland
+	usbutils
+	pciutils
 	geekbench
 	inxi
 ];
