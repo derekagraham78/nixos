@@ -80,7 +80,7 @@ users.users.dgraham.isNormalUser = true;
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	xdg.portal.config.common.default = "gtk";
 # Enable the KDE Plasma Desktop Environment.
-	services.xserver.displayManager.gdm.enable = true;
+	services.xserver.displayManager.lightdm.enable = true;
 # Configure keymap in X11
     	services.xserver = {
       		layout = "us";
