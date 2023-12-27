@@ -173,14 +173,12 @@ system.autoUpgrade = {
 	hddtemp
 	ipmitool
 	mdadm
-	sysvinit
 	lm_sensors
 	smartmontools
 	tree
 	glxinfo
 	wmctrl
 	xorg.xdpyinfo
-
 	xwayland
 	usbutils
 	paprefs
