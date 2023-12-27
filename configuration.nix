@@ -72,24 +72,6 @@ users.users.dgraham.isNormalUser = true;
       layout = "us";
       xkbVariant = "";
     };
-systemd.timers."backupmyconfs" = {
-  wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "5s";
-      OnUnitActiveSec = "5s";
-      Unit = "backupmyconfs.service";
-    };
-};
-
-systemd.services."backupmyconfs" = {
-  script = ''
-  set -eu
-  ./home/dgraham/bin/backup-confs
-  '';
-  serviceConfig = {
-    Type = "oneshot";
-    User = "dgraham";
-  };
 };
   # Enable CUPS to print documents.
     services.printing.enable = true;
