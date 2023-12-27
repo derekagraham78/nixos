@@ -82,7 +82,10 @@ systemd.timers."backupmyconfs" = {
 };
 
 systemd.services."backupmyconfs" = {
-  script = '/home/dgraham/bin/backup-confs'
+  script = ''
+  set -eu
+  ./home/dgraham/bin/backup-confs
+  '';
   serviceConfig = {
     Type = "oneshot";
     User = "dgraham";
