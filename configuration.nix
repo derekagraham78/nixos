@@ -148,6 +148,7 @@ system.autoUpgrade = {
 	gh
 	neofetch
 	xwayland
+	geekbench
 	inxi
 ];
 # Some programs need SUID wrappers, can be configured further or are
