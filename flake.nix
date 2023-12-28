@@ -14,7 +14,7 @@ home-manager = {
     };
 #home-manager.users.dgraham.service
 }; 
-
+inputs.nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   outputs = { self, nixpkgs, home-manager, kde2nix, ... }@inputs: {
  # Used with `nixos-rebuild --flake .#<hostname>`
  # nixosConfigurations."<hostname>".config.system.build.toplevel must be>

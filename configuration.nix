@@ -234,7 +234,7 @@ users.users.dgraham.isNormalUser = true;
 	        libreoffice-qt
         	libsForQt5.qt5.qtwayland
 	        vim
-        	vscode-with-extensions
+		vscode
 		fmt
 	        telegram-desktop
         	betterdiscordctl
@@ -248,7 +248,7 @@ users.users.dgraham.isNormalUser = true;
 	        kitty-themes
 	        yarn2nix
 	        yarn
-		 moc
+		moc
         	qt6.qt5compat
         	qt6.wrapQtAppsHook
 	        qt6.qttools
