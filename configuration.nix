@@ -109,7 +109,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 		alsa.support32Bit = true                                              ;
 		pulse.enable = true                                                   ;
 fonts.fonts = with pkgs; [
-  rPackages.trekfont
+  trekfont
   noto-fonts
   noto-fonts-cjk
   noto-fonts-emoji
