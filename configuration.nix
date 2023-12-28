@@ -76,6 +76,9 @@ users.users.dgraham.isNormalUser = true                                 ;
 # Enable the X11 windowing system.
 	services.xserver.desktopManager.plasma6.enable = true                  ;
 	services.xserver.enable = true                                         ;
+	services.xserver.displayManager.sessionCommands = ''
+  	${pkgs.x11vnc}/bin/x11vnc -rfbauth $HOME/.vnc/passwd &
+	'';
 	services.flatpak.enable = true                                         ;
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]              ;
 	xdg.portal.config.common.default = "gtk";
