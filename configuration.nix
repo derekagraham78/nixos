@@ -273,6 +273,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 		pciutils
 		geekbench
 		inxi
+		rPackages.trekfont
 	]                                                                      ;
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
