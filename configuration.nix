@@ -76,9 +76,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 # Enable the X11 windowing system.
 	services.xserver.desktopManager.plasma6.enable = true                  ;
 	services.xserver.enable = true                                         ;
-	services.xserver.displayManager.sessionCommands = ''
-  	${pkgs.x11vnc}/bin/x11vnc -rfbauth $HOME/.vnc/passwd &
-	'';
 	services.flatpak.enable = true                                         ;
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]              ;
 	xdg.portal.config.common.default = "gtk";
@@ -167,13 +164,13 @@ users.users.dgraham.isNormalUser = true                                 ;
 		lm_sensors
 		smartmontools
 		tree
+		anydesk
 		glxinfo
 		wmctrl
 		xorg.xdpyinfo
 		xwayland
 		usbutils
 		zip
-		x11vnc
 		xz
 		unzip
 		p7zip
@@ -234,7 +231,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 	cpu-x
 		wireshark
 	 variety
-	teamviewer
 	 libreoffice-qt
 	libsForQt5.qt5.qtwayland
 	 vim
@@ -289,7 +285,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 # Enable the OpenSSH daemon.
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
-	services.teamviewer.enable = true                                      ;
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
