@@ -108,7 +108,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 		alsa.enable = true                                                    ;
 		alsa.support32Bit = true                                              ;
 		pulse.enable = true                                                   ;
-fonts.fontspackages = with pkgs; [
+fonts.fonts = with pkgs; [
   rPackages.trekfont
   noto-fonts
   noto-fonts-cjk
