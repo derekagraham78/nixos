@@ -86,7 +86,7 @@ home.packages = with pkgs ; [
 	inxi
 	wireshark
 	variety
-	teamviewer
+	anydesk
 	libreoffice-qt
 	libsForQt5.qt5.qtwayland
 	vim
