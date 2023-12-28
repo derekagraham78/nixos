@@ -172,6 +172,7 @@ users.users.dgraham.isNormalUser = true;
 		paprefs
 		pasystray
 		pavucontrol
+		fmt
 		pciutils
 		geekbench
 		inxi
