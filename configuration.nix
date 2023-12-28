@@ -111,7 +111,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 # If you want to use JACK applications, uncomment this
 		jack.enable = true                                                    ;
 	}                                                                      ;
-fonts.fonts = with pkgs; [
+fonts.packages = with pkgs; [
   rPackages.trekfont
   noto-fonts
   noto-fonts-cjk
