@@ -108,6 +108,9 @@ users.users.dgraham.isNormalUser = true                                 ;
 		alsa.enable = true                                                    ;
 		alsa.support32Bit = true                                              ;
 		pulse.enable = true                                                   ;
+# If you want to use JACK applications, uncomment this
+		jack.enable = true                                                    ;
+	}                                                                      ;
 fonts.fonts = with pkgs; [
   rPackages.trekfont
   noto-fonts
@@ -120,9 +123,6 @@ fonts.fonts = with pkgs; [
   dina-font
   proggyfonts
 ];
-# If you want to use JACK applications, uncomment this
-		jack.enable = true                                                    ;
-	}                                                                      ;
 # Enable touchpad support (enabled default in most desktopManager).
 	services.xserver.libinput.enable = true                                ;
 	hardware.opengl = {
