@@ -81,6 +81,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 	xdg.portal.config.common.default = "gtk";
 # Enable the KDE Plasma Desktop Environment.
 	services.xserver.displayManager.lightdm.enable = true                  ;
+
 # Configure keymap in X11
 	services.xserver = {
 		layout = "us";
@@ -107,6 +108,18 @@ users.users.dgraham.isNormalUser = true                                 ;
 		alsa.enable = true                                                    ;
 		alsa.support32Bit = true                                              ;
 		pulse.enable = true                                                   ;
+fonts.fontspackages = with pkgs; [
+  rPackages.trekfont
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  liberation_ttf
+  fira-code
+  fira-code-symbols
+  mplus-outline-fonts.githubRelease
+  dina-font
+  proggyfonts
+];
 # If you want to use JACK applications, uncomment this
 		jack.enable = true                                                    ;
 	}                                                                      ;
