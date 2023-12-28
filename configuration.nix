@@ -173,21 +173,22 @@ users.users.dgraham.isNormalUser = true                                 ;
 		xwayland
 		usbutils
 		zip
-	 xz
-	unzip
-	p7zip
+		x11vnc
+		xz
+		unzip
+		p7zip
 # utils
-	ripgrep                                                                # recursively searches directories>
-	jq                                                                     # A lightweight and flexible command-li>
-	yq-go                                                                  # yaml processer https://github.com/>
-	 fzf                                                                   # A command-line fuzzy finde
+		ripgrep                                                                # recursively searches directories>
+		jq                                                                     # A lightweight and flexible command-li>
+		yq-go                                                                  # yaml processer https://github.com/>
+	 	fzf                                                                   # A command-line fuzzy finde
 # networking tools
-	mtr                                                                    # A network diagnostic tool
-	iperf3
-	dnsutils                                                               # `dig` + `nslookup`
-	ldns                                                                   # replacement of `dig`, it provide th>
-	aria2                                                                  # A lightweight multi-protocol & mul>
-	socat                                                                  # replacement of openbsd-netcat
+		mtr                                                                    # A network diagnostic tool
+		iperf3
+		dnsutils                                                               # `dig` + `nslookup`
+		ldns                                                                   # replacement of `dig`, it provide th>
+		aria2                                                                  # A lightweight multi-protocol & mul>
+		socat                                                                  # replacement of openbsd-netcat
 	nmap                                                                   # A utility for network discovery and>
 	 ipcalc                                                                # it is a calculator for the IPv4/>
 # misc
