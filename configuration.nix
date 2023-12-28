@@ -169,6 +169,103 @@ users.users.dgraham.isNormalUser = true;
 		xorg.xdpyinfo
 		xwayland
 		usbutils
+		zip
+	        xz
+        	unzip
+        	p7zip
+# utils
+        	ripgrep # recursively searches directories>
+        	jq # A lightweight and flexible command-li>
+        	yq-go # yaml processer https://github.com/>
+	        fzf # A command-line fuzzy finde
+# networking tools
+        	mtr # A network diagnostic tool
+        	iperf3
+        	dnsutils  # `dig` + `nslookup`
+        	ldns # replacement of `dig`, it provide th>
+        	aria2 # A lightweight multi-protocol & mul>
+        	socat # replacement of openbsd-netcat
+        	nmap # A utility for network discovery and>
+	        ipcalc  # it is a calculator for the IPv4/>
+# misc
+	        cowsay
+        	file
+        	which
+        	tree
+	        gnused
+        	gnutar
+	        gawk
+        	zstd
+	        gnupg
+# nix related
+#
+# it provides the command `nom` works just lik>
+# with more details log output
+	        nix-output-monitor
+# productivity
+        	hugo # static site generator
+        	glow # markdown previewer in terminal
+        	btop  # replacement of htop/nmon
+	        iotop # io monitoring
+	        iftop # network monitoring		
+# system call monitoring
+	        strace # system call monitoring
+        	ltrace # library call monitoring
+	        lsof # list open files
+# system tools
+	        sysstat
+        	lm_sensors # for `sensors` command
+        	ethtool
+	        pciutils # lspci
+	        usbutils # lsusb
+	        gh
+        	vivaldi-ffmpeg-codecs
+	        xfce.thunar
+        	xfce.thunar-volman
+	        xfce.thunar-archive-plugin
+        	xfce.thunar-media-tags-plugin
+	        stacer
+        	digikam
+	        _1password-gui
+        	cpu-x
+		wireshark
+	        variety
+        	teamviewer
+	        libreoffice-qt
+        	libsForQt5.qt5.qtwayland
+	        vim
+        	vscode-with-extensions
+		fmt
+	        telegram-desktop
+        	betterdiscordctl
+	        discord
+        	betterdiscord-installer
+	        vlc
+        	nodejs_latest
+	        xscreensaver
+	        kitty
+	        kitty-img
+	        kitty-themes
+	        yarn2nix
+	        yarn
+		 moc
+        	qt6.qt5compat
+        	qt6.wrapQtAppsHook
+	        qt6.qttools
+        	pkgs.qt6.full
+	        qt6.qtwayland
+        	pkgs.nodePackages_latest.pnpm
+	        libuvc
+        	pkgs.usbutils
+	        freetype
+        	libmediainfo
+	        fontconfig
+        	gnumake
+	        gcc13
+        	resilio-sync
+	        xorg.libxcb
+		python311Packages.qpageview
+        	libsForQt5.qt5.wrapQtAppsHook 
 		paprefs
 		pasystray
 		pavucontrol
