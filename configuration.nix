@@ -142,7 +142,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 # Enable automatic login for the user.
 	services.xserver.displayManager.autoLogin.enable = true                ;
 	services.xserver.displayManager.autoLogin.user = "dgraham";
-	services.xserver.displayManager.defaultSession = "plasma";
+	services.xserver.displayManager.defaultSession = "plasma_x11";
 # Allow unfree packages
 	nixpkgs.config.allowUnfree = true                                      ;
 # List packages installed in system profile. To search, run:
