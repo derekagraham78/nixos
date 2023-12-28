@@ -42,6 +42,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 	virtualisation.docker.enable = true                                    ;
 # Enable networking
 	networking.networkmanager.enable = true                                ;
+	networking. enableIPv6 = false; 
 # Set your time zone.
 	time.timeZone = "America/Chicago";
 	systemd.services.backupmyconfs = {
