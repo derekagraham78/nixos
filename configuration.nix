@@ -155,7 +155,7 @@ fonts.packages = with pkgs; [
 # Enable automatic login for the user.
 	services.xserver.displayManager.autoLogin.enable = true                ;
 	services.xserver.displayManager.autoLogin.user = "dgraham";
-	services.xserver.displayManager.defaultSession = "plasmaX11";
+	services.xserver.displayManager.defaultSession = "plasmax11";
 # Allow unfree packages
 	nixpkgs.config.allowUnfree = true                                      ;
 # List packages installed in system profile. To search, run:
