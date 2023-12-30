@@ -61,6 +61,16 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
+services.nginx.enable = true;
+services.nginx.virtualHosts."papalpenguin.com" = {
+    addSSL = true;
+    enableACME = true;
+    root = "/var/www/papalpenguin.com";
+};
+security.acme = {
+  acceptTerms = true;
+  defaults.email = "derek@papalpenguin.com";
+};
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
