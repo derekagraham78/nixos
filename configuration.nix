@@ -64,7 +64,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 services.nginx.enable = true;
 services.nginx.virtualHosts."papalpenguin.com" = {
     addSSL = true;
-    enableACME = true;
+    enableACME = false;
     root = "/var/www/papalpenguin.com";
 };
 security.acme = {
