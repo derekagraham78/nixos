@@ -125,6 +125,7 @@ fonts.packages = with pkgs; [
   noto-fonts-emoji
   liberation_ttf
   fira-code
+  nginx
   fira-code-symbols
   mplus-outline-fonts.githubRelease
   dina-font
