@@ -6,7 +6,7 @@
 let
 wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
   name = "vertice";
-  version = "4.5.2";
+  version = "1.0.4";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/vertice.1.0.4.zip";
     hash = "sha256-XU02cJGZQVZ2EhXftAfRLk/AjkLJEAzOIT1m2VOkew4=";
