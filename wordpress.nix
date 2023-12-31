@@ -13,6 +13,13 @@ services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
     port = 80,443;
     ssl = true;
 }
+ {
+    ip = "192.168.4.60";
+    port = 80;
+  }
+  {
+    ip = "*";
+    port = 8080;
 ];
 
 services.wordpress.sites."papalpenguin.com".settings = {
