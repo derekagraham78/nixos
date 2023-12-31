@@ -12,17 +12,17 @@ imports =
 #	./mysql.papalpenguin.com
 ]                                                                       ;
 # Home Manager
-users.users.dgraham.isNormalUser = true; 
-	users.defaultUserShell = pkgs.zsh;
+users.users.dgraham.isNormalUser = true                                 ;
+	users.defaultUserShell = pkgs.zsh                                      ;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
 # Your zsh config
 	ohMyZsh = {
-		enable = true;
-		plugins = [ "git" "python" "man" "1password" ];
+		enable = true                                                         ;
+		plugins = [ "git" "python" "man" "1password" ]                        ;
 	 	theme = "agnoster";
-	 	};            
-	};         
+	 	}                                                                    ;
+	}                                                                      ;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ]        ;
 # Bootloader.
 	boot.loader.systemd-boot.enable = true                                 ;
@@ -134,21 +134,21 @@ services.phpfpm.pools.mypool = {
 		}                                                                     ;
 	nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.7" ]       ;
 # Enable sound with pipewire.
-	sound.enable = true;                                                  
-	hardware.pulseaudio.package = pkgs.pulseaudioFull;   
-	hardware.pulseaudio.enable = true;                                      
+	sound.enable = true                                                    ;
+	hardware.pulseaudio.package = pkgs.pulseaudioFull                      ;
+	hardware.pulseaudio.enable = true                                      ;
 	hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
-	nixpkgs.config.pulseaudio = true;
-	programs.dconf.enable = true;                         
-	security.rtkit.enable = true; 
+	nixpkgs.config.pulseaudio = true                                       ;
+	programs.dconf.enable = true                                           ;
+	security.rtkit.enable = true                                           ;
 	services.pipewire = {
-		enable = false;                                                        
-		alsa.enable = true;                                                    
-		alsa.support32Bit = true;                                              
-		pulse.enable = true;                                                   
+		enable = false                                                        ;
+		alsa.enable = true                                                    ;
+		alsa.support32Bit = true                                              ;
+		pulse.enable = true                                                   ;
 # If you want to use JACK applications, uncomment this
-		jack.enable = true;                                                    
-	};
+		jack.enable = true                                                    ;
+	}                                                                      ;
 fonts.packages = with pkgs; [
   rPackages.trekfont
   noto-fonts
@@ -174,7 +174,7 @@ fonts.packages = with pkgs; [
 # Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.dgraham = {
 	description = "Derek Graham";
-	extraGroups = [ "vsftpd" "networkmanager" "rslsync" "docker" "wheel" "video" ]  ;
+	extraGroups = [ "networkmanager" "rslsync" "docker" "wheel" "video" ]  ;
 	packages = with pkgs                                                   ; [
 	kate
 ]                                                                       ;
@@ -343,19 +343,7 @@ fonts.packages = with pkgs; [
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
 	services.openssh.allowSFTP = true;
-services.vsftpd = {
-    enable = true;
-#   cannot chroot && write
-    chrootlocalUser = true;
-    writeEnable = true;
-    localUsers = true;
-    userlist = [ "dgraham" "root" ];
-    userlistEnable = true;
-    localRoot = "/var/www/papalpenguin";
-    extraConfig = ''
-       local_umask=007
-    '';
-   };
+
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
