@@ -66,18 +66,18 @@ users.users.dgraham.isNormalUser = true                                 ;
 }                                                                       ;
 services.nginx = {
   enable = true;
-  virtualHosts."papalpenguin.com" = {
-    enableACME = false;
-    forceSSL = false;
-    root = "/var/www/papalpenguin.com";
-    locations."~ \\.php$".extraConfig = ''
-    index = "index.php index.html";
-    fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-    fastcgi_index index.php;
-        include ${pkgs.nginx}/conf/fastcgi_params;
-        include ${pkgs.nginx}/conf/fastcgi.conf;
-    '';
-};
+  #virtualHosts."papalpenguin.com" = {
+  #  enableACME = false;
+  #  forceSSL = false;
+  #  root = "/var/www/papalpenguin.com";
+  #  locations."~ \\.php$".extraConfig = ''
+  #  index = "index.php index.html";
+  #  fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+  #  fastcgi_index index.php;
+  #      include ${pkgs.nginx}/conf/fastcgi_params;
+  #      include ${pkgs.nginx}/conf/fastcgi.conf;
+   # '';
+#};
 };
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
