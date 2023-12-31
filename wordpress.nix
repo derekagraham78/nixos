@@ -43,7 +43,7 @@ let domain = "papalpenguin.com";
   # Themes
   astra = (fetchTheme {
     name = "astra";
-    version = "4.1.5";
+    version = "4.5.2";
     hash = "sha256-X3Jv2kn0FCCOPgrID0ZU8CuSjm/Ia/d+om/ShP5IBgA=";
   });
 in {
