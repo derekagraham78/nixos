@@ -6,8 +6,8 @@
 {
 imports =
 [                                                                       # Include the results of the hardware scan.
-	./hardware-configuration.nix
-	./mysql.papalpenguin.com
+	/etc/nixos/hardware-configuration.nix
+	/etc/nixos/mysql.papalpenguin.com
 ]                                                                       ;
 # Home Manager
 users.users.dgraham.isNormalUser = true                                 ;
