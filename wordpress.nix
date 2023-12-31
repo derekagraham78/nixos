@@ -18,7 +18,7 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
   version = "4.9.5";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/responsive.${version}.zip";
-    hash = "sha256-nOZ2dsxZhZi53hE5LLuXtpGBi3Psf5crb2aYCLg71w0=";
+    hash = "sha256-ltJLyPPL18dF7YMm+6M47K8TseIgsoWrA9LaQdJPV9o=";
   };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
