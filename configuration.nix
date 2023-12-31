@@ -69,8 +69,8 @@ services.nginx = {
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
     locations."~ \\.php$".extraConfig = ''
-      fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-      fastcgi_index index.php;
+#      fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+#      fastcgi_index index.php;
     '';
   };
 };
@@ -78,24 +78,18 @@ services.mysql = {
   enable = true;
   package = pkgs.mariadb;
 };
-let
-  phpPackage = pkgs.php.buildEnv {
-    extraConfig = ''
-      memory_limit = 256M
-    '';
-  };
-in
-{
-  languages.php.enable = true;
-  languages.php.package = phpPackage;
-  languages.php.fpm.pools.web = {
-    settings = {
-      "pm" = "dynamic";
-      "pm.max_children" = 5;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 5;
-    };
+services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
+  user = "nobody";                                                                                                                                                                                                                           
+  settings = {                                                                                                                                                                                                                               
+    "pm" = "dynamic";            
+    "listen.owner" = config.services.nginx.user;                                                                                                                                                                                                              
+    "pm.max_children" = 5;                                                                                                                                                                                                                   
+    "pm.start_servers" = 2;                                                                                                                                                                                                                  
+    "pm.min_spare_servers" = 1;                                                                                                                                                                                                              
+    "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
+    "pm.max_requests" = 500;                                                                                                                                                                                                                 
+  };                                                                                                                                                                                                                                         
+};
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
