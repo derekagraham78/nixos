@@ -8,7 +8,8 @@ imports =
 [                                                                       # Include the results of the hardware scan.
 	./hardware-configuration.nix
 	./mysql.nix
-	./mysql.papalpenguin.com
+	./wordpress.nix
+#	./mysql.papalpenguin.com
 ]                                                                       ;
 # Home Manager
 users.users.dgraham.isNormalUser = true                                 ;
