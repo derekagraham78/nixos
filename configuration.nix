@@ -160,7 +160,7 @@ services.phpfpm.pools.mypool = {
 		pulse.enable = true                                                   ;
 # If you want to use JACK applications, uncomment this
 		jack.enable = true                                                    ;
-	}                                                                      ;
+	};
 fonts.packages = with pkgs; [
   rPackages.trekfont
   noto-fonts
