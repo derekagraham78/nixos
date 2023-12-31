@@ -12,7 +12,7 @@ AUTOMATIC_UPDATER_DISABLED = false;
 };
 services.wordpress.sites."papalpenguin.com".database.tablePrefix = "wp_";
 services.wordpress.webserver = "nginx";
-services.wordpress.sites."papalpenguin.com".virtualHost.serverAliases [
+services.wordpress.sites."papalpenguin.com".virtualHost.serverAliases = [
 "www.papalpenguin.com"
 "papalpenguin.com"
 ];
