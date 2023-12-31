@@ -3,9 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, lib, pkgs, ... }:
 
-{
-let domain = "papalpenguin.com";
 
+let domain = "papalpenguin.com";
+{
   # Auxiliary functions
   fetchPackage = { name, version, hash, isTheme }:
     pkgs.stdenv.mkDerivation rec {
