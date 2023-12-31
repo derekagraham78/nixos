@@ -25,7 +25,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
 
 services.wordpress.sites."papalpenguin.com".settings = {
 WP_HOME = "https://www.papalpenguin.com";
-FORCE_SSL_ADMIN = true;
+FORCE_SSL_ADMIN = false;
 AUTOMATIC_UPDATER_DISABLED = false;
 };
 services.wordpress.sites."papalpenguin.com".database.tablePrefix = "wp_";
