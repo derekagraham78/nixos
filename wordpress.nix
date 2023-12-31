@@ -5,6 +5,8 @@
 
 {
 services.wordpress.sites."papalpenguin.com" = {};
+services.wordpress.sites.<name>.virtualHost.documentRoot = "/var/www/papalpenguin.com";
+
 services.wordpress.sites."papalpenguin.com".settings = {
 WP_HOME = "https://www.papalpenguin.com";
 FORCE_SSL_ADMIN = true;
