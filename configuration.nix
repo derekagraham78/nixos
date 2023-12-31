@@ -77,6 +77,15 @@ services.nginx = {
 services.mysql = {
   enable = true;
   package = pkgs.mariadb;
+ensureDatabases = [
+      dbConfig.db
+    ];
+    ensureUsers = [
+      {
+        name = "papalpenguin";
+        ensurePermissions = {
+          "papalpenguin.*" = "ALL PRIVILEGES";
+        };
 };
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
