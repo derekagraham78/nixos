@@ -2,7 +2,7 @@
   services.mysql = {
     package = pkgs.mariadb;
     enable = true;
-    ensureDatabases = [ papalpenguin    ];
+    ensureDatabases = [ papalpenguindb ];
    replication.role = "master";
        replication.slaveHost = "127.0.0.1";
        replication.masterUser = "papalpenguin";
@@ -11,7 +11,7 @@
       {
         name = "papalpenguin";
         ensurePermissions = {
-          "papalpenguin.*" = "ALL PRIVILEGES";
+          "papalpenguindb.*" = "ALL PRIVILEGES";
         };
       }
     ];
