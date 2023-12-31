@@ -40,6 +40,5 @@ services.wordpress.sites."papalpenguin.com".virtualHost =
 {
   adminAddr = "derek@papalpenguin.com";
   forceSSL = false;
-  enableACME = true;
 };
 }
