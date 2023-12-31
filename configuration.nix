@@ -74,10 +74,6 @@ services.nginx = {
     '';
   };
 };
-services.mysql = {
-  enable = true;
-  package = pkgs.mariadb;
-};
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
   settings = {                                                                                                                                                                                                                               
