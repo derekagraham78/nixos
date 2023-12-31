@@ -7,8 +7,9 @@
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
 services.wordpress.sites."papalpenguin.com" = {};
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
-#services.wordpress.sites."papalpenguin.com".themes = {
-#inherit (pkgs.wordpressPackages.themes) astra;
+services.wordpress.sites."papalpenguin.com".themes = {
+inherit (pkgs.wordpressPackages.themes) 
+Vertice;
 #};
 
 #services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
