@@ -72,6 +72,7 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
     enableACME = false;
     root = "/var/www/mccoll-clan.com";
 };
+services.wordpress.sites."papalpenguin.com" = {};
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
