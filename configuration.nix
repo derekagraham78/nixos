@@ -351,7 +351,7 @@ services.vsftpd = {
     localUsers = true;
     userlist = [ "dgraham" "root" ];
     userlistEnable = true;
-    localRoot = "/var/ftp";
+    localRoot = "/var/www/papalpenguin";
     extraConfig = ''
        local_umask=007
     '';
