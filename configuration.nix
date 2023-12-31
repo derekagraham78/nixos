@@ -78,12 +78,16 @@ services.mysql = {
   enable = true;
   package = pkgs.mariadb;
 };
-languages.php.enable = true;
-  languages.php.package = pkgs.php.buildEnv {
+let
+  phpPackage = pkgs.php.buildEnv {
     extraConfig = ''
       memory_limit = 256M
     '';
   };
+in
+{
+  languages.php.enable = true;
+  languages.php.package = phpPackage;
   languages.php.fpm.pools.web = {
     settings = {
       "pm" = "dynamic";
@@ -92,7 +96,6 @@ languages.php.enable = true;
       "pm.min_spare_servers" = 1;
       "pm.max_spare_servers" = 5;
     };
-};
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
