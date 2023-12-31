@@ -72,7 +72,16 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
     enableACME = false;
     root = "/var/www/mccoll-clan.com";
 };
-services.wordpress.sites."papalpenguin.com" = {};
+services.wordpress.sites."papalpenguin.com" = {
+database.createLocally = true;  # name is set to `wordpress` by default
+    themes = [ responsiveTheme ];
+    plugins = [ akismetPlugin ];
+    virtualHost = {
+      adminAddr = "derek@papalpenguin.com";
+      serverAliases = [ "papalpenguin.com" "www.papalpenguin.com" ];
+    };
+};
+
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
