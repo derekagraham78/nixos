@@ -135,7 +135,7 @@ services.phpfpm.pools.mypool = {
 nixpkgs.overlays = [ (final: prev: {
 libao = prev.libao.override {
   usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOnfinal.stdenv.hostPlatform final.libpulseaudio);
-} ); ];
+}; ); ];
 
 # Enable sound with pipewire.
 	sound.enable = true;
