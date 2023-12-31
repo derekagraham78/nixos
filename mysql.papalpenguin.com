@@ -34,7 +34,7 @@ systemd.services.setdbpass = {
  };
 
 
-} 
+#} 
   # Using PAM for database authentication,
   # so creating a system user for that purpose.
   users.users.papalpenguin = {
