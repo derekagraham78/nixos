@@ -174,7 +174,7 @@ fonts.packages = with pkgs; [
 # Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.dgraham = {
 	description = "Derek Graham";
-	extraGroups = [ "networkmanager" "rslsync" "docker" "wheel" "video" ]  ;
+	extraGroups = [ "vsftpd" "networkmanager" "rslsync" "docker" "wheel" "video" ]  ;
 	packages = with pkgs                                                   ; [
 	kate
 ]                                                                       ;
