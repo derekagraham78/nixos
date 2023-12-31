@@ -9,7 +9,7 @@ wordpress-theme-astra = pkgs.stdenv.mkDerivation rec {
   version = "4.5.2";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/astra.${version}.zip";
-    hash = "sha256-09zzg0j2flljw0xq6p7m4n97ncfz4ixi75i9j714bjx9mpn3cidh";
+    hash = "sha256-sEU27K2py0XCkSmWE3sk3zF7kiX1XIM74JJSJyR4/yc=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
@@ -18,7 +18,7 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
   version = "4.9.5";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/responsive.${version}.zip";
-    hash = "sha256-1njp9z943nnj0fmqbci0waqi7bzc72izn9l3xm2wgmybyg44plln=";
+    hash = "sha256-nOZ2dsxZhZi53hE5LLuXtpGBi3Psf5crb2aYCLg71w0=";
   };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
