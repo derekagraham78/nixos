@@ -233,6 +233,9 @@ fonts.packages = with pkgs; [
 	nmap                                                                   # A utility for network discovery and>
 	 ipcalc                                                                # it is a calculator for the IPv4/>
 # misc
+	php
+	phpPackages.composer
+
 	 cowsay
 	file
 	which
