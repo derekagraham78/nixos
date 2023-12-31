@@ -25,7 +25,7 @@ systemd.services.setdbpass = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       ExecStart = ''
-      ${pkgs.mariadb}/bin/mysql -e "grant all privileges on ${statsConfig.db}.* to ${statsConfig.user}@localhost identified by '${statsConfig.password}';" ${statsConfig.db}
+      ${pkgs.mariadb}/bin/mysql -e "grant all privileges on papalpenguindb.* to papalpenguin@localhost identified by '098825';" papalpenguindb
       '';
       User = "root";
       PermissionsStartOnly = true;
