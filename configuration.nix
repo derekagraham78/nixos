@@ -67,11 +67,11 @@ users.users.dgraham.isNormalUser = true                                 ;
 #    enableACME = false;
 #    root = "/var/www/papalpenguin.com";
 #};
-services.nginx.virtualHosts."mccoll-clan.com" = {
-    addSSL = false;
-    enableACME = false;
-    root = "/var/www/mccoll-clan.com";
-};
+#services.nginx.virtualHosts."mccoll-clan.com" = {
+#    addSSL = false;
+#    enableACME = false;
+#    root = "/var/www/mccoll-clan.com";
+#};
   domain = "papalpenguin.com";
 
   # Auxiliary functions
