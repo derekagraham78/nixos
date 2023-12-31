@@ -4,7 +4,7 @@
     enable = true;
     ensureDatabases = [ "papalpenguindb" ];
    replication.role = "master";
-       replication.slaveHost = "127.0.0.1";
+       replication.masterHost = "127.0.0.1";
        replication.masterUser = "papalpenguin";
        replication.masterPassword = "098825";
     ensureUsers = [
