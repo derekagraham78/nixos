@@ -61,66 +61,33 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
-  services.phpfpm.pools.papalpenguin = {
-#    user = papalpenguin;
-    settings = {
-      "listen.owner" = config.services.nginx.user;
-      "listen.group" = config.services.nginx.group;
-      "listen.mode" = "0660";
-      "catch_workers_output" = 1;
-    };
-  };
-
-  users.groups.papalpenguin.members = [ "papalpenguin" ];
-  users.users.papalpenguin = {
-    isSystemUser = true;
-    group = "papalpenguin";
-  };
-  users.users.nginx.extraGroups = [ "papalpenguin"];
-
-  services.nginx = {
-    enable = true;
-
-    virtualHosts = {
-      papalpenguin.com = {
-#        root = "/var/www/papalpenguin.com}";
-
-        extraConfig = ''
-            index index.php;
-        '';
-
-        locations."~ ^(.+\\.php)(.*)$"  = {
-          extraConfig = ''
-            # Check that the PHP script exists before passing it
-            try_files $fastcgi_script_name =404;
-            include ${config.services.nginx.package}/conf/fastcgi_params;
-            fastcgi_split_path_info  ^(.+\.php)(.*)$;
-            fastcgi_pass unix:${config.services.phpfpm.pools.papalpenguin.socket};
-            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-            fastcgi_param  PATH_INFO        $fastcgi_path_info;
-
-            include ${pkgs.nginx}/conf/fastcgi.conf;            
-          '';
-        };
-      };
-    };
-};
-
-services.mysql.enable = true;
-  services.mysql.package = pkgs.mariadb;
-#services.nginx.enable = true;
-services.nginx.virtualHosts.papalpenguin.com = {
-   addSSL = false;
+services.nginx = {
+  enable = true;
+  virtualHosts."papalpenguin.com" = {
     enableACME = false;
+    forceSSL = false;
     root = "/var/www/papalpenguin.com";
+    locations."~ \\.php$".extraConfig = ''
+      fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+      fastcgi_index index.php;
+    '';
+  };
 };
-#services.nginx.virtualHosts."mccoll-clan.com" = {
-#    addSSL = false;
-#    enableACME = false;
-#    root = "/var/www/mccoll-clan.com";
-#};
-
-
+services.mysql = {
+  enable = true;
+  package = pkgs.mariadb;
+};
+services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
+  user = "nobody";                                                                                                                                                                                                                           
+  settings = {                                                                                                                                                                                                                               
+    "pm" = "dynamic";            
+    "listen.owner" = config.services.nginx.user;                                                                                                                                                                                                              
+    "pm.max_children" = 5;                                                                                                                                                                                                                   
+    "pm.start_servers" = 2;                                                                                                                                                                                                                  
+    "pm.min_spare_servers" = 1;                                                                                                                                                                                                              
+    "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
+    "pm.max_requests" = 500;                                                                                                                                                                                                                 
+  };                    
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
