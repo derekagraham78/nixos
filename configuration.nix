@@ -64,7 +64,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 
 services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;
-  services.mysql.rootPassword = "/etc/mysql/mysql.password";
 
 services.nginx.virtualHosts."papalpenguin.com" = {
    addSSL = false;
