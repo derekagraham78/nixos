@@ -4,6 +4,16 @@
 { config, lib, pkgs, ... }:
 
 let
+wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
+  name = "vertice";
+  version = "4.5.2";
+  src = pkgs.fetchzip {
+    url = "https://downloads.wordpress.org/theme/vertice.1.0.4.zip";
+    hash = "sha256-XU02cJGZQVZ2EhXftAfRLk/AjkLJEAzOIT1m2VOkew4=";
+};
+  installPhase = "mkdir -p $out; cp -R * $out/";
+};
+sha256-XU02cJGZQVZ2EhXftAfRLk/AjkLJEAzOIT1m2VOkew4=
 wordpress-theme-astra = pkgs.stdenv.mkDerivation rec {
   name = "astra";
   version = "4.5.2";
