@@ -83,7 +83,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 
     virtualHosts = {
       papalpenguin.com = {
-        root = "/var/www/papalpenguin.com}";
+#        root = "/var/www/papalpenguin.com}";
 
         extraConfig = ''
             index index.php;
@@ -109,7 +109,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;
 #services.nginx.enable = true;
-services.nginx.virtualHosts.papalpenguin.com = {
+//services.nginx.virtualHosts.papalpenguin.com = {
    addSSL = false;
     enableACME = false;
     root = "/var/www/papalpenguin.com";
