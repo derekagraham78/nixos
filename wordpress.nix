@@ -53,8 +53,8 @@ services.wordpress.sites."papalpenguin.com" = {};
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".themes = {
 inherit astra; };
-services.wordpress.sites."papalpenguin.com".plugins = {
-inherit google-site-kit; };
+#services.wordpress.sites."papalpenguin.com".plugins = {
+#inherit google-site-kit; };
 #services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
 services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
 {
