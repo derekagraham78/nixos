@@ -135,17 +135,17 @@ services.phpfpm.pools.mypool = {
 	nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.7" ]       ;
 # Enable sound with pipewire.
 	sound.enable = true                                                    ;
-	hardware.pulseaudio.package = pkgs.pulseaudio;
-	hardware.pulseaudio.enable = true                                      ;
+	#hardware.pulseaudio.package = pkgs.pulseaudio;
+	hardware.pulseaudio.enable = false                                      ;
 	#hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
 	nixpkgs.config.pulseaudio = false                                       ;
 	programs.dconf.enable = true                                           ;
 	security.rtkit.enable = true                                           ;
 	services.pipewire = {
-		enable = false                                                        ;
+		enable = true                                                        ;
 		alsa.enable = true                                                    ;
 		alsa.support32Bit = true                                              ;
-		pulse.enable = true                                                   ;
+		pulse.enable = false                                                   ;
 # If you want to use JACK applications, uncomment this
 		jack.enable = true                                                    ;
 	}                                                                      ;
