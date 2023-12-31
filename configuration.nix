@@ -143,7 +143,6 @@ services.phpfpm.pools.mypool = {
 	hardware.pulseaudio.package = pkgs.pulseaudio;
 	hardware.pulseaudio.enable = true;
 	#hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
-	nixpkgs.config.pulseaudio = false;
 	programs.dconf.enable = true;      
 	security.rtkit.enable = true;
 	services.pipewire = {
