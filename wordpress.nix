@@ -12,7 +12,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
     ip = "192.168.4.60";
     port = 443;
     ssl = true;
-};
+}
 ];
 
 services.wordpress.sites."papalpenguin.com".settings = {
