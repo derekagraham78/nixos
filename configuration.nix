@@ -80,7 +80,7 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
   });
 wordpress = {
       webserver = "nginx";
-      sites.papalpenguin.com" = {
+      sites.papalpenguin.com = {
         plugins = {  };
         themes = { inherit astra; };
         settings = { WP_DEFAULT_THEME = "astra"; };
