@@ -69,14 +69,11 @@ services.nginx = {
     enableACME = false;
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
-locations."~ \\.php$".extraConfig = ''
-fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-      fastcgi_index index.php;
-        include ${pkgs.nginx}/conf/fastcgi_params;
-        include ${pkgs.nginx}/conf/fastcgi.conf;
-    '';
-  };
+location / {
+  try_files $uri /index.html index.php;
+   }
 };
+
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
   settings = {                                                                                                                                                                                                                               
