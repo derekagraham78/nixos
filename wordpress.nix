@@ -32,7 +32,7 @@ let domain = "papalpenguin.com";
       hash = hash;
       isTheme = true;
     });
-{
+
   # Plugins
   google-site-kit = (fetchPlugin {
     name = "google-site-kit";
@@ -46,6 +46,7 @@ let domain = "papalpenguin.com";
     version = "4.1.5";
     hash = "sha256-X3Jv2kn0FCCOPgrID0ZU8CuSjm/Ia/d+om/ShP5IBgA=";
   });
+in {
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
 services.wordpress.sites."papalpenguin.com" = {};
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
