@@ -74,6 +74,11 @@ services.nginx = {
     '';
   };
 };
+dbConfig = {
+    db = "papalpenguin";
+    user = "papalpenguin";
+    socket = "'./run/mysqld/mysqld.sock'";
+  };
 services.mysql = {
   enable = true;
   package = pkgs.mariadb;
