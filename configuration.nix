@@ -66,7 +66,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 }                                                                       ;
 security.acme = {
   acceptTerms = true;
-  defaults.email = "derekagraham78@icloud.com";
+  defaults.email = "derek@papalpenguin.com";
 };
 services.nginx.defaultSSLListenPort = 443;
 services.nginx = {
@@ -75,7 +75,8 @@ services.nginx = {
     enableACME = true;
     forceSSL = false;
     addSSL = true;
-  #  root = "/var/www/papalpenguin.com";
+    serverAliases = [ "www.papalpenguin.com" ];
+  #   root = "/var/www/papalpenguin.com";
   #  locations."~ \\.php$".extraConfig = ''
   #  index = "index.php index.html";
   #  fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
