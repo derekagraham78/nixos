@@ -13,7 +13,6 @@ wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
-sha256-XU02cJGZQVZ2EhXftAfRLk/AjkLJEAzOIT1m2VOkew4=
 wordpress-theme-astra = pkgs.stdenv.mkDerivation rec {
   name = "astra";
   version = "4.5.2";
