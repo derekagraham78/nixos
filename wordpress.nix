@@ -71,6 +71,6 @@ services.wordpress.sites."papalpenguin.com".virtualHost.locations."/".index = "i
 services.wordpress.sites."papalpenguin.com".virtualHost =
 {
   adminAddr = "derek@papalpenguin.com";
-  forceSSL = false;
+  forceSSL = true;
 };
 }
