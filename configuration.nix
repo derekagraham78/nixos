@@ -66,6 +66,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 }                                                                       ;
 security.acme.acceptTerms = true;
 security.acme.defaults.email = "derek@papalpenguin.com";
+services.nginx.defaultSSLListenPort = 443;
 services.nginx = {
   enable = true;
   virtualHosts."papalpenguin.com" = {
