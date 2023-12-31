@@ -229,7 +229,6 @@ fonts.packages = with pkgs; [
 # utils
 		ripgrep                                                                # recursively searches directories>
 		plocate
-                locate
 		jq                                                                     # A lightweight and flexible command-li>
 		yq-go                                                                  # yaml processer https://github.com/>
 	 	fzf                                                                   # A command-line fuzzy finde
