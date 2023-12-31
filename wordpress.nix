@@ -5,7 +5,6 @@
 
 
 let domain = "papalpenguin.com";
-{
   # Auxiliary functions
   fetchPackage = { name, version, hash, isTheme }:
     pkgs.stdenv.mkDerivation rec {
@@ -33,7 +32,7 @@ let domain = "papalpenguin.com";
       hash = hash;
       isTheme = true;
     });
-
+{
   # Plugins
   google-site-kit = (fetchPlugin {
     name = "google-site-kit";
