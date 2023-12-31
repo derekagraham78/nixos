@@ -132,7 +132,7 @@ services.phpfpm.pools.mypool = {
 		nssmdns = true                                                        ;
 		openFirewall = true                                                   ;
 		}                                                                     ;
-nixpkgs.overlays = | (final: prev: {
+nixpkgs.overlays = [ (final: prev: {
 libao = prev.libao.override {
   usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOnfinal.stdenv.hostPlatform final.libpulseaudio);
 }) ];
