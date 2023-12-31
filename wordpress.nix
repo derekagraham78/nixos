@@ -5,7 +5,7 @@
 
 {
 services.wordpress.sites."papalpenguin.com" = {};
-services.wordpress.sites."papalpenguin.com".settings {
+services.wordpress.sites."papalpenguin.com".settings = {
 WP_HOME = "https://www.papalpenguin.com";
 FORCE_SSL_ADMIN = true;
 AUTOMATIC_UPDATER_DISABLED = false;
