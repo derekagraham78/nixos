@@ -118,14 +118,14 @@ users.users.dgraham.isNormalUser = true                                 ;
 
 
   services = {
-    nginx.virtualHosts.${domain} = {
+    nginx.virtualHosts.papalpenguin.com = {
       enableACME = true;
       forceSSL = true;
     };
 
     wordpress = {
       webserver = "nginx";
-      sites."${domain}" = {
+      sites.papalpenguin.com = {
         plugins = { inherit google-site-kit; };
         themes = { inherit astra; };
         settings = { WP_DEFAULT_THEME = "astra"; };
