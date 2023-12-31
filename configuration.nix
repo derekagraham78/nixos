@@ -74,7 +74,6 @@ services.nginx = {
   virtualHosts."papalpenguin.com" = {
     enableACME = true;
     forceSSL = true;
-    addSSL = true;
     serverAliases = [ "www.papalpenguin.com" ];
   #   root = "/var/www/papalpenguin.com";
   #  locations."~ \\.php$".extraConfig = ''
