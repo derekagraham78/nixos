@@ -9,7 +9,8 @@ wordpress-theme-astra = pkgs.stdenv.mkDerivation rec {
   version = "4.5.2";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/astra.${version}.zip";
-    hash = "sha256-1brqnf58fj7c1b5666zfwgqww0vqj48xi3vh9nvhnsk0zy3br3nj=";
+    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+#1brqnf58fj7c1b5666zfwgqww0vqj48xi3vh9nvhnsk0zy3br3nj=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
