@@ -77,7 +77,6 @@ fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
     '';
   };
 };
-};
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
   settings = {                                                                                                                                                                                                                               
