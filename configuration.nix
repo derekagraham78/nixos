@@ -88,6 +88,7 @@ services.phpfpm.pools.mypool = {
     "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
     "pm.max_requests" = 500;                                                                                                                                                                                                                 
   };                    
+};
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
