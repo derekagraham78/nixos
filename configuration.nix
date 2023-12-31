@@ -64,6 +64,8 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
+security.acme.acceptTerms = true;
+security.acme.defaults.email = "derek@papalpenguin.com";
 services.nginx = {
   enable = true;
   #virtualHosts."papalpenguin.com" = {
