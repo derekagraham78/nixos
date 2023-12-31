@@ -20,6 +20,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
   {
     ip = "*";
     port = 8080;
+}
 ];
 
 services.wordpress.sites."papalpenguin.com".settings = {
