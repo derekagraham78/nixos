@@ -72,18 +72,12 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
     enableACME = false;
     root = "/var/www/mccoll-clan.com";
 };
- # Themes
-  astra = (fetchTheme {
-    name = "astra";
-    version = "4.1.5";
-    hash = "sha256-X3Jv2kn0FCCOPgrID0ZU8CuSjm/Ia/d+om/ShP5IBgA=";
-  });
 wordpress = {
       webserver = "nginx";
       sites.papalpenguin.com = {
         plugins = {  };
-        themes = { inherit astra; };
-        settings = { WP_DEFAULT_THEME = "astra"; };
+        themes = {  };
+        settings = {  };
       };
  };
 # Select internationalisation properties.
