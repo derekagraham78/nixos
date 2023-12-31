@@ -62,11 +62,11 @@ users.users.dgraham.isNormalUser = true                                 ;
 }	                                                                      ;
 }                                                                       ;
 services.nginx.enable = true;
-services.nginx.virtualHosts."papalpenguin.com" = {
-    addSSL = false;
-    enableACME = false;
-    root = "/var/www/papalpenguin.com";
-};
+#services.nginx.virtualHosts."papalpenguin.com" = {
+#   addSSL = false;
+#    enableACME = false;
+#    root = "/var/www/papalpenguin.com";
+#};
 services.nginx.virtualHosts."mccoll-clan.com" = {
     addSSL = false;
     enableACME = false;
@@ -318,7 +318,7 @@ fonts.packages = with pkgs; [
 		enable = true                                                         ;
 	}                                                                      ;
 # List services that you want to enable:
-# services.httpd.enable = true;
+ services.httpd.enable = true;
 # Enable the OpenSSH daemon.
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
