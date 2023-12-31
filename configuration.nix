@@ -134,20 +134,20 @@ services.phpfpm.pools.mypool = {
 		}                                                                     ;
 	nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.7" ]       ;
 # Enable sound with pipewire.
-	sound.enable = true                                                    ;
-	#hardware.pulseaudio.package = pkgs.pulseaudio;
-	hardware.pulseaudio.enable = false                                      ;
-	#hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
-	nixpkgs.config.pulseaudio = false                                       ;
-	programs.dconf.enable = true                                           ;
-	security.rtkit.enable = true                                           ;
+	sound.enable = true;
+	hardware.pulseaudio.package = pkgs.pulseaudio;
+	hardware.pulseaudio.enable = false;
+	hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
+	nixpkgs.config.pulseaudio = false;
+	programs.dconf.enable = true;      
+	security.rtkit.enable = true;
 	services.pipewire = {
-		enable = true                                                        ;
-		alsa.enable = true                                                    ;
-		alsa.support32Bit = true                                              ;
-		pulse.enable = false                                                   ;
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = false;
 # If you want to use JACK applications, uncomment this
-		jack.enable = true                                                    ;
+		jack.enable = true;
 	}                                                                      ;
 fonts.packages = with pkgs; [
   rPackages.trekfont
@@ -322,9 +322,6 @@ fonts.packages = with pkgs; [
 	 xorg.libxcb
 		python311Packages.qpageview
 	libsForQt5.qt5.wrapQtAppsHook
-		paprefs
-		pasystray
-		pavucontrol
 		fmt
 		pciutils
 		geekbench
