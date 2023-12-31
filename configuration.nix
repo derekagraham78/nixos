@@ -61,12 +61,12 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
-services.nginx.enable = true;
-services.nginx.virtualHosts."papalpenguin.com" = {
-   addSSL = false;
-    enableACME = false;
-    root = "/var/www/papalpenguin.com";
-};
+#services.nginx.enable = true;
+#services.nginx.virtualHosts."papalpenguin.com" = {
+#   addSSL = false;
+#    enableACME = false;
+#    root = "/var/www/papalpenguin.com";
+#};
 services.nginx.virtualHosts."mccoll-clan.com" = {
     addSSL = false;
     enableACME = false;
