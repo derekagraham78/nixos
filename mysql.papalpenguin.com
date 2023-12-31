@@ -19,19 +19,20 @@
 };
 
 
-systemd.services.setdbpass = {
-    description = "MySQL database password setup";
-    wants = [ "mariadb.service" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = ''
-      ${pkgs.mariadb}/bin/mysql -e "grant all privileges on papalpenguindb.* to papalpenguin@localhost identified by '098825';" papalpenguindb
-      '';
-      User = "root";
-      PermissionsStartOnly = true;
-      RemainAfterExit = true;
-    };
- };
+#systemd.services.setdbpass = {
+#    description = "MySQL database password setup";
+#    wants = [ "mariadb.service" ];
+#    wantedBy = [ "multi-user.target" ];
+#    serviceConfig = {
+#      ExecStart = ''
+#      ${pkgs.mariadb}/bin/mysql -e "grant all privileges on papalpenguindb.* to papalpenguin@localhost identified by '098825';" papalpenguindb
+#      '';
+#      User = "root";
+#      PermissionsStartOnly = true;
+#      RemainAfterExit = true;
+#    };
+#
+# };
 
 
 #} 
