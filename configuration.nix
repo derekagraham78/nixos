@@ -64,7 +64,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
-services.nginx.virtualHosts."papalpenguin.com".addSSL = true;
 security.acme.acceptTerms = true;
 security.acme.defaults.email = "derek@papalpenguin.com";
 services.nginx.defaultSSLListenPort = 443;
@@ -73,6 +72,7 @@ services.nginx = {
   virtualHosts."papalpenguin.com" = {
     enableACME = true;
     forceSSL = false;
+    addSSL = true;
   #  root = "/var/www/papalpenguin.com";
   #  locations."~ \\.php$".extraConfig = ''
   #  index = "index.php index.html";
