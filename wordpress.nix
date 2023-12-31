@@ -30,7 +30,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.locations."/".index = "i
 services.wordpress.sites."papalpenguin.com".virtualHost =
 {
   adminAddr = "derek@papalpenguin.com";
-  forceSSL = true;
+  forceSSL = false;
   enableACME = true;
 };
 }
