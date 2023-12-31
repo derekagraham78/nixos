@@ -228,6 +228,7 @@ fonts.packages = with pkgs; [
 		p7zip
 # utils
 		ripgrep                                                                # recursively searches directories>
+wp4nix
 		plocate
 		jq                                                                     # A lightweight and flexible command-li>
 		yq-go                                                                  # yaml processer https://github.com/>
