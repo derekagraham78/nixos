@@ -10,7 +10,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www
 services.wordpress.sites."papalpenguin.com".themes = {
 inherit (pkgs.wordpressPackages.themes) 
 Vertice;
-#};
+};
 
 #services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
 services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
