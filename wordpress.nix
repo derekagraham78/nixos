@@ -3,8 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, lib, pkgs, ... }:
 
+let
 
-{
+wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
+  name = "responsive";
+  version = "4.7.9";
+  src = pkgs.fetchzip {
+    url = "https://downloads.wordpress.org/theme/responsive.${version}.zip";
+    hash = "sha256-7K/pwD1KAuipeOAOLXd2wqOUEhwk+uNGIllVWzDHzp0=";
+  };
+  installPhase = "mkdir -p $out; cp -R * $out/";
+};
+in {
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
 services.wordpress.sites."papalpenguin.com" = {};
