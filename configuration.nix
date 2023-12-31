@@ -79,7 +79,11 @@ services.mysql = {
   package = pkgs.mariadb;
 };
 languages.php.enable = true;
-  languages.php.package = phpPackage;
+  languages.php.package = pkgs.php.buildEnv {
+    extraConfig = ''
+      memory_limit = 256M
+    '';
+  };
   languages.php.fpm.pools.web = {
     settings = {
       "pm" = "dynamic";
