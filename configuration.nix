@@ -351,12 +351,11 @@ services.vsftpd = {
     localUsers = true;
     userlist = [ "dgraham" "root" ];
     userlistEnable = true;
-services.vsftpd.localRoot = "/var/ftp";
-extraConfig = ''
-  local_umask=007
-'';
-
- };
+    localRoot = "/var/ftp";
+    extraConfig = ''
+       local_umask=007
+    '';
+   };
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
