@@ -342,6 +342,8 @@ fonts.packages = with pkgs; [
 # Enable the OpenSSH daemon.
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
+	services.openssh.allowSFTP = true;
+
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
