@@ -64,8 +64,10 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
-security.acme.acceptTerms = true;
-security.acme.defaults.email = "derek@papalpenguin.com";
+security.acme = {
+  acceptTerms = true;
+  defaults.email = "derek@papalpenguin.com";
+};
 services.nginx.defaultSSLListenPort = 443;
 services.nginx = {
   enable = true;
