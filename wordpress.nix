@@ -34,6 +34,7 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
 in {
 services.wordpress.sites."papalpenguin.com".themes = {
 inherit wordpress-theme-responsive;
+inherit wordpress-theme-vertice;
 inherit wordpress-theme-astra;
     };
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
