@@ -136,7 +136,7 @@ nixpkgs.overlays = [ (final: prev: {
 libao = prev.libao.override {
   usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOn 
 final.stdenv.hostPlatform final.libpulseaudio);
-}; ); ];
+}) ];
 
 # Enable sound with pipewire.
 	sound.enable = true;
