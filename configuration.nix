@@ -194,7 +194,6 @@ fonts.packages = with pkgs; [
 # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 		git
 		wget
-		php-fpm
 		gh
 		xscreensaver
 		neofetch
