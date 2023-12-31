@@ -74,19 +74,10 @@ services.nginx = {
     '';
   };
 };
-let
-dbConfig = {
-    db = "papalpenguin";
-    user = "papalpenguin";
-    socket = "'./run/mysqld/mysqld.sock'";
-  };
-in
 services.mysql = {
   enable = true;
   package = pkgs.mariadb;
-ensureDatabases = [
-      dbConfig.db
-    ];
+ensureDatabases = [    ];
     ensureUsers = [
       {
         name = "papalpenguin";
