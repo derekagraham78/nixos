@@ -86,7 +86,10 @@ ensureDatabases = [
         ensurePermissions = {
           "papalpenguin.*" = "ALL PRIVILEGES";
         };
+    }
+  ];
 };
+
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
   settings = {                                                                                                                                                                                                                               
