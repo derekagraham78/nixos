@@ -64,6 +64,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
+services.nginx.virtualHosts."papalpenguin.com".addSSL = true;
 services.nginx.defaultListen = [
 { addr = "192.168.4.60"; proxyProtocol = false; ssl = true; }
 ];
