@@ -6,7 +6,7 @@
 {
 services.wordpress.sites."papalpenguin.com" = {};
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
-services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
+#services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
 services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
 {
     ip = "192.168.4.60";
@@ -42,5 +42,3 @@ services.wordpress.sites."papalpenguin.com".virtualHost =
   enableACME = true;
 };
 }
-
-
