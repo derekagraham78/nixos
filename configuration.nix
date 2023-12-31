@@ -65,7 +65,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 services.nginx = {
   enable = true;
   virtualHosts."papalpenguin.com" = {
-#    basicAuth = { papalpenguin = "098825"; };
     enableACME = false;
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
@@ -79,17 +78,16 @@ services.mysql = {
   enable = true;
   package = pkgs.mariadb;
 };
-services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
-  user = "nobody";                                                                                                                                                                                                                           
-  settings = {                                                                                                                                                                                                                               
-    "pm" = "dynamic";            
-    "listen.owner" = config.services.nginx.user;                                                                                                                                                                                                              
-    "pm.max_children" = 5;                                                                                                                                                                                                                   
-    "pm.start_servers" = 2;                                                                                                                                                                                                                  
-    "pm.min_spare_servers" = 1;                                                                                                                                                                                                              
-    "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
-    "pm.max_requests" = 500;                                                                                                                                                                                                                 
-  };                    
+languages.php.enable = true;
+  languages.php.package = phpPackage;
+  languages.php.fpm.pools.web = {
+    settings = {
+      "pm" = "dynamic";
+      "pm.max_children" = 5;
+      "pm.start_servers" = 2;
+      "pm.min_spare_servers" = 1;
+      "pm.max_spare_servers" = 5;
+    };
 };
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
