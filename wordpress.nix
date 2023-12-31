@@ -9,12 +9,12 @@ services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www
 #services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
 services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
 {
-    ip = "192.168.4.60";
+    ip = "208.59.78.209";
     port = 443;
     ssl = true;
 }
  {
-    ip = "192.168.4.60";
+    ip = "208.59.78.209";
     port = 80;
   }
   {
