@@ -132,12 +132,11 @@ services.phpfpm.pools.mypool = {
 		nssmdns = true                                                        ;
 		openFirewall = true                                                   ;
 		}                                                                     ;
+nixpkgs.overlays = | (final: prev: {
+libao = prev.libao.override {
+  usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOnfinal.stdenv.hostPlatform final.libpulseaudio);
+}) ];
 
-	nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.7" ]       ;
-nixpkgs.overlays = 
-[ 
-(final: prev: { libao = prev.libao.override { usePulseAudio = final.config.pulseaudio) or (final.lib.meta.availableOn final.stdenv.hostPlatform final.libpulseaudio); };  }; 
-];
 # Enable sound with pipewire.
 	sound.enable = true;
 	#hardware.pulseaudio.package = pkgs.pulseaudio;
