@@ -62,7 +62,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 }	                                                                      ;
 }                                                                       ;
   services.phpfpm.pools.papalpenguin = {
-    user = app;
+    user = papalpenguin;
     settings = {
       "listen.owner" = config.services.nginx.user;
       "listen.group" = config.services.nginx.group;
