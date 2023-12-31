@@ -16,7 +16,7 @@ services.wordpress.sites."papalpenguin.com".virtualHost.serverAliases = [
 "www.papalpenguin.com"
 "papalpenguin.com"
 ];
-services.wordpress.sites."papalpenguin.com".virtualHost.locations."/".index = "index.php index.html"
+services.wordpress.sites."papalpenguin.com".virtualHost.locations."/".index = "index.php index.html";
 ];
 services.wordpress.sites."papalpenguin.com".virtualHost
 {
