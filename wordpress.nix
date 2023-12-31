@@ -9,7 +9,7 @@ wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
   version = "1.0.4";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/vertice.1.0.4.zip";
-    hash = "sha256-XU02cJGZQVZ2EhXftAfRLk/AjkLJEAzOIT1m2VOkew4=";
+    hash = "sha256-Igy6a3GYgg8p1xzOpidmCoTYEuLxdstG3Rrg9eqIfBk=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
