@@ -61,40 +61,23 @@ users.users.dgraham.isNormalUser = true                                 ;
 	Unit = "backupmyconfs.service";
 }	                                                                      ;
 }                                                                       ;
-#services.nginx.enable = true;
-#services.nginx.virtualHosts."papalpenguin.com" = {
-#   addSSL = false;
-#    enableACME = false;
-#    root = "/var/www/papalpenguin.com";
-#};
-#services.nginx.virtualHosts."mccoll-clan.com" = {
-#    addSSL = false;
-#    enableACME = false;
-#    root = "/var/www/mccoll-clan.com";
-#};
 
-  # Auxiliary functions
-  services = {
-    nginx.virtualHosts.papalpenguin.com = {
-      enableACME = true;
-      forceSSL = true;
-    };
+services.mysql.enable = true;
+  services.mysql.package = pkgs.mariadb;
+  services.mysql.rootPassword = "/etc/mysql/mysql.password";
 
-    wordpress = {
-      webserver = "nginx";
-      sites.papalpenguin.com = {
-        plugins = { };
-        themes = { };
-        settings = { };
-      };
-    };
-  };
+services.nginx.virtualHosts."papalpenguin.com" = {
+   addSSL = false;
+    enableACME = false;
+    root = "/var/www/papalpenguin.com";
+};
+services.nginx.virtualHosts."mccoll-clan.com" = {
+    addSSL = false;
+    enableACME = false;
+    root = "/var/www/mccoll-clan.com";
+};
 
-  # As this is a root on tmpfs system, we use the impermanence
-  # NixOS module to persist WordPress state between reboots.
-  # You can omit the next two lines if using a regular configuration.
-  environment.persistence."/persist".directories =
-    [ "/var/lib/mysql" "/var/lib/wordpress" ];
+
 # Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
@@ -331,7 +314,7 @@ fonts.packages = with pkgs; [
 		enable = true                                                         ;
 	}                                                                      ;
 # List services that you want to enable:
- services.httpd.enable = true;
+# services.httpd.enable = true;
 # Enable the OpenSSH daemon.
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
