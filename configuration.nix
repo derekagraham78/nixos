@@ -12,17 +12,18 @@ imports =
 #	./mysql.papalpenguin.com
 ]                                                                       ;
 # Home Manager
-users.users.root.isNormalUser = false                >
-        users.defaultUserShell = pkgs.zsh              >
-        programs.zsh.enable = true                     >
+users.users.root.isNormalUser = false;
+        users.defaultUserShell = pkgs.zsh;
+        programs.zsh.enable = true;
         programs.zsh = {
 # Your zsh config
         ohMyZsh = {
-                enable = true                          >
-                plugins = [ "git" "python" "man" "1pass>
+                enable = true;
+                plugins = [ "git" "python" "man" "1password" ];
                 theme = "agnoster";
-                }                                      >
-        }                 
+                };                                      
+        };
+                 
 users.users.dgraham.isNormalUser = true                                 ;
 	users.defaultUserShell = pkgs.zsh                                      ;
 	programs.zsh.enable = true                                             ;
