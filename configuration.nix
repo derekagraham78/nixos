@@ -68,9 +68,9 @@ security.acme.acceptTerms = true;
 security.acme.defaults.email = "derek@papalpenguin.com";
 services.nginx = {
   enable = true;
-  #virtualHosts."papalpenguin.com" = {
-  #  enableACME = false;
-  #  forceSSL = false;
+  virtualHosts."papalpenguin.com" = {
+    enableACME = true;
+    forceSSL = false;
   #  root = "/var/www/papalpenguin.com";
   #  locations."~ \\.php$".extraConfig = ''
   #  index = "index.php index.html";
@@ -79,7 +79,7 @@ services.nginx = {
   #      include ${pkgs.nginx}/conf/fastcgi_params;
   #      include ${pkgs.nginx}/conf/fastcgi.conf;
    # '';
-#};
+};
 };
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
