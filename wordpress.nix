@@ -18,9 +18,9 @@ services.wordpress.sites."papalpenguin.com".virtualHost.serverAliases [
 ];
 services.wordpress.sites."papalpenguin.com".virtualHost.locations."/".index = "index.php index.html"
 ];
-services.wordpress.sites.<name>.virtualHost
+services.wordpress.sites."papalpenguin.com.virtualHost
 {
-  adminAddr = "webmaster@example.org";
+  adminAddr = "derek@papalpenguin.com";
   forceSSL = true;
   enableACME = false;
 };
