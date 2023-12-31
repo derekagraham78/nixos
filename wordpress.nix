@@ -5,9 +5,9 @@
 
 
 {
+services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
 services.wordpress.sites."papalpenguin.com" = {};
-services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.listen = [
 {
     ip = "208.59.78.209";
