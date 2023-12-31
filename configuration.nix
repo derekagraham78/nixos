@@ -25,7 +25,7 @@ users.users.root.isNormalUser = false;
         };
                  
 users.users.dgraham.isNormalUser = true; 
-	users.defaultUserShell = pkgs.zsh;
+#	users.defaultUserShell = pkgs.zsh;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
 # Your zsh config
