@@ -24,17 +24,17 @@ users.users.root.isNormalUser = false;
                 };                                      
         };
                  
-users.users.dgraham.isNormalUser = true                                 ;
-	users.defaultUserShell = pkgs.zsh                                      ;
+users.users.dgraham.isNormalUser = true; 
+	users.defaultUserShell = pkgs.zsh;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
 # Your zsh config
 	ohMyZsh = {
-		enable = true                                                         ;
-		plugins = [ "git" "python" "man" "1password" ]                        ;
+		enable = true;
+		plugins = [ "git" "python" "man" "1password" ];
 	 	theme = "agnoster";
-	 	}                                                                    ;
-	}                                                                      ;
+	 	};            
+	};         
 	nix.settings.experimental-features = [ "nix-command" "flakes" ]        ;
 # Bootloader.
 	boot.loader.systemd-boot.enable = true                                 ;
