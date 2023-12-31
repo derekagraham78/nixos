@@ -69,7 +69,7 @@ services.nginx = {
     enableACME = false;
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
-    locations."/" = {
+locations."~ \\.php$".extraConfig = ''
 fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
       fastcgi_index index.php;
         include ${pkgs.nginx}/conf/fastcgi_params;
