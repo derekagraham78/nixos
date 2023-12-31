@@ -76,7 +76,7 @@ fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         include ${pkgs.nginx}/conf/fastcgi.conf;
     '';
 };
-
+};
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
   user = "nobody";                                                                                                                                                                                                                           
   settings = {                                                                                                                                                                                                                               
