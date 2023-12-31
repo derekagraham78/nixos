@@ -135,9 +135,9 @@ services.phpfpm.pools.mypool = {
 	nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.7" ]       ;
 # Enable sound with pipewire.
 	sound.enable = true;
-	hardware.pulseaudio.package = pkgs.pulseaudio;
+	#hardware.pulseaudio.package = pkgs.pulseaudio;
 	hardware.pulseaudio.enable = false;
-	hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
+	#hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
 	nixpkgs.config.pulseaudio = false;
 	programs.dconf.enable = true;      
 	security.rtkit.enable = true;
