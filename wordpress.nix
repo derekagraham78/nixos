@@ -7,7 +7,7 @@
 services.wordpress.sites."papalpenguin.com" = {};
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.addSSL = true;
-services.wordpress.sites."papalpenguin.com".virtualHost.listen.*.ssl = true;
+services.wordpress.sites."papalpenguin.com".virtualHost.listen.true.ssl 
 
 
 services.wordpress.sites."papalpenguin.com".settings = {
