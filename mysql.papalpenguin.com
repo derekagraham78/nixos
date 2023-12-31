@@ -9,9 +9,9 @@
        replication.masterPassword = "098825";
     ensureUsers = [
       {
-        name = "${statsConfig.user}";
+        name = "papalpenguin";
         ensurePermissions = {
-          "${statsConfig.db}.*" = "ALL PRIVILEGES";
+          "papalpenguin.*" = "ALL PRIVILEGES";
         };
       }
     ];
@@ -46,11 +46,11 @@ systemd.services.setdbpass = {
   users.groups.dbuser = {};
  
   # Create the database and set up permissions.
-  services.mysql.ensureDatabases = [ "papalpenguin" ];
-  services.mysql.ensureUsers = [
-    {
-      name = "papalpenguin"; # Must be a system user.
-      ensurePermissions = { "papalpenguin.*" = "ALL PRIVILEGES"; };
-    }
-  ];
+#  services.mysql.ensureDatabases = [ "papalpenguin" ];
+#  services.mysql.ensureUsers = [
+#    {
+#      name = "papalpenguin"; # Must be a system user.
+#      ensurePermissions = { "papalpenguin.*" = "ALL PRIVILEGES"; };
+#    }
+#  ];
 }
