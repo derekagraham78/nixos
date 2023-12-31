@@ -15,6 +15,9 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
 in {
+services.wordpress.sites."papalpenguin.com".themes {
+inherit wordpress-theme-responsive;
+    };
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
 services.wordpress.sites."papalpenguin.com" = {};
