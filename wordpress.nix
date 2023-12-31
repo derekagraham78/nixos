@@ -4,7 +4,15 @@
 { config, lib, pkgs, ... }:
 
 let
-
+wordpress-theme-astra = pkgs.stdenv.mkDerivation rec {
+  name = "astra";
+  version = "4.5.2";
+  src = pkgs.fetchzip {
+    url = "https://downloads.wordpress.org/theme/astra.${version}.zip";
+    hash = "sha256-7K/1brqnf58fj7c1b5666zfwgqww0vqj48xi3vh9nvhnsk0zy3br3nj=";
+};
+  installPhase = "mkdir -p $out; cp -R * $out/";
+};
 wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
   name = "responsive";
   version = "4.7.9";
@@ -17,6 +25,7 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
 in {
 services.wordpress.sites."papalpenguin.com".themes = {
 inherit wordpress-theme-responsive;
+inherit wordpress-theme-astra;
     };
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
 services.wordpress.sites."papalpenguin.com".virtualHost.enableACME = true;
