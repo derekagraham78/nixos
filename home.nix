@@ -4,8 +4,6 @@
 # TODO please change the username & home direcotry to your own
 home.username = "dgraham";
 home.homeDirectory = "/home/dgraham";
-#home.username = "root";
-#home.homeDirectory = "/root";
 # basic configuration of git, please change to your own
 programs.git = {
 enable = true                            ;
