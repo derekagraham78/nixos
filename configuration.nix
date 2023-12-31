@@ -16,7 +16,7 @@ users.users.dgraham.isNormalUser = true;
 	users.defaultUserShell = pkgs.zsh;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
- Your zsh config
+# Your zsh config
 	ohMyZsh = {
 		enable = true;
 		plugins = [ "git" "python" "man" "1password" ];
