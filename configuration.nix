@@ -132,25 +132,25 @@ services.phpfpm.pools.mypool = {
 		nssmdns = true                                                        ;
 		openFirewall = true                                                   ;
 		}                                                                     ;
-nixpkgs.overlays = [ (final: prev: {
-libao = prev.libao.override {
-  usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOn 
-final.stdenv.hostPlatform final.libpulseaudio);
-}) ];
+#nixpkgs.overlays = [ (final: prev: {
+#libao = prev.libao.override {
+#  usePulseAudio = final.config.pulseaudio or (final.lib.meta.availableOn 
+#final.stdenv.hostPlatform final.libpulseaudio);
+#}) ];
 
 # Enable sound with pipewire.
 	sound.enable = true;
-	#hardware.pulseaudio.package = pkgs.pulseaudio;
-	hardware.pulseaudio.enable = false;
+	hardware.pulseaudio.package = pkgs.pulseaudio;
+	hardware.pulseaudio.enable = true;
 	#hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
 	nixpkgs.config.pulseaudio = false;
 	programs.dconf.enable = true;      
 	security.rtkit.enable = true;
 	services.pipewire = {
-		enable = true;
+		enable = false;
 		alsa.enable = true;
 		alsa.support32Bit = true;
-		pulse.enable = false;
+		pulse.enable = true;
 # If you want to use JACK applications, uncomment this
 		jack.enable = true;
 	}                                                                      ;
