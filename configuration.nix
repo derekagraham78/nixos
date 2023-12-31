@@ -116,7 +116,7 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
     hash = "sha256-X3Jv2kn0FCCOPgrID0ZU8CuSjm/Ia/d+om/ShP5IBgA=";
   });
 
-in {
+
   services = {
     nginx.virtualHosts.${domain} = {
       enableACME = true;
