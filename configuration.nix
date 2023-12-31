@@ -343,7 +343,15 @@ fonts.packages = with pkgs; [
 	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
 	services.openssh.allowSFTP = true;
-
+services.vsftpd = {
+    enable = true;
+#   cannot chroot && write
+    chrootlocalUser = true;
+    writeEnable = true;
+    localUsers = true;
+    userlist = [ "dgraham" "root" ];
+    userlistEnable = true;
+  };
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
