@@ -74,7 +74,7 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
 };
 services.wordpress.sites."papalpenguin.com" = {
 database.createLocally = true;  # name is set to `wordpress` by default
-    themes = [ responsiveTheme ];
+    themes = [  ];
     plugins = [  ];
     virtualHost = {
       adminAddr = "derek@papalpenguin.com";
