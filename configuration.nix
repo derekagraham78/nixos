@@ -70,8 +70,8 @@ services.nginx = {
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
     locations."/" = {
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-#        fastcgi_pass unix:${config.services.phpfpm.pools.papalpenguin.socket};
+#fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:${config.services.phpfpm.pools.papalpenguin.socket};
         include ${pkgs.nginx}/conf/fastcgi_params;
         include ${pkgs.nginx}/conf/fastcgi.conf;
     '';
