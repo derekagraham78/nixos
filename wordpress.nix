@@ -10,7 +10,7 @@ WP_HOME = "https://www.papalpenguin.com";
 FORCE_SSL_ADMIN = true;
 AUTOMATIC_UPDATER_DISABLED = false;
 };
-services.wordpress.sites.<name>.database.tablePrefix = "wp_";
+services.wordpress.sites."papalpenguin.com".database.tablePrefix = "wp_";
 services.wordpress.webserver = "nginx";
 services.wordpress.sites."papalpenguin.com".virtualHost.serverAliases [
 "www.papalpenguin.com"
