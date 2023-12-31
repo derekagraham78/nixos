@@ -126,9 +126,9 @@ users.users.dgraham.isNormalUser = true                                 ;
     wordpress = {
       webserver = "nginx";
       sites.papalpenguin.com = {
-        plugins = { inherit google-site-kit; };
-        themes = { inherit astra; };
-        settings = { WP_DEFAULT_THEME = "astra"; };
+        plugins = { };
+        themes = { };
+        settings = { };
       };
     };
   };
