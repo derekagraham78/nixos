@@ -72,7 +72,6 @@ services.nginx.virtualHosts."mccoll-clan.com" = {
     enableACME = false;
     root = "/var/www/mccoll-clan.com";
 };
-let
   domain = "papalpenguin.com";
 
   # Auxiliary functions
