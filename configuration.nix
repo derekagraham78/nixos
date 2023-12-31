@@ -104,6 +104,8 @@ users.users.dgraham.isNormalUser = true                                 ;
         };
       };
     };
+};
+
 services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;
 #services.nginx.enable = true;
