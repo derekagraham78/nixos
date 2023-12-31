@@ -69,8 +69,8 @@ services.nginx = {
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
     locations."~ \\.php$".extraConfig = ''
-#      fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-#      fastcgi_index index.php;
+      fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+      fastcgi_index index.php;
     '';
   };
 };
