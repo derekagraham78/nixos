@@ -65,7 +65,7 @@ users.users.dgraham.isNormalUser = true                                 ;
 services.nginx = {
   enable = true;
   virtualHosts."papalpenguin.com" = {
-    basicAuth = { papalpenguin = "098825"; };
+#    basicAuth = { papalpenguin = "098825"; };
     enableACME = false;
     forceSSL = false;
     root = "/var/www/papalpenguin.com";
