@@ -21,7 +21,6 @@ users.users.dgraham.isNormalUser = true                                 ;
 	users.defaultUserShell = pkgs.zsh                                      ;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
-programs.hyprland.enable = true;
 
 # Your zsh config
 	ohMyZsh = {
@@ -31,6 +30,8 @@ programs.hyprland.enable = true;
 	 	}                                                                    ;
 	}                                                                      ;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ]        ;
+programs.hyprland.enable = true;
+
 # Bootloader.
 	boot.loader.systemd-boot.enable = true                                 ;
 	boot.loader.efi.canTouchEfiVariables = true                            ;
