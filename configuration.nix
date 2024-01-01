@@ -16,6 +16,7 @@ imports =
 	vscode.homeDir = "/home/dgraham";
 	vscode.extensions = with pkgs.vscode-extensions; [
 		ms-vscode.cpptools
+		vscode-extension-1Password-op-vscode
 		];
 	nix.settings = {
 		substituters = ["https://hyprland.cachix.org"];
