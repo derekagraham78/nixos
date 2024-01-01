@@ -9,7 +9,7 @@ wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
   version = "1.1.0";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/ollie.1.1.0.zip";
-    hash = "sha256-ePUHkwtjLP/JcJtSdc1QiJlXgru6SLysNqsPk/AF0kY=";
+    hash = "sha256-ZS0uXVcQNsTK+1bULclrGN/vYogIynDbOsOxXLI2V2w=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
