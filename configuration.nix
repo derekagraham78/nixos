@@ -246,6 +246,7 @@ imports =
 		ipcalc			# it is a calculator for the IPv4/>
 # misc
 		alejandra
+		wofi
 		php
 		phpPackages.composer
 		cowsay
