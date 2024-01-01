@@ -4,21 +4,12 @@
 { config, lib, pkgs, ... }:
 
 let
-wordpress-theme-spectra-one = pkgs.stdenv.mkDerivation rec {
-  name = "spectra-one";
-  version = "1.0.8";
+wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
+  name = "ollie";
+  version = "1.1.0";
   src = pkgs.fetchzip {
-    url = "https://downloads.wordpress.org/theme/spectra-one.1.0.8.zip";
-    hash = "sha256-DuRP0AXbW6/ConHdIEwer/+6LQam3twffQa7SbP/sYU=";
-};
-  installPhase = "mkdir -p $out; cp -R * $out/";
-};
-wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
-  name = "vertice";
-  version = "1.0.4";
-  src = pkgs.fetchzip {
-    url = "https://downloads.wordpress.org/theme/vertice.1.0.4.zip";
-    hash = "sha256-Igy6a3GYgg8p1xzOpidmCoTYEuLxdstG3Rrg9eqIfBk=";
+    url = "https://downloads.wordpress.org/theme/ollie.1.1.0.zip";
+    hash = "sha256-ePUHkwtjLP/JcJtSdc1QiJlXgru6SLysNqsPk/AF0kY=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
@@ -42,9 +33,8 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
 };
 in {
 services.wordpress.sites."papalpenguin.com".themes = {
-inherit wordpress-theme-spectra-one;
+inherit wordpress-theme-ollie;
 inherit wordpress-theme-responsive;
-inherit wordpress-theme-vertice;
 inherit wordpress-theme-astra;
     };
 services.wordpress.sites."papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
