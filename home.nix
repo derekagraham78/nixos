@@ -31,7 +31,7 @@
 		xz
 		unzip
 		p7zip
-		flameshot
+		grimblast
 # utils
 		ripgrep # recursively searches directories for a regex pattern
 		jq      # A lightweight and flexible command-line JSON processor

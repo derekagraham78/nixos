@@ -294,6 +294,7 @@ imports =
 		vscode
 		fmt
 		telegram-desktop
+		grimblast
 		betterdiscordctl
 		discord
 		betterdiscord-installer
