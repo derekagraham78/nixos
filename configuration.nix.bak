@@ -230,17 +230,17 @@ imports =
 		wp4nix
 		swaybg
 		plocate
-		jq				# A lightweight and flexible command-li>
-        swaynotificationcenter
+		jq			# A lightweight and flexible command-li>
+                swaynotificationcenter
 		yq-go			# yaml processer https://github.com/>
-	 	fzf				# A command-line fuzzy finde
+	 	fzf			# A command-line fuzzy finde
 # networking tools
-		mtr				# A network diagnostic tool
+		mtr			# A network diagnostic tool
 		iperf3
 		dnsutils		# `dig` + `nslookup`
-		ldns			# replacement of `dig`, it provide th>
-		aria2			# A lightweight multi-protocol & mul>
-		socat			# replacement of openbsd-netcat
+		ldns                    # replacement of `dig`, it provide th>
+		aria2                   # A lightweight multi-protocol & mul>
+		socat                   # replacement of openbsd-netcat
 		nmap			# A utility for network discovery and>
 		ipcalc			# it is a calculator for the IPv4/>
 # misc
@@ -264,81 +264,81 @@ imports =
 		hugo			# static site generator
 		glow			# markdown previewer in terminal
 	 	btop			# replacement of htop/nmon
-		iotop			# io monitoring
-		iftop			# network monitoring		
+	 iotop                                                                 # io monitoring
+	 iftop                                                                 # network monitoring		
 # system call monitoring
-		strace			# system call monitoring
-		ltrace			# library call monitoring
- 		lsof			# list open files
+	 strace                                                                # system call monitoring
+	ltrace                                                                 # library call monitoring
+	 lsof                                                                  # list open files
 # system tools
-		sysstat
-		lm_sensors		# for `sensors` command
-		ethtool
-		pciutils		# lspci
-		usbutils		# lsusb
-		gh
-		vivaldi-ffmpeg-codecs
-		xfce.thunar
-		xfce.thunar-volman
-		xfce.thunar-archive-plugin
-		xfce.thunar-media-tags-plugin
-	 	stacer
-		digikam
-	 	_1password-gui
-		cpu-x
+	 sysstat
+	lm_sensors                                                             # for `sensors` command
+	ethtool
+	 pciutils                                                              # lspci
+	 usbutils                                                              # lsusb
+	 gh
+	vivaldi-ffmpeg-codecs
+	 xfce.thunar
+	xfce.thunar-volman
+	 xfce.thunar-archive-plugin
+	xfce.thunar-media-tags-plugin
+	 stacer
+	digikam
+	 _1password-gui
+	cpu-x
 		wireshark
-		variety
-		libreoffice-qt
-		libsForQt5.qt5.qtwayland
-		vim
+	 variety
+	 libreoffice-qt
+	libsForQt5.qt5.qtwayland
+	 vim
 		vscode
 		fmt
-		telegram-desktop
-		betterdiscordctl
-		discord
-		betterdiscord-installer
-	 	vlc
-		nodejs_latest
-	 	xscreensaver
-	 	kitty
-	 	kitty-img
-	 	kitty-themes
-	 	yarn2nix
-	 	yarn
+	 telegram-desktop
+	betterdiscordctl
+	 discord
+	betterdiscord-installer
+	 vlc
+	nodejs_latest
+	 xscreensaver
+	 kitty
+	 kitty-img
+	 kitty-themes
+	 yarn2nix
+	 yarn
 		moc
-		qt6.qt5compat
-		qt6.wrapQtAppsHook
-	 	qt6.qttools
-		pkgs.qt6.full
-	 	qt6.qtwayland
-		pkgs.nodePackages_latest.pnpm
-		libuvc
-		pkgs.usbutils
-	 	freetype
-		libmediainfo
-	 	fontconfig
-		gnumake
-	 	gcc13
-		resilio-sync
-	 	xorg.libxcb
+	qt6.qt5compat
+	qt6.wrapQtAppsHook
+	 qt6.qttools
+	pkgs.qt6.full
+	 qt6.qtwayland
+	pkgs.nodePackages_latest.pnpm
+	 libuvc
+	pkgs.usbutils
+	 freetype
+	libmediainfo
+	 fontconfig
+	gnumake
+	 gcc13
+	resilio-sync
+	 xorg.libxcb
 		python311Packages.qpageview
-		libsForQt5.qt5.wrapQtAppsHook
+	libsForQt5.qt5.wrapQtAppsHook
 		fmt
 		pciutils
 		geekbench
 		inxi
 		rPackages.trekfont
-	];
+	]                                                                      ;
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
-	programs.mtr.enable = true;
+	programs.mtr.enable = true                                             ;
 	programs.gnupg.agent = {
-		enable = true;
-	};
+		enable = true                                                         ;
+	}                                                                      ;
 # List services that you want to enable:
 # services.httpd.enable = true;
 # Enable the OpenSSH daemon.
-	services.openssh.enable = true;
+	services.openssh.enable = true                                         ;
 	services.openssh.settings.PermitRootLogin = "yes";
 	services.openssh.allowSFTP = true;
 
@@ -346,7 +346,7 @@ imports =
 # networking.firewall.allowedTCPPorts = [ 8581 ];
 # networking.firewall.allowedUDPPorts = [ 8581 ];
 # Or disable the firewall altogether.
-	networking.firewall.enable = false;
+	networking.firewall.enable = false                                     ;
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -356,5 +356,3 @@ imports =
 
 system.stateVersion = "23.11"; # Did you read the comment?
 }
-
-
