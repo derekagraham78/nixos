@@ -9,7 +9,7 @@ wordpress-theme-spectra-one = pkgs.stdenv.mkDerivation rec {
   version = "1.0.8";
   src = pkgs.fetchzip {
     url = "https://downloads.wordpress.org/theme/spectra-one.1.0.8.zip";
-    hash = "sha256-PR1sC/DZP9HrerR32UWZ8hhnKuMMSpiUpipbEOe5oIs=";
+    hash = "sha256-DuRP0AXbW6/ConHdIEwer/+6LQam3twffQa7SbP/sYU=";
 };
   installPhase = "mkdir -p $out; cp -R * $out/";
 };
