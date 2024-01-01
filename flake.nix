@@ -22,8 +22,7 @@ url = "github:nix-community/home-manager";
 inputs.nixpkgs.follows = "nixpkgs";
 wayland.windowManager.hyprland = {
     plugins = [
-	inputs.hyprload.packages.${pkgs.system}.default
-        inputs.hyprpaper.packages.${pkgs.system}.default
+	inputs.plugin_name.packages.${pkgs.system}.default
     ];
   };
 }                                                                                ;
