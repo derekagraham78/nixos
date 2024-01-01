@@ -4,6 +4,15 @@
 { config, lib, pkgs, ... }:
 
 let
+wordpress-theme-spectra-one = pkgs.stdenv.mkDerivation rec {
+  name = "spectra-one";
+  version = "1.0.8";
+  src = pkgs.fetchzip {
+    url = "https://downloads.wordpress.org/theme/spectra-one.1.0.8.zip";
+    hash = "sha256-PR1sC/DZP9HrerR32UWZ8hhnKuMMSpiUpipbEOe5oIs=";
+};
+  installPhase = "mkdir -p $out; cp -R * $out/";
+};
 wordpress-theme-vertice = pkgs.stdenv.mkDerivation rec {
   name = "vertice";
   version = "1.0.4";
@@ -33,6 +42,7 @@ wordpress-theme-responsive = pkgs.stdenv.mkDerivation rec {
 };
 in {
 services.wordpress.sites."papalpenguin.com".themes = {
+inherit wordpress-theme-spectra-one;
 inherit wordpress-theme-responsive;
 inherit wordpress-theme-vertice;
 inherit wordpress-theme-astra;
