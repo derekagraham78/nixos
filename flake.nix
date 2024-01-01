@@ -5,11 +5,14 @@ description = "PapalPenguin's NixOS Flake";
 # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
 inputs = {
 hyprland.url = "github:hyprwm/Hyprland";
-    plugin_name = {
-        url = "github:maintener/plugin_name";
+    hyprpaper = {
+        url = "github:hyprwm/hyprpaper";
         inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
-
+	hyprload = {
+ 		url = "github:duckonaut/hyprload";
+ 		inputs.hyprland.follows = "hyprland"; # IMPORTANT
+	};
 	kde2nix.url = "github:nix-community/kde2nix";
 helix.url = "github:helix-editor/helix/23.10";
 # The nixpkgs entry in the flake registry.
