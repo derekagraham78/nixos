@@ -10,6 +10,7 @@ imports =
 	./hardware-configuration.nix
 	./mysql.nix
 	./wordpress.nix
+	./vscode.nix
 ];
 
 	nix.settings = {
@@ -294,7 +295,6 @@ imports =
 		libreoffice-qt
 		libsForQt5.qt5.qtwayland
 		vim
-		vscode
 		fmt
 		telegram-desktop
 		grimblast
