@@ -245,6 +245,7 @@ imports =
 		nmap			# A utility for network discovery and>
 		ipcalc			# it is a calculator for the IPv4/>
 # misc
+		alejandra
 		php
 		phpPackages.composer
 		cowsay
