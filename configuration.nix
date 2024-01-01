@@ -122,8 +122,8 @@ services.phpfpm.pools.mypool = {
 	services.xserver.desktopManager.plasma6.enable = true                  ;
 	services.xserver.enable = true                                         ;
 	services.flatpak.enable = true                                         ;
-	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]              ;
-#	xdg.portal.config.common.default = "gtk";
+	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ]              ;
+	xdg.portal.config.common.default = "hyprland";
 # Enable the KDE Plasma Desktop Environment.
 	services.xserver.displayManager.gdm.enable = true                  ;
 
