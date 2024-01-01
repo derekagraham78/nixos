@@ -100,7 +100,7 @@
 		libreoffice-qt
 		libsForQt5.qt5.qtwayland
 		vim
-		vscode-with-extensions
+		vscode
 		telegram-desktop
 		betterdiscordctl
 		discord
