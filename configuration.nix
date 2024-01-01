@@ -125,7 +125,7 @@ services.phpfpm.pools.mypool = {
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]              ;
 	xdg.portal.config.common.default = "gtk";
 # Enable the KDE Plasma Desktop Environment.
-	services.xserver.displayManager.lightdm.enable = true                  ;
+	services.xserver.displayManager.gdm.enable = true                  ;
 
 # Configure keymap in X11
 	services.xserver = {
