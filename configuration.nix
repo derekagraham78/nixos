@@ -12,7 +12,11 @@ imports =
 	./wordpress.nix
 	./vscode.nix
 ];
-
+	vscode.user = "dgraham";
+	vscode.homeDir = "/home/dgraham";
+	vscode.extensions = with pkgs.vscode-extensions; [
+		ms-vscode.cpptools
+		];
 	nix.settings = {
 		substituters = ["https://hyprland.cachix.org"];
 		trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
@@ -200,6 +204,8 @@ imports =
 	environment.systemPackages = with pkgs;                                 
 	[
 # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+		vscode
+		vscode-extensions
 		git
 		wget
 		gh
