@@ -11,11 +11,18 @@ imports =
 	./wordpress.nix
 #	./mysql.papalpenguin.com
 ]                                                                       ;
+
+nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 # Home Manager
 users.users.dgraham.isNormalUser = true                                 ;
 	users.defaultUserShell = pkgs.zsh                                      ;
 	programs.zsh.enable = true                                             ;
 	programs.zsh = {
+programs.hyprland.enable = true;
+
 # Your zsh config
 	ohMyZsh = {
 		enable = true                                                         ;
@@ -192,7 +199,7 @@ fonts.packages = with pkgs; [
 # Enable automatic login for the user.
 	services.xserver.displayManager.autoLogin.enable = true                ;
 	services.xserver.displayManager.autoLogin.user = "dgraham";
-	services.xserver.displayManager.defaultSession = "plasmax11";
+	services.xserver.displayManager.defaultSession = "hyprland";
 # Allow unfree packages
 	nixpkgs.config.allowUnfree = true                                      ;
 # List packages installed in system profile. To search, run:
