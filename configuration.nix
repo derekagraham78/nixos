@@ -239,6 +239,7 @@ fonts.packages = with pkgs; [
 		swaybg
 		plocate
 		jq                                                                     # A lightweight and flexible command-li>
+                swaynotificationcenter
 		yq-go                                                                  # yaml processer https://github.com/>
 	 	fzf                                                                   # A command-line fuzzy finde
 # networking tools
