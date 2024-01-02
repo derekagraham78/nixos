@@ -8,9 +8,7 @@
   ...
 }:
 let
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-
-  hyprland-flake = (import flake-compat {
+  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00=" } hyprland-flake = (import flake-compat {
     src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
   }).defaultNix;
 in {
