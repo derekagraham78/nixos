@@ -16,7 +16,12 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
+      wayland.windowManager.hyprland = {
+        enable = true;
+          plugins = [
+            inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+          ];
+       };
   };
   outputs = {
     self,
