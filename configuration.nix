@@ -124,8 +124,8 @@
   services.xserver.desktopManager.plasma6.enable = false;
   services.xserver.enable = true;
   services.flatpak.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
-  xdg.portal.config.common.default = "hyprland gtk";
+  xdg.portal.extraPortals = [ "pkgs.xdg-desktop-portal-hyprland" "xdg-desktop-portal-kde" "xdg-desktop-portal-gtk" ];
+  xdg.portal.config.common.default = [ "hyprland" "kde" "gtk" ];
   services.xserver.displayManager.gdm.enable = true;
   # Configure keymap in X11
   services.xserver = {
