@@ -280,7 +280,7 @@
     ltrace # library call monitoring
     lsof # list open files
     # system tools
-    inotifywait
+    inotify-tools
     sysstat
     lm_sensors # for `sensors` command
     ethtool
