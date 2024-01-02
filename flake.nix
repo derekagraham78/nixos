@@ -23,6 +23,7 @@
     nixpkgs,
     home-manager,
     kde2nix,
+    hyprland,
     ...
   } @ inputs: {
     # Used with `nixos-rebuild --flake .#<hostname>`
