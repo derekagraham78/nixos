@@ -200,9 +200,8 @@
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
-  services.xserver.displayManager.lightdm.greeter.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
   services.xserver.displayManager.autoLogin.user = "dgraham";
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.enable = true;
