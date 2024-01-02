@@ -71,7 +71,8 @@
   networking. enableIPv6 = false;
   # Set your time zone.
   time.timeZone = "America/Chicago";
-  security.pam.swaylock = {};
+  security.pam.services.swaylock = {};
+  security.pam.services.swaylock.fprintAuth = false;
   systemd.services.backupmyconfs = {
     path = [pkgs.zsh];
     serviceConfig = {
