@@ -296,6 +296,7 @@
     pciutils # lspci
     usbutils # lsusb
     gh
+    vivaldi
     vivaldi-ffmpeg-codecs
     xfce.thunar
     xfce.thunar-volman
