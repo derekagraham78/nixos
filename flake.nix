@@ -29,6 +29,8 @@
       "nixos-mulder" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
+      homeConfigurations."dgraham@mulder" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           hyprland.homeManagerModules.default
           {wayland.windowManager.hyprland.enable = true;}
@@ -44,6 +46,7 @@
 	  }
         ];
       };
+  };
     };
 };
 }
