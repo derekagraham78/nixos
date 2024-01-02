@@ -48,6 +48,7 @@ boot = {
   kernelPackages = pkgs.linuxPackages_zen;
   kernelModules = ["drivetemp"];
   kernelParams = ["reboot=acpi" "coretemp"];
+};
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
