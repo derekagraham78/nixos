@@ -200,10 +200,16 @@
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.autoLogin.user = "dgraham";
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "dgraham";
+      };
+      default_session = initial_session;
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
