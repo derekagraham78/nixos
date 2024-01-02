@@ -25,7 +25,7 @@
           10)
       );
   };
-}
+};
   wayland.windowManager.hyprland.plugins = [
   inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
 #  "/absolute/path/to/plugin.so"
