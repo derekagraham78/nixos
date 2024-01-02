@@ -10,7 +10,7 @@
 let
   flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-MS/VO4Bv2N0yAUrWxCmwTU7+g5GhI6lEMy7R3ZzmswU="; };
   hyprland-flake = (import flake-compat {
-     src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-MS/VO4Bv2N0yAUrWxCmwTU7+g5GhI6lEMy7R3ZzmswU="; }; }).defaultNix;
+     src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-MS/VO4Bv2N0yAUrWxCmwTU7+g5GhI6lEMy7R3ZzmswU="; }; }) .defaultNix;
 in {
   programs.hyprland = {
     enable = true;
