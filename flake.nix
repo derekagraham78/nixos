@@ -19,10 +19,8 @@
   };
 };
   outputs = {
-    self,
     nixpkgs,
     home-manager,
-    kde2nix,
     hyprland,
     ...
   } @ inputs: {
