@@ -20,18 +20,10 @@
   outputs = {
     nixpkgs,
     home-manager,
-    hyprland,
     ...
   } @ inputs: {
     # Used with `nixos-rebuild --flake .#<hostname>`
     # nixosConfigurations."<hostname>".config.system.build.toplevel must be>
-    homeConfigurations."dgraham@mulder" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [
-        hyprland.homeManagerModules.default
-        {wayland.windowManager.hyprland.enable = true;}
-      ];
-    };
     nixosConfigurations = {
       "nixos-mulder" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -45,11 +37,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.dgraham = import ./home.nix;
-            wayland.windowManager.hyprland = {
-              enable = true;
-              plugins = [
-                inputs.hyprland-plugins.packages.hyprbars
-              ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
