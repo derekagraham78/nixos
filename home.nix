@@ -25,11 +25,7 @@
           10)
       );
   };
-};
-  wayland.windowManager.hyprland.plugins = [
-  inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-#  "/absolute/path/to/plugin.so"
-];
+  }
   home.file."~/.config/hypr/hyprland.conf".text = ''
     decoration {
     	shadow_offset = 0 5
