@@ -39,15 +39,15 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   programs.hyprland.enable = true;
   # Bootloader.
-boot = {
-  loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_zen;
+    kernelModules = ["drivetemp"];
+    kernelParams = ["reboot=acpi" "coretemp"];
   };
-  kernelPackages = pkgs.linuxPackages_zen;
-  kernelModules = ["drivetemp"];
-  kernelParams = ["reboot=acpi" "coretemp"];
-};
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

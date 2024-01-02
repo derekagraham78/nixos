@@ -5,6 +5,7 @@
   # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
   inputs = {
     kde2nix.url = "github:nix-community/kde2nix";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -12,7 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  inputs.nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   outputs = {
     self,
     nixpkgs,
