@@ -205,9 +205,6 @@
   services.xserver.displayManager.lightdm.greeter.enable = true;
   services.xserver.displayManager.autoLogin.user = "dgraham";
   services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.defaultSession = "hyprland";
-
-  services.xserver.displayManager.sddm.autoNumlock = true;
   services.xserver.enable = true;
 
   # Allow unfree packages
