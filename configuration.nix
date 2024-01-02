@@ -8,7 +8,8 @@
   ...
 }:
 let
-  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; }; 
+  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-Ziq5/662ab9ffd779e86e5b64e22fdf626950879553997d4af17c6499c2694ef19b4d"; }
+#9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; }; 
   hyprland-flake = (import flake-compat {
      src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; };
 }).defaultNix;
