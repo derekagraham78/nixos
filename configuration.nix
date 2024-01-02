@@ -328,6 +328,7 @@
     fontconfig
     gnumake
     gcc13
+    waybar
     resilio-sync
     xorg.libxcb
     python311Packages.qpageview
