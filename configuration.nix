@@ -37,7 +37,7 @@
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  #programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
   # Bootloader.
   boot = {
     loader = {
