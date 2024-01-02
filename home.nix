@@ -18,6 +18,12 @@
   home.username = "dgraham";
   home.homeDirectory = "/home/dgraham";
   # basic configuration of git, please change to your own
+  wayland.windowManager.hyprland = {
+    enable = true;
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+    ];
+  };
   programs.git = {
     enable = true;
     userName = "derekagraham78";
