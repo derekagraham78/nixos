@@ -34,8 +34,6 @@
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           {
-              hyprland.homeManagerModules.default
-              wayland.windowManager.hyprland.enable = true;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.dgraham = import ./home.nix;
