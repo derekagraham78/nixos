@@ -43,12 +43,12 @@ boot = {
   loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   };
   kernelPackages = pkgs.linuxPackages_zen;
   kernelModules = ["drivetemp"];
   kernelParams = ["reboot=acpi" "coretemp"];
 };
+  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
