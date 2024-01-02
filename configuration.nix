@@ -48,6 +48,11 @@
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
   };
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
