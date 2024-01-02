@@ -40,7 +40,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.dgraham = import ./home.nix;
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
+          };
         ];
       };
     };
