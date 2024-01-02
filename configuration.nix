@@ -253,7 +253,7 @@
     plocate
     gimp-with-plugins
     jq # A lightweight and flexible command-li>
-    swaynotificationcenter
+    dunst
     yq-go # yaml processer https://github.com/>
     fzf # A command-line fuzzy finde
     # networking tools
@@ -351,10 +351,6 @@
     fmt
     pciutils
     geekbench
-    (pkgs.discord.override {
-  # remove any overrides that you don't want
-  withVencord = true;
-})
     inxi
     rPackages.trekfont
   ];
