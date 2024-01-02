@@ -25,29 +25,27 @@
   } @ inputs: {
     # Used with `nixos-rebuild --flake .#<hostname>`
     # nixosConfigurations."<hostname>".config.system.build.toplevel must be>
-    nixosConfigurations = {
-      "nixos-mulder" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-      homeConfigurations."dgraham@mulder" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."dgraham@mulder" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           hyprland.homeManagerModules.default
           {wayland.windowManager.hyprland.enable = true;}
+        ];
+     };
+    nixosConfigurations = {
+      "nixos-mulder" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
           ./configuration.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          }
           home-manager.nixosModules.home-manager
           {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.dgraham = import ./home.nix;
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	  }
-        ];
+	  };
       };
-  };
     };
-};
 }
