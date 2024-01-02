@@ -195,6 +195,8 @@
     dates = "02:00";
     randomizedDelaySec = "45min";
   };
+  # Bluetooth Enabled
+  hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "dgraham";
@@ -211,15 +213,12 @@
     gh
     xscreensaver
     neofetch
-    bluez-tools
     dmidecode
     doas
     file
-    bluez
     hddtemp
     ipmitool
     mdadm
-    lm_sensors
     smartmontools
     tree
     anydesk
@@ -304,9 +303,7 @@
     fmt
     telegram-desktop
     grimblast
-    betterdiscordctl
     discord
-    betterdiscord-installer
     vlc
     nodejs_latest
     xscreensaver
