@@ -76,7 +76,7 @@
   systemd.services.backupmyconfs = {
     path = [pkgs.zsh];
     serviceConfig = {
-      ExecStart = "/home/dgraham/bin/backup-confs";
+      ExecStart = "/home/dgraham/bin/check4update";
       wantedBy = ["default.target"];
       Type = "oneshot";
       User = "dgraham";
@@ -305,7 +305,6 @@
     ltrace # library call monitoring
     lsof # list open files
     # system tools
-    mlocate
     inotify-tools
     sysstat
     lm_sensors # for `sensors` command
