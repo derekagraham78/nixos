@@ -186,7 +186,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dgraham = {
     description = "Derek Graham";
-    extraGroups = ["networkmanager" "rslsync" "docker" "wheel" "video"];
+    extraGroups = ["plocate" "networkmanager" "rslsync" "docker" "wheel" "video"];
     packages = with pkgs; [
       kate
     ];
