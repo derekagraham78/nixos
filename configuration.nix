@@ -305,6 +305,7 @@
     ltrace # library call monitoring
     lsof # list open files
     # system tools
+    mlocate
     inotify-tools
     sysstat
     lm_sensors # for `sensors` command
