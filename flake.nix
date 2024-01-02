@@ -4,6 +4,11 @@
   # Inputs
   # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
   inputs = {
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+       url = "github:hyprwm/hyprland-plugins";
+       inputs.hyprland.follows = "hyprland";
+     };
     kde2nix.url = "github:nix-community/kde2nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
@@ -11,7 +16,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -40,7 +44,7 @@
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	  }
         ];
-      
+      };
     };
 };
 }
