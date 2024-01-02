@@ -39,12 +39,15 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   programs.hyprland.enable = true;
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelModules = ["drivetemp"];
-  boot.kernelParams = ["reboot=acpi" "coretemp"];
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+boot = {
+  loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  };
+  kernelPackages = pkgs.linuxPackages_zen;
+  kernelModules = ["drivetemp"];
+  kernelParams = ["reboot=acpi" "coretemp"];
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
