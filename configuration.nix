@@ -7,16 +7,7 @@
   pkgs,
   ...
 }:
-let
-  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-MS/VO4Bv2N0yAUrWxCmwTU7+g5GhI6lEMy7R3ZzmswU="; };
-  hyprland-flake = (import flake-compat {
-     src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-MS/VO4Bv2N0yAUrWxCmwTU7+g5GhI6lEMy7R3ZzmswU="; }; }) .defaultNix;
-in {
-  programs.hyprland = {
-    enable = true;
-    package = hyprland-flake.packages.${pkgs.system}.hyprland;
-  };
- 
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -24,15 +15,15 @@ in {
     ./wordpress.nix
     ./vscode.nix
   ];
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
   vscode.extensions = with pkgs.vscode-extensions; [
     ms-vscode.cpptools
   ];
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
   # Home Manager
   users.users.dgraham.isNormalUser = true;
   users.defaultUserShell = pkgs.zsh;
@@ -131,11 +122,12 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
   services.flatpak.enable = true;
+  xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   xdg.portal.config.common.default = ["hyprland" "kde" "gtk"];
-  services.xserver.displayManager.gdm.enable = true;
+
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -208,9 +200,16 @@ in {
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
+  services.xserver.displayManager.lightdm.greeter.enable = true;
   services.xserver.displayManager.autoLogin.user = "dgraham";
-  services.xserver.displayManager.defaultSession = "hyprland";
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.defaultSession = [ hyprland ];
+
+  services.xserver.displayManager.sddm.autoNumlock = true;
+  services.xserver.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
