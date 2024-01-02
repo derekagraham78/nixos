@@ -121,7 +121,6 @@
     LC_TIME = "en_US.UTF-8";
   };
   # Enable the X11 windowing system.
-  services.xserver.desktopManager.plasma6.enable = false;
   services.xserver.enable = true;
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
