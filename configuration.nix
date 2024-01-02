@@ -221,6 +221,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    rofi-wayland
+    eww-wayland
+    hyprland-autoname-workspaces
+    hyprshade
+    hyprkeys
     element-desktop
     vencord
     vscode
