@@ -6,17 +6,14 @@
   inputs = {
     kde2nix.url = "github:nix-community/kde2nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     # The nixpkgs entry in the flake registry.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
+
   outputs = {
     self,
     nixpkgs,
@@ -36,6 +33,8 @@
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
