@@ -8,9 +8,9 @@
   ...
 }:
 let
-  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; }; 
+  flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; }; 
   hyprland-flake = (import flake-compat {
-     src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; };
+     src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-Ziq5/9d56G5bZOIv32JpUIeVU5l9SvF8ZJnCaU7xm00="; };
 }).defaultNix;
 in {
   programs.hyprland = {
