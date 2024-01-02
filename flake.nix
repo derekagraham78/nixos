@@ -32,6 +32,8 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
           ./configuration.nix
           kde2nix.nixosModules.default
           # make home-manager as a module of nixos

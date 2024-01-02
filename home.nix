@@ -16,12 +16,6 @@
     bindm = $mod ALT, mouse:272, resizewindow
   '';
   # TODO please change the username & home direcotry to your own
-    wayland.windowManager.hyprland = {
-       enable = true;
-         plugins = [
-          inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-         ];
-     };
   home.username = "dgraham";
   home.homeDirectory = "/home/dgraham";
   # basic configuration of git, please change to your own
