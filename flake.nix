@@ -35,7 +35,7 @@
           home-manager.nixosModules.home-manager
           {
               hyprland.homeManagerModules.default
-              {wayland.windowManager.hyprland.enable = true;}
+              wayland.windowManager.hyprland.enable = true;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.dgraham = import ./home.nix;
