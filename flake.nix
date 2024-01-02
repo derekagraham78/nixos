@@ -4,12 +4,10 @@
   # Inputs
   # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
   inputs = {
-    wayland.windowManager.hyprland.plugins = [
-      hyprland-plugins.packages.${pkgs.system}.hyprbars
-      "/absolute/path/to/plugin.so"
-    ];
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+       "/absolute/path/to/plugin.so"
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
