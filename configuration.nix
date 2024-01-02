@@ -18,7 +18,7 @@ in {
     enable = true;
     package = hyprland-flake.packages.${pkgs.system}.hyprland;
   };
- {
+ 
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
