@@ -97,7 +97,6 @@
     inxi
     wireshark
     variety
-    anydesk
     libreoffice-qt
     libsForQt5.qt5.qtwayland
     vim
