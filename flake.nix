@@ -6,8 +6,6 @@
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-       "/absolute/path/to/plugin.so"
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
@@ -47,6 +45,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.dgraham = import ./home.nix;
+            wayland.windowManager.hyprland = {
+              enable = true;
+              plugins = [
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+              ];
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
