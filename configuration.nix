@@ -6,8 +6,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -127,7 +126,6 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   xdg.portal.config.common.default = ["hyprland" "kde" "gtk"];
 
-
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -218,6 +216,7 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     element-desktop
+    vencord
     vscode
     git
     wget
