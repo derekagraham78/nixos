@@ -325,6 +325,7 @@
     xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
+    xfce.tumbler
     stacer
     digikam
     _1password-gui
