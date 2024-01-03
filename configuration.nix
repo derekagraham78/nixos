@@ -207,9 +207,12 @@
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
+  programs.qtgreet = {
+    package = fPkgs.qtgreet;
+    enable = true;
+  };
   services.greetd = {
     restart = true;
-    package = fPkgs.qtgreet;
     enable = true;
     settings = rec {
       initial_session = {
