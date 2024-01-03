@@ -208,6 +208,7 @@
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
   services.greetd = {
+    restart = true;
     package = fPkgs.qtgreet;
     enable = true;
     settings = rec {
