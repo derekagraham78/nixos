@@ -232,7 +232,7 @@
     greetd.gtkgreet
     pavucontrol
     pasystray
-    pa_applet
+    lxqt.pavucontrol-qt
     paprefs
     patray
     noisetorch
