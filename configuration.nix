@@ -231,7 +231,6 @@
     killall
     grim #screes capture
     slurp
-    klibcShrunk
     swaylock-effects
     swayidle
     pavucontrol
