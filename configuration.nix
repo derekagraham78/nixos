@@ -212,7 +212,7 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "gtkgreet --command ${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.hyprland}/bin/Hyprland";
         user = "dgraham";
       };
       default_session = initial_session;
@@ -229,7 +229,6 @@
     klibcShrunk
     swaylock-effects
     swayidle
-    greetd.gtkgreet
     pavucontrol
     pasystray
     lxqt.pavucontrol-qt
