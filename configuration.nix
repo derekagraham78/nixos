@@ -342,6 +342,7 @@
     kitty-img
     kitty-themes
     yarn2nix
+    teamviewer
     yarn
     moc
     qt6.qt5compat
