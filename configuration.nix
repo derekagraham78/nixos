@@ -13,6 +13,7 @@
     ./mysql.nix
     ./wordpress.nix
     ./vscode.nix
+    ./qtgreet/default.nix
   ];
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
@@ -207,6 +208,7 @@
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
   services.greetd = {
+    package = fPkgs.qtgreet;
     enable = true;
     settings = rec {
       initial_session = {
