@@ -207,16 +207,12 @@
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  programs.qtgreet = {
-    package = fPkgs.qtgreet;
-    enable = true;
-  };
   services.greetd = {
     restart = true;
     enable = true;
     settings = rec {
       initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
+        command = "gtkgreet --command ${pkgs.hyprland}/bin/Hyprland";
         user = "dgraham";
       };
       default_session = initial_session;
@@ -232,6 +228,7 @@
     killall
     swaylock-effects
     swayidle
+    greetd.gtkgreet
     pavucontrol
     pasystray
     pa_applet
