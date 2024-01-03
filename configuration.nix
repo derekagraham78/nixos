@@ -229,21 +229,23 @@
     killall
     swaylock-effects
     pavucontrol
+    pasystray
+    pa_applet
+    paprefs
+    patray
+    noisetorch
+    volctl
+    rofi-pulse-select
     rofi-wayland
-    eww-wayland
     hyprland-autoname-workspaces
     hyprshade
     hyprkeys
     element-desktop
-    vencord
     vscode
     git
     wget
     gh
-    xscreensaver
     neofetch
-    dmidecode
-    doas
     file
     hddtemp
     ipmitool
@@ -263,12 +265,9 @@
     ripgrep # recursively searches directories>
     wp4nix
     swaybg
-    plocate
     gimp-with-plugins
     jq # A lightweight and flexible command-li>
     dunst
-    yq-go # yaml processer https://github.com/>
-    fzf # A command-line fuzzy finde
     # networking tools
     mtr # A network diagnostic tool
     iperf3
@@ -280,7 +279,6 @@
     ipcalc # it is a calculator for the IPv4/>
     # misc
     alejandra
-    wofi
     php
     phpPackages.composer
     cowsay
@@ -327,8 +325,6 @@
     cpu-x
     wireshark
     variety
-    libreoffice-qt
-    libsForQt5.qt5.qtwayland
     vim
     fmt
     telegram-desktop
@@ -336,7 +332,6 @@
     discord
     vlc
     nodejs_latest
-    xscreensaver
     kitty
     kitty-img
     kitty-themes
@@ -349,18 +344,14 @@
     pkgs.qt6.full
     qt6.qtwayland
     pkgs.nodePackages_latest.pnpm
-    libuvc
     pkgs.usbutils
     freetype
-    libmediainfo
     fontconfig
     gnumake
     gcc13
     waybar
     resilio-sync
-    xorg.libxcb
     python311Packages.qpageview
-    libsForQt5.qt5.wrapQtAppsHook
     fmt
     pciutils
     geekbench
