@@ -331,7 +331,6 @@
     poppler
     ffmpegthumbnailer
     evince
-    gnome-repub-thumbnailer
     mccomix
     folderpreview
     f3d9
