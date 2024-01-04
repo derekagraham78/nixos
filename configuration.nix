@@ -328,7 +328,7 @@
     vivaldi-ffmpeg-codecs
     xfce.thunar
     webp-pixbuf-loader
-    poppler-glib
+    poppler
     ffmpegthumbnailer
     totem
     evince
