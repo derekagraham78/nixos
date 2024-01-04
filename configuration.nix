@@ -332,8 +332,6 @@
     ffmpegthumbnailer
     evince
     mcomix
-    folderpreview
-    f3d9
     file-rollersu
     xfce.thunar-volman
     xfce.thunar-archive-plugin
