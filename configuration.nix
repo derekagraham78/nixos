@@ -83,6 +83,8 @@
       User = "dgraham";
     };
   };
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
   systemd.timers.backupmyconfs = {
     timerConfig = {
       OnBootSec = "60m";
@@ -321,6 +323,20 @@
     vivaldi
     vivaldi-ffmpeg-codecs
     xfce.thunar
+    programs.thunar.plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+    webp-pixbuf-loader
+    poppler-glib
+    ffmpegthumbnailer
+    totem
+    evince
+    gnome-repub-thumbnailer
+    mccomix
+    folderpreview
+    f3d9
+    file-roller
     xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
@@ -368,6 +384,7 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
+  programs.xfconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
   };
