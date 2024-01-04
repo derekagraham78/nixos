@@ -72,6 +72,8 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   virtualisation.docker.enable = true;
   # Enable networking
+  systemd.network.enable = true;
+  
   networking.networkmanager.enable = true;
   networking. enableIPv6 = false;
   # Set your time zone.
