@@ -332,7 +332,7 @@
     ffmpegthumbnailer
     evince
     mcomix
-    sxfce.thunar-volman
+    xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
     xfce.tumbler
