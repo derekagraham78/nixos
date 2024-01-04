@@ -331,7 +331,7 @@
     poppler
     ffmpegthumbnailer
     evince
-    mccomix
+    mcomix
     folderpreview
     f3d9
     file-rollersu
