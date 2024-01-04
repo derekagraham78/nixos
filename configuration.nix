@@ -330,7 +330,6 @@
     webp-pixbuf-loader
     poppler
     ffmpegthumbnailer
-    totem
     evince
     gnome-repub-thumbnailer
     mccomix
