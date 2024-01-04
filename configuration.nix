@@ -54,6 +54,10 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
+  programs.thunar.plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -323,10 +327,6 @@
     vivaldi
     vivaldi-ffmpeg-codecs
     xfce.thunar
-    programs.thunar.plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
     webp-pixbuf-loader
     poppler-glib
     ffmpegthumbnailer
@@ -336,7 +336,7 @@
     mccomix
     folderpreview
     f3d9
-    file-roller
+    file-rollersu
     xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
