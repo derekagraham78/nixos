@@ -332,8 +332,7 @@
     ffmpegthumbnailer
     evince
     mcomix
-    file-rollersu
-    xfce.thunar-volman
+    sxfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
     xfce.tumbler
