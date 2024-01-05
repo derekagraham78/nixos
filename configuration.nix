@@ -55,9 +55,9 @@
     # here, NOT in environment.systemPackages
   ];
   programs.thunar.plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
+    thunar-archive-plugin
+    thunar-volman
+  ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -71,7 +71,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   virtualisation.docker.enable = true;
   # Enable networking
-  
+
   networking.networkmanager.enable = true;
   networking. enableIPv6 = false;
   # Set your time zone.
@@ -233,6 +233,10 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     gwenview
+    dmenu-rs
+    clipmenu
+    emojipick
+    haskellPackages.dmenu-pmount
     wev
     killall
     grim #screes capture
