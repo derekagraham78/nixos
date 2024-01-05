@@ -236,7 +236,6 @@
     dmenu-rs
     clipmenu
     emojipick
-    haskellPackages.dmenu-pmount
     wev
     killall
     grim #screes capture
