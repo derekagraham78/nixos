@@ -72,7 +72,6 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   virtualisation.docker.enable = true;
   # Enable networking
-  systemd.network.enable = true;
   
   networking.networkmanager.enable = true;
   networking. enableIPv6 = false;
@@ -397,6 +396,7 @@
   # networking.firewall.allowedUDPPorts = [ 8581 ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+  programs.nm-applet.enable = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
