@@ -281,6 +281,10 @@
     jq # A lightweight and flexible command-li>
     dunst
     # networking tools
+    nm-tray
+    networkmanager
+    networkmanagerapplet
+    networkmanager_dmenu
     mtr # A network diagnostic tool
     iperf3
     dnsutils # `dig` + `nslookup`
