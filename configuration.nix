@@ -61,7 +61,6 @@
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  services.teamviewer.enable = true;
   # Printer
   services.printing.drivers = [pkgs.brlaser];
   services.dbus.packages = with pkgs; [
@@ -358,7 +357,8 @@
     kitty-img
     kitty-themes
     yarn2nix
-   # teamviewer
+    rustdesk
+    rustdesk-server
     yarn
     moc
     qt6.qt5compat
