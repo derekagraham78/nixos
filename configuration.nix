@@ -260,6 +260,7 @@
     wget
     gh
     neofetch
+    wayvnc
     file
     hddtemp
     ipmitool
