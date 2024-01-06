@@ -19,7 +19,7 @@
   };
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.plugin_name.packages.${pkgs.system}.hyprbars
+      inputs.hyprbars.packages.${pkgs.system}.hyprbars
     ];
   };
 
