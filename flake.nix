@@ -2,6 +2,11 @@
   description = "PapalPenguin's NixOS Flake";
 
   inputs = {
+    hyprland.url = "github:hyprwm/Hyprland";
+    plugin_name = {
+      url = "github:maintener/plugin_name";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

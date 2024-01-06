@@ -3,22 +3,26 @@
   pkgs,
   ...
 }: {
-  wayland.windowManager.hyprland.enable = true;
-  # hyprland
-  wayland.windowManager.hyprland.plugins = [
-    inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-    "/absolute/path/to/plugin.so"
-  ];
-  home.file."~/.config/hypr/hyprland.conf".text = ''
-    decoration {
-    	shadow_offset = 0 5
-    	col.shadow = rgba(00000099)
-    	}
-    $mod = SUPER
-    bindm = $mod, mouse:272, movewindow
-    bindm = $mod, mouse:273, resizewindow
-    bindm = $mod ALT, mouse:272, resizewindow
-  '';
+  wayland.windowManager.hyprland = {
+    # Whether to enable Hyprland wayland compositor
+    enable = true;
+    # The hyprland package to use
+    package = pkgs.hyprland;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+
+    # Optional
+    # Whether to enable hyprland-session.target on hyprland startup
+    systemd.enable = true;
+    # Whether to enable patching wlroots for better Nvidia support
+    enableNvidiaPatches = true;
+  };
+  wayland.windowManager.hyprland = {
+    plugins = [
+      inputs.plugin_name.packages.${pkgs.system}.hyprbars
+    ];
+  };
+
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
