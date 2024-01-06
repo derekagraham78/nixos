@@ -18,6 +18,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: {
     nixosConfigurations = {
