@@ -3,88 +3,101 @@
   config,
   pkgs,
   ...
-}: {
-  # hyprland
-  inputs = {
-    # ...
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+}: let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
 
-    # ...
-  };
-  wayland.windowManager.hyprland = {
-    enable = true;
-    plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
-      inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
-      inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+  hyprland =
+    (import flake-compat {
+      src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+    })
+    .defaultNix;
+in
+  {
+    imports = [hyprland.homeManagerModules.default];
 
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+    wayland.windowManager.hyprland.enable = true;
+  } {
+    # hyprland
+    inputs = {
       # ...
-    ];
-    settings = {
-      "$mod" = "SUPER";
-      bind =
-        [
-          "$mod, F, exec, firefox"
-          ", Print, exec, grimblast copy area"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
+      hyprland.url = "github:hyprwm/Hyprland";
+      hyprland-plugins = {
+        url = "github:hyprwm/hyprland-plugins";
+        inputs.hyprland.follows = "hyprland";
+      };
+
+      # ...
     };
-  };
-  home.file."~/.config/hypr/hyprland.conf".text = ''
-    decoration {
-    	shadow_offset = 0 5
-    	col.shadow = rgba(00000099)
-    	}
-    $mod = SUPER
-    bindm = $mod, mouse:272, movewindow
-    bindm = $mod, mouse:273, resizewindow
-    bindm = $mod ALT, mouse:272, resizewindow
-  '';
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "derekagraham78";
-    userEmail = "derekagraham78@icloud.com";
-  };
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [];
+    wayland.windowManager.hyprland = {
+      enable = true;
+      plugins = [
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
+        inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
+        inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
 
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "23.11";
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+        # ...
+      ];
+      settings = {
+        "$mod" = "SUPER";
+        bind =
+          [
+            "$mod, F, exec, firefox"
+            ", Print, exec, grimblast copy area"
+          ]
+          ++ (
+            # workspaces
+            # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+            builtins.concatLists (builtins.genList (
+                x: let
+                  ws = let
+                    c = (x + 1) / 10;
+                  in
+                    builtins.toString (x + 1 - (c * 10));
+                in [
+                  "$mod, ${ws}, workspace, ${toString (x + 1)}"
+                  "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                ]
+              )
+              10)
+          );
+      };
+    };
+    home.file."~/.config/hypr/hyprland.conf".text = ''
+      decoration {
+      	shadow_offset = 0 5
+      	col.shadow = rgba(00000099)
+      	}
+      $mod = SUPER
+      bindm = $mod, mouse:272, movewindow
+      bindm = $mod, mouse:273, resizewindow
+      bindm = $mod ALT, mouse:272, resizewindow
+    '';
+    # basic configuration of git, please change to your own
+    programs.git = {
+      enable = true;
+      userName = "derekagraham78";
+      userEmail = "derekagraham78@icloud.com";
+    };
+    # Packages that should be installed to the user profile.
+    home.packages = with pkgs; [];
 
-  # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
-}
+    # This value determines the home Manager release that your
+    # configuration is compatible with. This helps avoid breakage
+    # when a new home Manager release introduces backwards
+    # incompatible changes.
+    #
+    # You can update home Manager without changing this value. See
+    # the home Manager release notes for a list of state version
+    # changes in each release.
+    home.stateVersion = "23.11";
+
+    # Let home Manager install and manage itself.
+    programs.home-manager.enable = true;
+  }
