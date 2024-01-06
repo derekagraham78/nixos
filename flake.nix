@@ -30,7 +30,7 @@
           home-manager.nixosModules.home-manager
           {pkgs, ...}: {
             home-manager.useGlobalPkgs = true;
-            home-manager.users.dgraham = import ./home.nix;
+            home-manager.users.dgraham = {pkgs, ...}: import ./home.nix;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
