@@ -4,11 +4,17 @@
   pkgs,
   ...
 }: let
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  flake-compat = builtins.fetchTarball {
+    url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=";
+  };
 
   hyprland =
     (import flake-compat {
-      src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+      src = builtins.fetchTarball {
+        url = "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+        sha256 = "sha256-isiBkAsjXIvb/6McVK42/iBbC4h+UL3JRkkLqTSPE48=";
+      };
     })
     .defaultNix;
 in {
