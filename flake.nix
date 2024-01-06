@@ -3,8 +3,8 @@
 
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
-    plugin_name = {
-      url = "github:maintener/plugin_name";
+    hyperbars = {
+      url = "github:hyprland-plugins/hyprbars";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
