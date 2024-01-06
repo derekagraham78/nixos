@@ -32,7 +32,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.users.dgraham = {pkgs, ...}: import ./home.nix;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs;};
+            #home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
       };
