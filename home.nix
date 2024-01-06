@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  wayland.windowManager.hyprland.settings = {
+  windowManager.hyprland.settings = {
     decoration = {
       shadow_offset = "0 5";
       "col.shadow" = "rgba(00000099)";
@@ -35,7 +35,7 @@
   systemd.enable = true;
   # Whether to enable patching wlroots for better Nvidia support
 
-  wayland.windowManager.hyprland = {
+  windowManager.hyprland = {
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
