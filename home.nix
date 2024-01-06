@@ -23,16 +23,15 @@ in {
   wayland.windowManager.hyprland.enable = true;
 
   # hyprland
-  #inputs = {
-  # ...
-  #  hyprland.url = "github:hyprwm/Hyprland";
-  #  hyprland-plugins = {
-  #    url = "github:hyprwm/hyprland-plugins";
-  #    inputs.hyprland.follows = "hyprland";
-  #  };
-
-  # ...
-  #    };
+  inputs = {
+    # ...
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    # ...
+  };
   wayland.windowManager.hyprland = {
     plugins = [
       #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
