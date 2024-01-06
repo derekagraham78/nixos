@@ -2,73 +2,23 @@
   inputs,
   pkgs,
   ...
-}: let
-  flake-compat = builtins.fetchTarball {
-    url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=";
-  };
-
-  hyprland =
-    (import flake-compat {
-      src = builtins.fetchTarball {
-        url = "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-        sha256 = "sha256-isiBkAsjXIvb/6McVK42/iBbC4h+UL3JRkkLqTSPE48=";
-      };
-    })
-    .defaultNix;
-in {
-  imports = [hyprland.homeManagerModules.default];
-
+}: {
   wayland.windowManager.hyprland.enable = true;
-
   # hyprland
-  inputs = {
-    # ...
-    hyprland.url = "github:hyprwm/Hyprland";
-    #    hyprland-plugins = {
-    #      url = "github:hyprwm/hyprland-plugins";
-    #      inputs.hyprland.follows = "hyprland";
-    # ...
-    #  };
-    wayland.windowManager.hyprland = {
-      plugins = [
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
-        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
-        inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-        # ...
-      ];
-    };
-    settings = {
-      "$mod" = "SUPER";
-      bind =
-        [
-          "$mod, F, exec, firefox"
-          ", Print, exec, grimblast copy area"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
-    };
+  wayland.windowManager.hyprland = {
+    plugins = [
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # ...
+    ];
   };
   home.file."~/.config/hypr/hyprland.conf".text = ''
     decoration {
