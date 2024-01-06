@@ -54,6 +54,26 @@
         "type": "github"
       }
     },
+    "hyprbars": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1704501043,
+        "narHash": "sha256-ZjaDk2zx2210KQgzbNmx7Ang1kkxIFdfN1tWGjK/gVc=",
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
+        "rev": "23708e7ad859d02902b58abae518abc5c11b4172",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
+        "type": "github"
+      }
+    },
     "hyprland": {
       "inputs": {
         "hyprland-protocols": "hyprland-protocols",
@@ -206,6 +226,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "hyprbars": "hyprbars",
         "hyprland": "hyprland",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_4"
