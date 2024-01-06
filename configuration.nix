@@ -9,7 +9,7 @@
 }: let
   flake-compat = builtins.fetchTarball {
     url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=;
+    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=";
   };
   hyprland-flake =
     (import flake-compat {
