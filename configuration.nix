@@ -9,13 +9,13 @@
 }: let
   flake-compat = builtins.fetchTarball {
     url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-    sha256 = "sha256-aXfytz3PUye+amhFufMbP7NowdcZX8rIiTp9w0Oa124=";
+    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=;
   };
   hyprland-flake =
     (import flake-compat {
       src = builtins.fetchTarball {
         url = "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-        sha256 = "sha256-5Am8LQCLssAmS4DUeKu1jvtzLl60xVuZNS3rqQVC78Q=";
+        sha256 = "sha256-isiBkAsjXIvb/6McVK42/iBbC4h+UL3JRkkLqTSPE48=";
       };
     })
     .defaultNix;
