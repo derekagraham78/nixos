@@ -266,7 +266,7 @@
     glxinfo
     wmctrl
     xorg.xdpyinfo
-    xwayland
+    wayland
     usbutils
     zip
     xz
