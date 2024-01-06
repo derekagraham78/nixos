@@ -27,7 +27,9 @@
         specialArgs = inputs;
         modules = [
           ./configuration.nix
-
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+          # ...
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
