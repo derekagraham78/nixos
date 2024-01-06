@@ -19,7 +19,7 @@
         enable = true;
         # ...
         plugins = [
-          inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+          hyprland-plugins.packages.${pkgs.system}.hyprbars
         ];
       };
     };
