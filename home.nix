@@ -3,19 +3,11 @@
   pkgs,
   ...
 }: {
-  wayland.windowManager.hyprland = {
-    # Whether to enable Hyprland wayland compositor
-    enable = true;
-    # The hyprland package to use
-    package = pkgs.hyprland;
-    # Whether to enable XWayland
-    xwayland.enable = true;
+  # Optional
+  # Whether to enable hyprland-session.target on hyprland startup
+  systemd.enable = true;
+  # Whether to enable patching wlroots for better Nvidia support
 
-    # Optional
-    # Whether to enable hyprland-session.target on hyprland startup
-    systemd.enable = true;
-    # Whether to enable patching wlroots for better Nvidia support
-  };
   wayland.windowManager.hyprland = {
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
