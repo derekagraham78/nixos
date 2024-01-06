@@ -3,6 +3,10 @@
 
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprbars = {
+      url = "github:hyprwm/hyprland-plugins/hyrbars";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
