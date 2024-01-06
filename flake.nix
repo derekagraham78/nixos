@@ -16,16 +16,18 @@
     home-manager,
     hyprland,
     ...
-  } @ inputs: {
+  }: {
     nixosConfigurations = {
       "nixos-mulder" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
           ./configuration.nix
-          hyprland.homeManagerModules.default
-          {windowManager.hyprland.enable = wayland;}
           home-manager.nixosModules.home-manager
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+          # ...
+
           {
             home-manager.useGlobalPkgs = true;
             home-manager.users.dgraham = import ./home.nix;
