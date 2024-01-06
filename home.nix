@@ -28,7 +28,6 @@ in {
   # ...
   #    };
   wayland.windowManager.hyprland = {
-    enable = true;
     plugins = [
       #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
       #     inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
