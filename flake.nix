@@ -26,6 +26,8 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
