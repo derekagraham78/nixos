@@ -28,23 +28,23 @@ in {
     #    hyprland-plugins = {
     #      url = "github:hyprwm/hyprland-plugins";
     #      inputs.hyprland.follows = "hyprland";
-  };
-  # ...
-  #  };
-  wayland.windowManager.hyprland = {
-    plugins = [
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-      # ...
-    ];
+    # ...
+    #  };
+    wayland.windowManager.hyprland = {
+      plugins = [
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
+        #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+        # ...
+      ];
+    };
     settings = {
       "$mod" = "SUPER";
       bind =
