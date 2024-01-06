@@ -6,7 +6,18 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  hyprland-flake =
+    (import flake-compat {
+      src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+    })
+    .defaultNix;
+in {
+  programs.hyprland = {
+    enable = true;
+    package = hyprland-flake.packages.${pkgs.system}.hyprland;
+  };
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -15,10 +26,10 @@
     ./vscode.nix
     ./qtgreet/default.nix
   ];
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+  #  nix.settings = {
+  #   substituters = ["https://hyprland.cachix.org"];
+  #    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  #  };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
   vscode.extensions = with pkgs.vscode-extensions; [
@@ -38,7 +49,7 @@
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  programs.hyprland.enable = true;
+  #  programs.hyprland.enable = true;
   # Bootloader.
   boot = {
     loader = {

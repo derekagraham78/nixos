@@ -9,6 +9,13 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    wayland.windowManager.hyprland = {
+      enable = true;
+      # ...
+      plugins = [
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      ];
+    };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
