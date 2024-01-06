@@ -154,8 +154,8 @@ in {
   # Enable the X11 windowing system.
   services.flatpak.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
-  xdg.portal.config.common.default = ["hyprland" "kde" "gtk"];
+  #  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  xdg.portal.config.common.default = ["kde" "gtk"];
   services.xserver.xkb.model = "Logitech K270";
 
   # Configure keymap in X11
