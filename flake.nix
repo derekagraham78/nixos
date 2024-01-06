@@ -28,9 +28,8 @@
           ./configuration.nix
 
           home-manager.nixosModules.home-manager
-          {pkgs, ...}: {
-            wayland.windowManager.hyprland = {
-              enable = true;
+          {pkgs, ... }: {
+            
               # ...
               plugins = [
                 inputs.hyprland-plugins.packages.${pkgs.system}.hyprload

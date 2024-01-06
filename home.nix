@@ -15,7 +15,9 @@
 
     # ...
   };
-
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
   home.file."~/.config/hypr/hyprland.conf".text = ''
     decoration {
     	shadow_offset = 0 5
