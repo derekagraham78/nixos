@@ -28,6 +28,24 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
+            wayland.windowManager.hyprland = {
+              enable = true;
+              # ...
+              plugins = [
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
+                inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
+                inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+
+                inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+                # ...
+              ];
+            };
             home-manager.useGlobalPkgs = true;
             home-manager.users.dgraham = import ./home.nix;
             home-manager.useUserPackages = true;
