@@ -24,7 +24,7 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           hyprland.homeManagerModules.default
-          {wayland.windowManager.hyprland.enable = true;}
+
           # ...
 
           {
