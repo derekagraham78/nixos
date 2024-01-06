@@ -5,10 +5,30 @@
   ...
 }: {
   # hyprland
+  inputs = {
+    # ...
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    # ...
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     # ...
     plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprload
+      inputs.hyprland-plugins.packages.${pkgs.system}.split-monitor-workspaces
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprNStack
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprRiver
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-dwindle-autogroup
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprland-virtual-desktops
+      inputs.hyprland-plugins.packages.${pkgs.system}.Hypr-DarkWindow
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       # ...
     ];
@@ -23,9 +43,6 @@
     bindm = $mod, mouse:273, resizewindow
     bindm = $mod ALT, mouse:272, resizewindow
   '';
-  # TODO please change the username & home direcotry to your own
-  home.username = "dgraham";
-  home.homeDirectory = "/home/dgraham";
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
