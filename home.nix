@@ -5,6 +5,14 @@
   ...
 }: {
   # hyprland
+  wayland.windowManager.hyprland = {
+    enable = true;
+    # ...
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # ...
+    ];
+  };
   home.file."~/.config/hypr/hyprland.conf".text = ''
     decoration {
     	shadow_offset = 0 5
