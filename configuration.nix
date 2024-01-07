@@ -69,6 +69,8 @@
   services.plex = {
     enable = true;
     openFirewall = true;
+    group = "plex";
+    dataDir = "/var/plex";
   };
   networking.networkmanager.enable = true;
   networking. enableIPv6 = false;
@@ -192,7 +194,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dgraham = {
     description = "Derek Graham";
-    extraGroups = ["plocate" "networkmanager" "rslsync" "docker" "wheel" "video"];
+    extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
     packages = with pkgs; [
       kate
     ];
