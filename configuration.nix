@@ -69,7 +69,6 @@
   services.plex = {
     enable = true;
     openFirewall = true;
-    group = "plex";
     dataDir = "/var/plex";
   };
   networking.networkmanager.enable = true;
