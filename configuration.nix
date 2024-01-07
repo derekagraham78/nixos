@@ -54,7 +54,6 @@
     thunar-volman
   ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
-  services.mullvad-vpn.enable = true;
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
@@ -233,7 +232,6 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
-    mullvad-vpn
     deluge-gtk
     gwenview
     dmenu-rs
