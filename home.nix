@@ -35,11 +35,11 @@
   systemd.enable = true;
   # Whether to enable patching wlroots for better Nvidia support
 
-  windowManager.hyprland = {
-    plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-    ];
-  };
+  ##  windowManager.hyprland = {
+  #  plugins = [
+  #   inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+  #   ];
+  #  };
 
   # basic configuration of git, please change to your own
   programs.git = {
