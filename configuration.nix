@@ -248,7 +248,6 @@ in {
     wev
     ox
     deluge-gtk
-    cinnamon.nemo-with-extensions
     gnome.nautilus
     nautilus-open-any-terminal
     gnome.sushi
