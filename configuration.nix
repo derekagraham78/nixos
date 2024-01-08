@@ -32,10 +32,6 @@ in {
     ./vscode.nix
     ./qtgreet/default.nix
   ];
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
   vscode.extensions = with pkgs.vscode-extensions; [
