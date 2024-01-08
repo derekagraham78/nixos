@@ -18,7 +18,7 @@
   ];
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.Hyprland;
   };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
