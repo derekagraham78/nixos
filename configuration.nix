@@ -353,7 +353,7 @@ in {
     gh
     vivaldi
     vivaldi-ffmpeg-codecs
-    #xfce.thunar
+    xfce.thunar
     webp-pixbuf-loader
     poppler
     ffmpegthumbnailer
