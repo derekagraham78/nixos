@@ -361,7 +361,7 @@ in {
     mcomix
     xfce.thunar-volman
     xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
+    #xfce.thunar-media-tags-plugin
     xfce.tumbler
     stacer
     digikam
