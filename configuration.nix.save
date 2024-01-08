@@ -65,11 +65,11 @@ in {
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
+ ];
+#  programs.thunar.plugins = with pkgs.xfce; [
+ #   thunar-archive-plugin
+  #  thunar-volman
   ];
-  #  programs.thunar.plugins = with pkgs.xfce; [
-  #    thunar-archive-plugin
-  #    thunar-volman
-  #  ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -154,7 +154,7 @@ in {
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   #  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
-  xdg.portal.config.common.default = ["hyprland" "kde" "gtk"];
+  xdg.portal.config.common.default = ["kde" "gtk"];
   services.xserver.xkb.model = "Logitech K270";
 
   # Configure keymap in X11
