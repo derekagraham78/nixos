@@ -248,6 +248,7 @@ in {
     wev
     ox
     deluge-gtk
+    nemo
     gwenview
     dmenu-rs
     clipmenu
