@@ -66,10 +66,10 @@ in {
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
+  #  programs.thunar.plugins = with pkgs.xfce; [
+  #    thunar-archive-plugin
+  #    thunar-volman
+  #  ];
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   networking.hostName = "Mulder"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
