@@ -2,6 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -15,6 +16,10 @@
     ./vscode.nix
     ./qtgreet/default.nix
   ];
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
   vscode.extensions = with pkgs.vscode-extensions; [
@@ -232,7 +237,6 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
-    hyprctl
     wev
     ox
     deluge-gtk
@@ -255,7 +259,6 @@
     volctl
     rofi-pulse-select
     rofi-wayland
-    hyprland-autoname-workspaces
     hyprshade
     hyprkeys
     element-desktop
