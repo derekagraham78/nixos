@@ -248,7 +248,10 @@ in {
     wev
     ox
     deluge-gtk
-    nemo
+    cinnamon.nemo-with-extensions
+    gnome.nautilus
+    nautilus-open-any-terminal
+    gnome.sushi
     gwenview
     dmenu-rs
     clipmenu
