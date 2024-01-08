@@ -247,6 +247,7 @@ in {
     slack
     wev
     ox
+    floorp
     deluge-gtk
     gnome.nautilus
     nautilus-open-any-terminal
