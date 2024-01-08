@@ -2,12 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  inputs,
   config,
   lib,
   pkgs,
   ...
-}: {
+}: let
+flake-compat = builtins.fetchTarball {url="https://github.com/edolstra/flake-compat/archive/master.tar.gz";sha256="sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U="; };
+hyprland-flake = (import flake-compat {
+src = builtins.fetchTarball {url="https://github.com/hyprwm/Hyprland/archive/master.tar.gz";sha256="sha256-PKVOCPV5i8prioWway5PjRMsICtrVONV3y5W69gQLWw="; };
+gz";
+  }).defaultNix;
+in {
+  programs.hyprland = {
+    enable = true;
+    package = hyprland-flake.packages.${pkgs.system}.hyprland;
+  };
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -18,7 +27,7 @@
   ];
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.Hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
