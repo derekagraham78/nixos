@@ -247,6 +247,7 @@ in {
     slack
     wev
     nmap
+    netbox
     ox
     floorp
     deluge-gtk
