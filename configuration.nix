@@ -209,7 +209,7 @@
   # Enable automatic login for the user.
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.defaultSession = "plasma";
   services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.displayManager.sddm.autoNumlock = true;
   services.xserver.displayManager.autoLogin.enable = true;
