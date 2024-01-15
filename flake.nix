@@ -2,7 +2,7 @@
   description = "PapalPenguin's NixOS Flake";
 
   inputs = {
-   kde2nix.url = kde2nix.url = "github:nix-community/kde2nix";
+    kde2nix.url = "github:nix-community/kde2nix";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
@@ -11,7 +11,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
   outputs = {
     nixpkgs,
