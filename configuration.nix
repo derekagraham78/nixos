@@ -6,31 +6,13 @@
   lib,
   pkgs,
   ...
-}: let
-  flake-compat = builtins.fetchTarball {
-    url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-    sha256 = "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=";
-  };
-  hyprland-flake =
-    (import flake-compat {
-      src = builtins.fetchTarball {
-        url = "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-        sha256 = "sha256-PKVOCPV5i8prioWway5PjRMsICtrVONV3y5W69gQLWw=";
-      };
-    })
-    .defaultNix;
-in {
-  programs.hyprland = {
-    enable = true;
-    package = hyprland-flake.packages.${pkgs.system}.hyprland;
-  };
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./mysql.nix
     ./wordpress.nix
     ./vscode.nix
-    ./qtgreet/default.nix
   ];
   vscode.user = "dgraham";
   vscode.homeDir = "/home/dgraham";
@@ -149,8 +131,7 @@ in {
   # Enable the X11 windowing system.
   services.flatpak.enable = true;
   xdg.portal.enable = true;
-  #  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
-  xdg.portal.config.common.default = ["hyprland" "kde" "gtk"];
+  xdg.portal.config.common.default = ["kde" "gtk"];
   services.xserver.xkb.model = "Logitech K270";
 
   # Configure keymap in X11
@@ -226,18 +207,14 @@ in {
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  services.greetd = {
-    restart = true;
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "dgraham";
-      };
-      default_session = initial_session;
-    };
-  };
-
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sddm.autoNumlock = true;
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "dgraham";
+  services.xserver.desktopManager.plasma6.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
