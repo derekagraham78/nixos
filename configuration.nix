@@ -254,7 +254,7 @@
     wget
     gh
     neofetch
-    wayvnc
+    turbovnc
     file
     hddtemp
     ipmitool
