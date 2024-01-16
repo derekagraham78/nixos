@@ -248,8 +248,6 @@
     volctl
     rofi-pulse-select
     rofi-wayland
-    hyprshade
-    hyprkeys
     element-desktop
     vscode
     git
