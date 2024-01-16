@@ -210,7 +210,7 @@
   # Enable automatic login for the user.
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.displayManager.defaultSession = "plasma-x11";
   services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.displayManager.sddm.autoNumlock = true;
   services.xserver.displayManager.autoLogin.enable = true;
@@ -256,7 +256,7 @@
     wget
     gh
     neofetch
-    wayvnc
+    anydesk
     file
     hddtemp
     ipmitool
