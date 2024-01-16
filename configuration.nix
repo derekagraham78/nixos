@@ -328,7 +328,6 @@
     pciutils # lspci
     usbutils # lsusb
     gh
-    vivaldi
     vivaldi-ffmpeg-codecs
     webp-pixbuf-loader
     poppler
