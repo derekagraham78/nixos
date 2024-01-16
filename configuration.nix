@@ -71,6 +71,7 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
   programs.sway.enable = true;
+  secruity.polkit.enable = true;
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
       if (
