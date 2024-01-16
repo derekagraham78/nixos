@@ -255,7 +255,7 @@
     wget
     gh
     neofetch
-    tigervnc
+    turbovnc
     file
     hddtemp
     ipmitool
