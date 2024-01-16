@@ -221,10 +221,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-              nixpkgs.config.permittedInsecurePackages = [
-                "tightvnc-1.3.10"
-              ];
-            }
+  nixpkgs.config.permittedInsecurePackages = [
+    "tightvnc-1.3.10"
+  ];
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
