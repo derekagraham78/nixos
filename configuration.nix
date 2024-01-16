@@ -372,7 +372,7 @@
     gcc13
     waybar
     resilio-sync
-    python311Packages.qpageview
+    #    python311Packages.qpageview
     fmt
     pciutils
     geekbench
