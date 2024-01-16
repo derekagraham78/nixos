@@ -53,7 +53,6 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services.xrdp.enable = true;
-  services.xrdp.port = "5901";
   services.printing.drivers = [pkgs.brlaser];
   services.dbus.packages = with pkgs; [
     xfce.xfconf
