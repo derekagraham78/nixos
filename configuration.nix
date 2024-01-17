@@ -196,7 +196,7 @@
   # Auto Upgrade
   system.autoUpgrade = {
     enable = true;
-    flake = "/etc/nixos#papalpenguin";
+    flake = "github:derekagraham78/nixos/flake.nix";
     flags = [
       "--update-input"
       "nixpkgs"
