@@ -259,6 +259,7 @@
     gh
     neofetch
     fastfetch
+    libsixel
     anydesk
     file
     hddtemp
