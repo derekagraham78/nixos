@@ -240,7 +240,7 @@
     swayidle
     pavucontrol
     pasystray
-    lxqt.pavucontrol-qt
+    #lxqt.pavucontrol-qt
     paprefs
     patray
     noisetorch
@@ -356,11 +356,11 @@
     rustdesk-server
     yarn
     moc
-    qt6.qt5compat
-    qt6.wrapQtAppsHook
-    qt6.qttools
-    pkgs.qt6.full
-    qt6.qtwayland
+    #qt6.qt5compat
+    #qt6.wrapQtAppsHook
+    #qt6.qttools
+    #pkgs.qt6.full
+    #qt6.qtwayland
     pkgs.nodePackages_latest.pnpm
     pkgs.usbutils
     freetype
