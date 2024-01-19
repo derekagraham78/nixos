@@ -82,6 +82,7 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+  fwupd.enable = true;
   avahi.nssmdns4 = {
     enable = true;
     nssmdns = true;
@@ -132,7 +133,6 @@
      layout = "us";
    };
   printing.enable = true;
-  fwupd.enable = true;
  pipewire = {
     enable = false;
     alsa.enable = true;
