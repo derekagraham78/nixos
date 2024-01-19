@@ -47,30 +47,31 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-    };
+      };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
-  };
+    };
   systemd = {
     extraConfig = "DefaultTimeoutStopSec=10s";
-  services.backupmyconfs = {
-    path = [pkgs.zsh];
-    serviceConfig = {
-      ExecStart = "/home/dgraham/bin/check4update";
-      wantedBy = ["default.target"];
-  Type = "oneshot";
-  User = "dgraham";
-    };
+    services.backupmyconfs = {
+      path = [pkgs.zsh];
+      serviceConfig = {
+        ExecStart = "/home/dgraham/bin/check4update";
+        wantedBy = ["default.target"];
+        Type = "oneshot";
+        User = "dgraham";
+        };
+    tim};
+  timers = { 
+    backupmyconfs = {
+      timerConfig = {
+        OnBootSec = "60m";
+        OnUnitActiveSec = "60m";
+        Unit = "backupmyconfs.service";
+        };
+      };
   };
-  timers.backupmyconfs = {
-    timerConfig = {
-      OnBootSec = "60m";
-      OnUnitActiveSec = "60m";
-      Unit = "backupmyconfs.service";
-    };
-  };
-
   };
   networking = {
     hostName = "Mulder"; # Define your hostname.
@@ -141,22 +142,22 @@
    xserver = {
      layout = "us";
      };
-    enable = true;
-    libinput.enable = true;
-    displayManager = { 
-      defaultSession = "plasmax11";
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        autoNumlock = true;
-        };
+   enable = true;
+   libinput.enable = true;
+   displayManager = { 
+     defaultSession = "plasmax11";
+     sddm = {
+       enable = true;
+       wayland.enable = true;
+       autoNumlock = true;
+       };
       autoLogin = { 
         enable = true;
         user = "dgraham";
         };
       };
     desktopManager.plasma6.enable = true;
-  };
+    };
 # List services that you want to enable:
   # services.httpd.enable = true;
   # Enable the OpenSSH daemon.
