@@ -83,14 +83,19 @@
       };
     systemd = {
       extraConfig = "DefaultTimeoutStopSec=10s";
+    acme = {
+    acceptTerms = true;
+    defaults.email = "derek@papalpenguin.com";
+    };
+
       backupmyconfs = {
         path = [pkgs.zsh];
         serviceConfig = {
-        ExecStart = "/home/dgraham/bin/check4update";
-        wantedBy = ["default.target"];
-        Type = "oneshot";
-        User = "dgraham";
-        };
+          ExecStart = "/home/dgraham/bin/check4update";
+          wantedBy = ["default.target"];
+          Type = "oneshot";
+          User = "dgraham";
+          };
       };
       timers = { 
         backupmyconfs = {
@@ -101,10 +106,6 @@
           };
         };
       };
-  acme = {
-    acceptTerms = true;
-    defaults.email = "derek@papalpenguin.com";
-    };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
