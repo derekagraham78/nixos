@@ -26,9 +26,11 @@
           kde2nix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.dgraham = import ./home.nix;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              users.dgraham = import ./home.nix;
+              useUserPackages = true;
+            };
           }
         ];
       };

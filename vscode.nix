@@ -5,9 +5,11 @@
   ...
 }: {
   options = {
-    vscode.extensions = lib.mkOption {default = [];};
-    vscode.user = lib.mkOption {}; # <- Must be supplied
-    vscode.homeDir = lib.mkOption {}; # <- Must be supplied
+    vscode = {
+      extensions = lib.mkOption {default = [];};
+      user = lib.mkOption {}; # <- Must be supplied
+      homeDir = lib.mkOption {}; # <- Must be supplied
+    };
     nixpkgs.latestPackages = lib.mkOption {default = [];};
   };
 
@@ -18,7 +20,7 @@
     nixpkgs.overlays = [
       (
         self: super: let
-          latestPkgs = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz) {
+          latestPkgs = import (fetchTarball "https://github.com/nixos/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz") {
             config.allowUnfree = true;
           };
         in

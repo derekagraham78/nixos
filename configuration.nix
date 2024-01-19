@@ -15,16 +15,15 @@
     ./vscode.nix
     ./cachix.nix
   ];
-  vscode.user = "dgraham";
-  vscode.homeDir = "/home/dgraham";
-  vscode.extensions = with pkgs.vscode-extensions; [
-    ms-vscode.cpptools
-  ];
+  vscode = { 
+    user = "dgraham";
+    homeDir = "/home/dgraham";
+    extensions = with pkgs.vscode-extensions; [ ms-vscode.cpptools ];
+    };
   # Home Manager
-  users.users.dgraham.isNormalUser = true;
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
-  programs.zsh = {
+  programs = {
+    zsh = { 
+      enable = true;
     # Your zsh config
     ohMyZsh = {
       enable = true;
@@ -32,7 +31,16 @@
       theme = "agnoster";
     };
   };
+  sway.enable = true;
+  dconf.enable = true;
+  mtr.enable = true;
+  xfconf.enable = true;
+  gnupg.agent = {
+    enable = true;
+  };
+  nm-applet.enable = true;
 
+};
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Bootloader.
   boot = {
@@ -44,63 +52,66 @@
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
   };
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
-  networking.hostName = "Mulder"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # Printer
-  services.xrdp.enable = true;
-  services.printing.drivers = [pkgs.brlaser];
-  services.dbus.packages = with pkgs; [
-    xfce.xfconf
-  ];
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  virtualisation.docker.enable = true;
-  # Enable networking
-  services.plex = {
-    enable = true;
-    openFirewall = true;
-    #dataDir = "/var/plex";
-  };
-  networking.networkmanager.enable = true;
-  networking. enableIPv6 = false;
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
-  programs.sway.enable = true;
-  security.pam.services.swaylock.fprintAuth = false;
-  systemd.services.backupmyconfs = {
+  systemd = {
+    extraConfig = "DefaultTimeoutStopSec=10s";
+  services.backupmyconfs = {
     path = [pkgs.zsh];
     serviceConfig = {
       ExecStart = "/home/dgraham/bin/check4update";
       wantedBy = ["default.target"];
-      Type = "oneshot";
-      User = "dgraham";
+  Type = "oneshot";
+  User = "dgraham";
     };
   };
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
-  systemd.timers.backupmyconfs = {
+  timers.backupmyconfs = {
     timerConfig = {
       OnBootSec = "60m";
       OnUnitActiveSec = "60m";
       Unit = "backupmyconfs.service";
     };
   };
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "derek@papalpenguin.com";
+
   };
-  services.nginx.defaultSSLListenPort = 443;
-  services.nginx = {
+  networking = {
+    hostName = "Mulder"; # Define your hostname.
+    firewall.enable = false;
+  networkmanager.enable = true;
+  enableIPv6 = false;
+
+};
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # Printer
+  services = {
+    xrdp.enable = true;
+    printing.drivers = [pkgs.brlaser];
+    dbus.packages = with pkgs; [
+    xfce.xfconf
+  ];
+  plex = {
     enable = true;
+    openFirewall = true;
+    #dataDir = "/var/plex";
+  };
+  gvfs.enable = true; # Mount, trash, and other functionalities
+  tumbler.enable = true; # Thumbnail support for images
+  security = {
+    pam.services.swaylock.fprintAuth = false;
+    acme = {
+      acceptTerms = true;
+      defaults.email = "derek@papalpenguin.com";
+    };
+  rtkit.enable = true;
+  };
+  nginx = {
+    enable = true;
+    defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       forceSSL = true;
       serverAliases = ["www.papalpenguin.com"];
     };
-  };
-  services.phpfpm.pools.mypool = {
+  };  
+  phpfpm.pools.mypool = {
     user = "nobody";
     settings = {
       "pm" = "dynamic";
@@ -110,8 +121,58 @@
       "pm.min_spare_servers" = 1;
       "pm.max_spare_servers" = 3;
       "pm.max_requests" = 500;
-    };
+      };
+   };
+   flatpak.enable = true;
+     layout = "us";
+   };
+  printing.enable = true;
+  fwupd.enable = true;
+  avahi.nssmdns4 = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
   };
+ pipewire = {
+    enable = false;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+ # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+  };
+  xserver = { 
+   xkb.model = "Logitech K270";
+   xserver = {
+     layout = "us";
+     };
+    enable = true;
+    libinput.enable = true;
+    displayManager = { 
+      sddm.enable = true;
+      defaultSession = "plasmax11";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        autoNumlock = true;
+      autoLogin = { 
+        enable = true;
+        user = "dgraham";
+        };
+      };
+    };
+    desktopManager.plasma6.enable = true;
+  };
+# List services that you want to enable:
+  # services.httpd.enable = true;
+  # Enable the OpenSSH daemon.
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  virtualisation.docker.enable = true;
+  # Enable networking
+  # Set your time zone.
+  time.timeZone = "America/Chicago";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -126,37 +187,19 @@
     LC_TIME = "en_US.UTF-8";
   };
   # Enable the X11 windowing system.
-  services.flatpak.enable = true;
   #  xdg.portal.enable = true;
   #  xdg.portal.config.common.default = ["kde" "gtk"];
-  services.xserver.xkb.model = "Logitech K270";
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-  };
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.fwupd.enable = true;
-  services.avahi.nssmdns4 = {
-    enable = true;
-    nssmdns = true;
-    openFirewall = true;
-  };
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.package = pkgs.pulseaudio;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.extraConfig = "load-module module-equalizer-sink";
-  programs.dconf.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+  hardware = {
+    pulseaudio = {
+      package = pkgs.pulseaudio;
+      enable = true;
+      extraConfig = "load-module module-equalizer-sink";
+    };
   };
   fonts.packages = with pkgs; [
     rPackages.trekfont
@@ -173,7 +216,6 @@
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
   hardware.opengl = {
     enable = true;
     # Enable 32-bit dri support for steam
@@ -182,12 +224,16 @@
     setLdLibraryPath = true;
   };
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dgraham = {
-    description = "Derek Graham";
-    extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
-    packages = with pkgs; [
-      kate
-    ];
+  users = { 
+    dgraham = {
+      description = "Derek Graham";
+      extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
+      isNormalUser = true;
+      packages = with pkgs; [
+        kate
+        ];
+      };
+    defaultUserShell = pkgs.zsh;
   };
   # Auto Upgrade
   system.autoUpgrade = {
@@ -204,14 +250,6 @@
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmax11";
-  services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.sddm.autoNumlock = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "dgraham";
-  services.xserver.desktopManager.plasma6.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
@@ -380,24 +418,10 @@
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
-  programs.xfconf.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-  };
-  # List services that you want to enable:
-  # services.httpd.enable = true;
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.settings.PermitRootLogin = "yes";
-  services.openssh.allowSFTP = true;
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 8581 ];
   # networking.firewall.allowedUDPPorts = [ 8581 ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-  programs.nm-applet.enable = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
