@@ -83,25 +83,7 @@
       };
     systemd = {
       extraConfig = "DefaultTimeoutStopSec=10s";
-
-      backupmyconfs = {
-        path = [pkgs.zsh];
-        serviceConfig = {
-          ExecStart = "/home/dgraham/bin/check4update";
-          wantedBy = ["default.target"];
-          Type = "oneshot";
-          User = "dgraham";
-          };
-      };
-      timers = { 
-        backupmyconfs = {
-          timerConfig = {
-          OnBootSec = "60m";
-          OnUnitActiveSec = "60m";
-          Unit = "backupmyconfs.service";
-          };
         };
-      };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
@@ -179,7 +161,22 @@
   # Enable the X11 windowing system.
   #  xdg.portal.enable = true;
   #  xdg.portal.config.common.default = ["kde" "gtk"];
-
+  systemd.services.backupmyconfs = {
+    path = [pkgs.zsh];
+    serviceConfig = {
+      ExecStart = "/home/dgraham/bin/check4update";
+      wantedBy = ["default.target"];
+      Type = "oneshot";
+      User = "dgraham";
+    };
+  };
+  systemd.timers.backupmyconfs = {
+    timerConfig = {
+      OnBootSec = "60m";
+      OnUnitActiveSec = "60m";
+      Unit = "backupmyconfs.service";
+    };
+  };
   # Configure keymap in X11
   # Enable CUPS to print documents.
   # Enable sound with pipewire.
