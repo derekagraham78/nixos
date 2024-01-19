@@ -82,6 +82,15 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+  pipewire = {
+    enable = false;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+ # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+    };
+
   fwupd.enable = true;
   avahi.nssmdns4 = {
     enable = true;
@@ -133,14 +142,6 @@
      layout = "us";
    };
   printing.enable = true;
- pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
- # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
   xserver = { 
    xkb.model = "Logitech K270";
    xserver = {
