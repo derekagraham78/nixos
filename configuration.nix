@@ -14,7 +14,7 @@
     ./wordpress.nix
     ./vscode.nix
     ./cachix.nix
-  ];
+    ];
   vscode = { 
     user = "dgraham";
     homeDir = "/home/dgraham";
@@ -146,8 +146,7 @@
         };
      };
    desktopManager.plasma6.enable = true;
- };  
-};
+   };
    security = {
      pam.services.swaylock.fprintAuth = false;
      rtkit.enable = true;
@@ -222,11 +221,10 @@
       description = "Derek Graham";
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
-      packages = with pkgs; [
-        kate
-        ];
+      packages = with pkgs; [ kate ];
       };
     defaultUserShell = pkgs.zsh;
+    };
   };
   # Auto Upgrade
   system.autoUpgrade = {
@@ -236,10 +234,10 @@
       "--update-input"
       "nixpkgs"
       "-L" # print build logs
-    ];
+      ];
     dates = "02:00";
     randomizedDelaySec = "45min";
-  };
+    };
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
@@ -252,7 +250,6 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
     cachix
-    nix-linter
     statix
     wev
     imagemagick
@@ -421,6 +418,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-
+};
   system.stateVersion = "23.11"; # Did you read the comment?
 }
