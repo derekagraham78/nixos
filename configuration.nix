@@ -102,6 +102,10 @@
           };
         };
       };
+  acme = {
+    acceptTerms = true;
+    defaults.email = "derek@papalpenguin.com";
+    };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
@@ -148,10 +152,6 @@
    security = {
      pam.services.swaylock.fprintAuth = false;
      rtkit.enable = true;
-     };
-   acme = {
-     acceptTerms = true;
-     defaults.email = "derek@papalpenguin.com";
      };
 # List services that you want to enable:
   # services.httpd.enable = true;
