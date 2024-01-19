@@ -85,8 +85,8 @@
     systemd = {
       extraConfig = "DefaultTimeoutStopSec=10s";
       backupmyconfs = {
-      path = [pkgs.zsh];
-      serviceConfig = {
+        path = [pkgs.zsh];
+        serviceConfig = {
         ExecStart = "/home/dgraham/bin/check4update";
         wantedBy = ["default.target"];
         Type = "oneshot";
@@ -95,13 +95,13 @@
       };
       timers = { 
         backupmyconfs = {
-        timerConfig = {
-        OnBootSec = "60m";
-        OnUnitActiveSec = "60m";
-        Unit = "backupmyconfs.service";
+          timerConfig = {
+          OnBootSec = "60m";
+          OnUnitActiveSec = "60m";
+          Unit = "backupmyconfs.service";
+          };
         };
       };
-    };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
@@ -144,6 +144,7 @@
      };
    desktopManager.plasma6.enable = true;
    };
+ };
    security = {
      pam.services.swaylock.fprintAuth = false;
      rtkit.enable = true;
