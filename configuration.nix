@@ -141,7 +141,6 @@
       };
    };
    flatpak.enable = true;
-     layout = "us";
    };
   xserver = { 
    xkb.model = "Logitech K270";
