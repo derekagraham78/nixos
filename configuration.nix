@@ -25,22 +25,21 @@
     zsh = { 
       enable = true;
     # Your zsh config
-    ohMyZsh = {
-      enable = true;
-      plugins = ["git" "python" "man" "1password"];
-      theme = "agnoster";
-    };
-  };
+      ohMyZsh = {
+        enable = true;
+        plugins = ["git" "python" "man" "1password"];
+        theme = "agnoster";
+        };
+      };
   sway.enable = true;
   dconf.enable = true;
   mtr.enable = true;
   xfconf.enable = true;
   gnupg.agent = {
     enable = true;
-  };
+    };
   nm-applet.enable = true;
-
-};
+  };
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Bootloader.
   boot = {
@@ -84,37 +83,28 @@
       enable = true;
       openFirewall = true;
       };
-  gvfs.enable = true; # Mount, trash, and other functionalities
-  tumbler.enable = true; # Thumbnail support for images
- systemd = {
-    extraConfig = "DefaultTimeoutStopSec=10s";
-    backupmyconfs = {
+    gvfs.enable = true; # Mount, trash, and other functionalities
+    tumbler.enable = true; # Thumbnail support for images
+    systemd = {
+      extraConfig = "DefaultTimeoutStopSec=10s";
+      backupmyconfs = {
       path = [pkgs.zsh];
       serviceConfig = {
-      ExecStart = "/home/dgraham/bin/check4update";
-      wantedBy = ["default.target"];
-      Type = "oneshot";
-      User = "dgraham";
-      };
-    };
-    timers = { 
-      backupmyconfs = {
-        timerConfig = {
-     OnBootSec = "60m";
-     OnUnitActiveSec = "60m";
-      Unit = "backupmyconfs.service";
-          };
+        ExecStart = "/home/dgraham/bin/check4update";
+        wantedBy = ["default.target"];
+        Type = "oneshot";
+        User = "dgraham";
         };
       };
-};
-  security = {
-    pam.services.swaylock.fprintAuth = false;
-    rtkit.enable = true;
-    };
-    acme = {
-      acceptTerms = true;
-      defaults.email = "derek@papalpenguin.com";
+      timers = { 
+        backupmyconfs = {
+        timerConfig = {
+        OnBootSec = "60m";
+        OnUnitActiveSec = "60m";
+        Unit = "backupmyconfs.service";
+        };
       };
+    };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
@@ -154,9 +144,18 @@
         enable = true;
         user = "dgraham";
         };
-      };
-    desktopManager.plasma6.enable = true;
-    };
+     };
+   desktopManager.plasma6.enable = true;
+ };  
+};
+   security = {
+     pam.services.swaylock.fprintAuth = false;
+     rtkit.enable = true;
+     };
+   acme = {
+     acceptTerms = true;
+     defaults.email = "derek@papalpenguin.com";
+     };
 # List services that you want to enable:
   # services.httpd.enable = true;
   # Enable the OpenSSH daemon.
