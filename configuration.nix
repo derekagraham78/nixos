@@ -82,33 +82,29 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
-  flatpak.enable = true;
-  printing.enable = true;
-  pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    flatpak.enable = true;
+    printing.enable = true;
+    pipewire = {
+      enable = false;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
  # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-    };
-
-  fwupd.enable = true;
-  avahi.nssmdns4 = {
-    enable = true;
-    nssmdns = true;
-    openFirewall = true;
-    };
+      jack.enable = true;
+      };
+    fwupd.enable = true;
+    avahi.nssmdns4 = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+      };
     xrdp.enable = true;
     printing.drivers = [pkgs.brlaser];
-    dbus.packages = with pkgs; [
-    xfce.xfconf
-  ];
-  plex = {
-    enable = true;
-    openFirewall = true;
-    #dataDir = "/var/plex";
-  };
+    dbus.packages = with pkgs; [ xfce.xfconf ];
+    plex = {
+      enable = true;
+      openFirewall = true;
+      };
   gvfs.enable = true; # Mount, trash, and other functionalities
   tumbler.enable = true; # Thumbnail support for images
   security = {
@@ -118,7 +114,7 @@
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
-    };
+      };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
@@ -126,7 +122,7 @@
       enableACME = true;
       forceSSL = true;
       serverAliases = ["www.papalpenguin.com"];
-    };
+      };
   };  
   phpfpm.pools.mypool = {
     user = "nobody";
