@@ -124,7 +124,6 @@
         user = "dgraham";
         };
      };
- };
    desktopManager.plasma6.enable = true;
    };
    security = {
