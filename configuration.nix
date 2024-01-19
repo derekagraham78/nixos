@@ -54,7 +54,7 @@
     };
   systemd = {
     extraConfig = "DefaultTimeoutStopSec=10s";
-    services.backupmyconfs = {
+    backupmyconfs = {
       path = [pkgs.zsh];
       serviceConfig = {
         ExecStart = "/home/dgraham/bin/check4update";
@@ -62,7 +62,7 @@
         Type = "oneshot";
         User = "dgraham";
         };
-    tim};
+      };
   timers = { 
     backupmyconfs = {
       timerConfig = {
