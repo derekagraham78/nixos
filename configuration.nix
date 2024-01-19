@@ -39,7 +39,6 @@
     };
   nm-applet.enable = true;
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
   # Bootloader.
   boot = {
     loader = {
@@ -186,6 +185,8 @@
       extraConfig = "load-module module-equalizer-sink";
     };
   };
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   fonts.packages = with pkgs; [
     rPackages.trekfont
     noto-fonts
