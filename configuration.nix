@@ -119,7 +119,6 @@
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
     };
-  };
   nginx = {
     enable = true;
     defaultSSLListenPort = 443;
