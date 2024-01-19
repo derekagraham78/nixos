@@ -82,6 +82,11 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+  avahi.nssmdns4 = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+    };
     xrdp.enable = true;
     printing.drivers = [pkgs.brlaser];
     dbus.packages = with pkgs; [
@@ -128,11 +133,6 @@
    };
   printing.enable = true;
   fwupd.enable = true;
-  avahi.nssmdns4 = {
-    enable = true;
-    nssmdns = true;
-    openFirewall = true;
-  };
  pipewire = {
     enable = false;
     alsa.enable = true;
