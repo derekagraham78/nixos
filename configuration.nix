@@ -83,10 +83,6 @@
       };
     systemd = {
       extraConfig = "DefaultTimeoutStopSec=10s";
-    acme = {
-    acceptTerms = true;
-    defaults.email = "derek@papalpenguin.com";
-    };
 
       backupmyconfs = {
         path = [pkgs.zsh];
@@ -152,6 +148,10 @@
  };
    security = {
      rtkit.enable = true;
+     acme = {
+       acceptTerms = true;
+       defaults.email = "derek@papalpenguin.com";
+       };
      };
 # List services that you want to enable:
   # services.httpd.enable = true;
