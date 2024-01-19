@@ -31,7 +31,6 @@
         theme = "agnoster";
         };
       };
-  sway.enable = true;
   dconf.enable = true;
   mtr.enable = true;
   xfconf.enable = true;
@@ -150,7 +149,6 @@
    };
  };
    security = {
-     pam.services.swaylock.fprintAuth = false;
      rtkit.enable = true;
      };
 # List services that you want to enable:
@@ -266,8 +264,6 @@ environment.systemPackages = with pkgs; [
     killall
     grim #screes capture
     slurp
-    swaylock-effects
-    swayidle
     pavucontrol
     pasystray
     paprefs
@@ -303,7 +299,6 @@ environment.systemPackages = with pkgs; [
     # utils
     ripgrep # recursively searches directories>
     wp4nix
-    swaybg
     gimp-with-plugins
     jq # A lightweight and flexible command-li>
     dunst
