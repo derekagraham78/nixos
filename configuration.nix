@@ -82,6 +82,8 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+  printing.enable = true;
+
   pipewire = {
     enable = false;
     alsa.enable = true;
@@ -141,7 +143,6 @@
    flatpak.enable = true;
      layout = "us";
    };
-  printing.enable = true;
   xserver = { 
    xkb.model = "Logitech K270";
    xserver = {
