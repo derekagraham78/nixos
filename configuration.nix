@@ -113,11 +113,12 @@
   tumbler.enable = true; # Thumbnail support for images
   security = {
     pam.services.swaylock.fprintAuth = false;
+    rtkit.enable = true;
+    };
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
     };
-  rtkit.enable = true;
   };
   nginx = {
     enable = true;
