@@ -52,34 +52,12 @@
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
     };
-  systemd = {
-    extraConfig = "DefaultTimeoutStopSec=10s";
-    backupmyconfs = {
-      path = [pkgs.zsh];
-      serviceConfig = {
-        ExecStart = "/home/dgraham/bin/check4update";
-        wantedBy = ["default.target"];
-        Type = "oneshot";
-        User = "dgraham";
-        };
-      };
-  timers = { 
-    backupmyconfs = {
-      timerConfig = {
-        OnBootSec = "60m";
-        OnUnitActiveSec = "60m";
-        Unit = "backupmyconfs.service";
-        };
-      };
-  };
-  };
   networking = {
     hostName = "Mulder"; # Define your hostname.
     firewall.enable = false;
-  networkmanager.enable = true;
-  enableIPv6 = false;
-
-};
+    networkmanager.enable = true;
+    enableIPv6 = false;
+    };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
@@ -108,6 +86,27 @@
       };
   gvfs.enable = true; # Mount, trash, and other functionalities
   tumbler.enable = true; # Thumbnail support for images
+ systemd = {
+    extraConfig = "DefaultTimeoutStopSec=10s";
+    backupmyconfs = {
+      path = [pkgs.zsh];
+      serviceConfig = {
+      ExecStart = "/home/dgraham/bin/check4update";
+      wantedBy = ["default.target"];
+      Type = "oneshot";
+      User = "dgraham";
+      };
+    };
+    timers = { 
+      backupmyconfs = {
+        timerConfig = {
+     OnBootSec = "60m";
+     OnUnitActiveSec = "60m";
+      Unit = "backupmyconfs.service";
+          };
+        };
+      };
+};
   security = {
     pam.services.swaylock.fprintAuth = false;
     rtkit.enable = true;
