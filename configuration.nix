@@ -149,7 +149,6 @@
     enable = true;
     libinput.enable = true;
     displayManager = { 
-      sddm.enable = true;
       defaultSession = "plasmax11";
       sddm = {
         enable = true;
