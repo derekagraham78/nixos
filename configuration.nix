@@ -123,7 +123,7 @@
       forceSSL = true;
       serverAliases = ["www.papalpenguin.com"];
       };
-  };  
+    };  
   phpfpm.pools.mypool = {
     user = "nobody";
     settings = {
@@ -135,7 +135,7 @@
       "pm.max_spare_servers" = 3;
       "pm.max_requests" = 500;
       };
-   };
+     };
   xserver = { 
    xkb.model = "Logitech K270";
    xserver = {
@@ -149,12 +149,12 @@
         enable = true;
         wayland.enable = true;
         autoNumlock = true;
+        };
       autoLogin = { 
         enable = true;
         user = "dgraham";
         };
       };
-    };
     desktopManager.plasma6.enable = true;
   };
 # List services that you want to enable:
