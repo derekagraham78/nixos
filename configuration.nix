@@ -218,11 +218,9 @@
       description = "Derek Graham";
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
-#      packages = with pkgs; [ kate ];
       };
     defaultUserShell = pkgs.zsh;
     };
-  };
   # Auto Upgrade
   system.autoUpgrade = {
     enable = true;
