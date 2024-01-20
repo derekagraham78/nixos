@@ -138,7 +138,6 @@
     doas = {
       enable = true;
       wheelNeedsPassword = false;
-      extraRules.dgraham.noPass = true;
     };
     sudo = {
       enable = true;
