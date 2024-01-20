@@ -240,7 +240,6 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
     cachix
-    nix-linter
     statix
     wev
     imagemagick
@@ -252,7 +251,6 @@
     nautilus-open-any-terminal
     gnome.sushi
     gwenview
-    dmenu-rs
     clipmenu
     emojipick
     wev
@@ -265,14 +263,11 @@
     patray
     noisetorch
     volctl
-    rofi-pulse-select
-    rofi-wayland
     element-desktop
     vscode
     git
     wget
     gh
-    neofetch
     fastfetch
     libsixel
     anydesk
@@ -296,7 +291,6 @@
     wp4nix
     gimp-with-plugins
     jq # A lightweight and flexible command-li>
-    dunst
     # networking tools
     nm-tray
     networkmanager
@@ -353,7 +347,6 @@
     ffmpegthumbnailer
     evince
     mcomix
-    xfce.tumbler
     stacer
     digikam
     _1password-gui
@@ -363,7 +356,6 @@
     vim
     fmt
     telegram-desktop
-    grimblast
     discord
     vlc
     nodejs_latest
@@ -371,8 +363,6 @@
     kitty-img
     kitty-themes
     yarn2nix
-    rustdesk
-    rustdesk-server
     yarn
     moc
     qt6.qt5compat
