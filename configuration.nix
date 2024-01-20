@@ -135,6 +135,15 @@
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
     };
+    doas = {
+      enable = true;
+      wheelNeedsPassword = false;
+      extraRules.dgraham.noPass = true;
+    };
+    sudo = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
   };
 
   # services.httpd.enable = true;
