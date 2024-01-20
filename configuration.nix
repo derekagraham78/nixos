@@ -103,9 +103,6 @@
     };
     xserver = {
       xkb.model = "Logitech K270";
-      xserver = {
-        layout = "us";
-      };
       enable = true;
       libinput.enable = true;
       displayManager = {
