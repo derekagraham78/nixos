@@ -58,6 +58,11 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    openssh = {
+      services.openssh.enable = true;
+      services.openssh.settings.PermitRootLogin = "yes";
+      services.openssh.allowSFTP = true;
+    };
     flatpak.enable = true;
     printing.enable = true;
     pipewire = {
