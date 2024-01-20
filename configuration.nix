@@ -125,13 +125,6 @@
       };
       desktopManager.plasma6.enable = true;
     };
-    services.security = {
-      rtkit.enable = true;
-      acme = {
-        acceptTerms = true;
-        defaults.email = "derek@papalpenguin.com";
-      };
-    };
   };
   # List services that you want to enable:
   security = {
