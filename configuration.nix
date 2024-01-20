@@ -134,6 +134,14 @@
     };
   };
   # List services that you want to enable:
+  security = {
+    rtkit.enable = true;
+    acme = {
+      acceptTerms = true;
+      defaults.email = "derek@papalpenguin.com";
+    };
+  };
+
   # services.httpd.enable = true;
   # Enable the OpenSSH daemon.
   # Configure network proxy if necessary
