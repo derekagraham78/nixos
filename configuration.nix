@@ -125,7 +125,7 @@
       };
       desktopManager.plasma6.enable = true;
     };
-    security = {
+    services.security = {
       rtkit.enable = true;
       acme = {
         acceptTerms = true;
