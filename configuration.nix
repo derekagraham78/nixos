@@ -210,7 +210,7 @@
   };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    dgraham = {
+    users.dgraham = {
       description = "Derek Graham";
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
