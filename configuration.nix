@@ -12,7 +12,6 @@
     ./mysql.nix
     ./wordpress.nix
     ./vscode.nix
-    ./cachix.nix
   ];
   vscode = {
     user = "dgraham";
