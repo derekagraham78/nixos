@@ -80,9 +80,6 @@
       enable = true;
       openFirewall = true;
     };
-    systemd = {
-      extraConfig = "DefaultTimeoutStopSec=10s";
-    };
     nginx = {
       enable = true;
       defaultSSLListenPort = 443;
@@ -127,6 +124,9 @@
     };
   };
   # List services that you want to enable:
+  systemd = {
+    extraConfig = "DefaultTimeoutStopSec=10s";
+  };
   security = {
     rtkit.enable = true;
     acme = {
