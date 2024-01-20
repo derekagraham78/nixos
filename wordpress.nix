@@ -35,49 +35,49 @@
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
 in {
-  services = { 
-    wordpress = { 
-      sites = { 
+  services = {
+    wordpress = {
+      sites = {
         "papalpenguin.com".themes = {
-           inherit wordpress-theme-ollie;
-           inherit wordpress-theme-responsive;
-           inherit wordpress-theme-astra;
-           };
+          inherit wordpress-theme-ollie;
+          inherit wordpress-theme-responsive;
+          inherit wordpress-theme-astra;
+        };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
         "papalpenguin.com" = {};
         "papalpenguin.com".virtualHost.listen = [
-         {
-           ip = "208.59.78.209";
-           port = 443;
-           ssl = true;
-         }
-         {
-           ip = "208.59.78.209";
-           port = 80;
-         }
-         {
-           ip = "*";
-           port = 8080;
-         }
+          {
+            ip = "208.59.78.209";
+            port = 443;
+            ssl = true;
+          }
+          {
+            ip = "208.59.78.209";
+            port = 80;
+          }
+          {
+            ip = "*";
+            port = 8080;
+          }
         ];
         "papalpenguin.com".database.tablePrefix = "wp_";
         "papalpenguin.com".settings = {
-           WP_HOME = "http://www.papalpenguin.com";
-           FORCE_SSL_ADMIN = false;
-           AUTOMATIC_UPDATER_DISABLED = false;
-           };
+          WP_HOME = "http://www.papalpenguin.com";
+          FORCE_SSL_ADMIN = false;
+          AUTOMATIC_UPDATER_DISABLED = false;
+        };
         "papalpenguin.com".virtualHost = {
-           adminAddr = "derek@papalpenguin.com";
-           forceSSL = true;
-           serverAliases = [
-             "www.papalpenguin.com"
-             "papalpenguin.com"
-             ]; 
-           locations."/".index = "index.php index.html";
-           };
+          adminAddr = "derek@papalpenguin.com";
+          forceSSL = true;
+          serverAliases = [
+            "www.papalpenguin.com"
+            "papalpenguin.com"
+          ];
+          locations."/".index = "index.php index.html";
+        };
+      };
+      webserver = "nginx";
+    };
   };
-  webserver = "nginx";
-};
-};
 }

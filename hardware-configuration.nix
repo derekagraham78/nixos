@@ -11,12 +11,12 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-boot = {
-  initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usbhid" "sd_mod"];
-  initrd.kernelModules = [];
-  kernelModules = [];
-  extraModulePackages = [];
-};
+  boot = {
+    initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usbhid" "sd_mod"];
+    initrd.kernelModules = [];
+    kernelModules = [];
+    extraModulePackages = [];
+  };
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/32e7ba08-133e-4a1a-8022-eadf8538980a";
     fsType = "ext4";
