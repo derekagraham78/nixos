@@ -13,48 +13,48 @@
     ./mysql.nix
     ./wordpress.nix
     ./vscode.nix
- #   ./cachix.nix
-    ];
-  vscode = { 
+    ./cachix.nix
+  ];
+  vscode = {
     user = "dgraham";
     homeDir = "/home/dgraham";
-    extensions = with pkgs.vscode-extensions; [ ms-vscode.cpptools ];
-    };
+    extensions = with pkgs.vscode-extensions; [ms-vscode.cpptools];
+  };
   # Home Manager
   programs = {
-    zsh = { 
+    zsh = {
       enable = true;
-    # Your zsh config
+      # Your zsh config
       ohMyZsh = {
         enable = true;
         plugins = ["git" "python" "man" "1password"];
         theme = "agnoster";
-        };
       };
-  dconf.enable = true;
-  mtr.enable = true;
-  xfconf.enable = true;
-  gnupg.agent = {
-    enable = true;
     };
-  nm-applet.enable = true;
+    dconf.enable = true;
+    mtr.enable = true;
+    xfconf.enable = true;
+    gnupg.agent = {
+      enable = true;
+    };
+    nm-applet.enable = true;
   };
   # Bootloader.
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      };
+    };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
-    };
+  };
   networking = {
     hostName = "Mulder"; # Define your hostname.
     firewall.enable = false;
     networkmanager.enable = true;
     enableIPv6 = false;
-    };
+  };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
@@ -65,74 +65,75 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
- # If you want to use JACK applications, uncomment this
+      # If you want to use JACK applications, uncomment this
       jack.enable = true;
-      };
+    };
     fwupd.enable = true;
     avahi.nssmdns4 = {
       enable = true;
       nssmdns = true;
       openFirewall = true;
-      };
+    };
     xrdp.enable = true;
     printing.drivers = [pkgs.brlaser];
     plex = {
       enable = true;
       openFirewall = true;
-      };
+    };
     systemd = {
       extraConfig = "DefaultTimeoutStopSec=10s";
-        };
-  nginx = {
-    enable = true;
-    defaultSSLListenPort = 443;
-    virtualHosts."papalpenguin.com" = {
-      enableACME = true;
-      forceSSL = true;
-      serverAliases = ["www.papalpenguin.com"];
+    };
+    nginx = {
+      enable = true;
+      defaultSSLListenPort = 443;
+      virtualHosts."papalpenguin.com" = {
+        enableACME = true;
+        forceSSL = true;
+        serverAliases = ["www.papalpenguin.com"];
       };
-    };  
-  phpfpm.pools.mypool = {
-    user = "nobody";
-    settings = {
-      "pm" = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 5;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 3;
-      "pm.max_requests" = 500;
+    };
+    phpfpm.pools.mypool = {
+      user = "nobody";
+      settings = {
+        "pm" = "dynamic";
+        "listen.owner" = config.services.nginx.user;
+        "pm.max_children" = 5;
+        "pm.start_servers" = 2;
+        "pm.min_spare_servers" = 1;
+        "pm.max_spare_servers" = 3;
+        "pm.max_requests" = 500;
       };
-     };
-  xserver = { 
-   xkb.model = "Logitech K270";
-   xserver = {
-     layout = "us";
-     };
-   enable = true;
-   libinput.enable = true;
-   displayManager = { 
-     defaultSession = "plasmax11";
-     sddm = {
-       enable = true;
-       wayland.enable = true;
-       autoNumlock = true;
-       };
-      autoLogin = { 
-        enable = true;
-        user = "dgraham";
+    };
+    xserver = {
+      xkb.model = "Logitech K270";
+      xserver = {
+        layout = "us";
+      };
+      enable = true;
+      libinput.enable = true;
+      displayManager = {
+        defaultSession = "plasmax11";
+        sddm = {
+          enable = true;
+          wayland.enable = true;
+          autoNumlock = true;
         };
-     };
-   desktopManager.plasma6.enable = true;
-   };
-   security = {
-     rtkit.enable = true;
-     acme = {
-       acceptTerms = true;
-       defaults.email = "derek@papalpenguin.com";
-       };
-     };
-# List services that you want to enable:
+        autoLogin = {
+          enable = true;
+          user = "dgraham";
+        };
+      };
+      desktopManager.plasma6.enable = true;
+    };
+    security = {
+      rtkit.enable = true;
+      acme = {
+        acceptTerms = true;
+        defaults.email = "derek@papalpenguin.com";
+      };
+    };
+  };
+  # List services that you want to enable:
   # services.httpd.enable = true;
   # Enable the OpenSSH daemon.
   # Configure network proxy if necessary
@@ -210,14 +211,14 @@
     setLdLibraryPath = true;
   };
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users = { 
+  users = {
     dgraham = {
       description = "Derek Graham";
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
-      };
-    defaultUserShell = pkgs.zsh;
     };
+    defaultUserShell = pkgs.zsh;
+  };
   # Auto Upgrade
   system.autoUpgrade = {
     enable = true;
@@ -226,10 +227,10 @@
       "--update-input"
       "nixpkgs"
       "-L" # print build logs
-      ];
+    ];
     dates = "02:00";
     randomizedDelaySec = "45min";
-    };
+  };
   # Bluetooth Enabled
   hardware.bluetooth.enable = true;
   # Enable automatic login for the user.
@@ -237,7 +238,7 @@
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     slack
     cachix
