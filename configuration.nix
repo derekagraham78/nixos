@@ -59,9 +59,9 @@
   # Printer
   services = {
     openssh = {
-      services.openssh.enable = true;
-      services.openssh.settings.PermitRootLogin = "yes";
-      services.openssh.allowSFTP = true;
+      enable = true;
+      PermitRootLogin = "yes";
+      allowSFTP = true;
     };
     flatpak.enable = true;
     printing.enable = true;
