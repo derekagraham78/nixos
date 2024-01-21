@@ -56,6 +56,7 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    tailscale.enable = true;
     openssh = {
       enable = true;
       settings.PermitRootLogin = "yes";
