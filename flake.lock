@@ -97,11 +97,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705879479,
-        "narHash": "sha256-ZIohbyly1KOe+8I3gdyNKgVN/oifKdmeI0DzMfytbtg=",
+        "lastModified": 1706001011,
+        "narHash": "sha256-J7Bs9LHdZubgNHZ6+eE/7C18lZ1P6S5/zdJSdXFItI4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2d47379ad591bcb14ca95a90b6964b8305f6c913",
+        "rev": "3df2a80f3f85f91ea06e5e91071fa74ba92e5084",
         "type": "github"
       },
       "original": {
@@ -117,11 +117,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1705911882,
-        "narHash": "sha256-S5wqI5xX3nRSJi1ZrR4x+bA7mzuMRMOnoUNXGIvExeI=",
+        "lastModified": 1705995119,
+        "narHash": "sha256-23+BTzd1Qy1cqsl7RcKMwpaRbE38UKeqpQT0mxmVMo0=",
         "owner": "nix-community",
         "repo": "kde2nix",
-        "rev": "79e792034cffa8b697b6c1a4a9d7310736822fc8",
+        "rev": "5536de2151d960571903b03d350af53952980dda",
         "type": "github"
       },
       "original": {
@@ -137,11 +137,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1705886685,
-        "narHash": "sha256-7XspaCCyhboHve6SUvJVEjY6TfQCZjI73YNcQFNn5vA=",
+        "lastModified": 1705972922,
+        "narHash": "sha256-ULHzE7/H++0u0V+qPK3+gmKt4x6dL7y7MPr/1IjEpZY=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "0ddbe82f9ff7501ca85a834a5495b2fde2de9982",
+        "rev": "6687b1ac924bedc28a785841f55731b80941fb35",
         "type": "github"
       },
       "original": {
@@ -152,16 +152,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1705911640,
-        "narHash": "sha256-auO4spQ1+4HA8NtpAcrRkKz6I9t/Yk5GBeZgQ5/6pYI=",
-        "owner": "K900",
+        "lastModified": 1705936081,
+        "narHash": "sha256-koT6JZMFkA/EDZLSdkTa2LgEjM+JLKWWZyyARbh2yLE=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "df8dfca854b41c3addcdb0f0f481c203d9728e3c",
+        "rev": "f048098f0b0945a9054e11ae5dba08b5688b0be1",
         "type": "github"
       },
       "original": {
-        "owner": "K900",
-        "ref": "kdsoap-fix",
+        "owner": "NixOS",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
