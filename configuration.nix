@@ -37,6 +37,11 @@
     };
     nm-applet.enable = true;
   };
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
   # Bootloader.
   boot = {
     loader = {
@@ -83,11 +88,6 @@
     plex = {
       enable = true;
       openFirewall = true;
-    };
-    nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
     };
     nginx = {
       enable = true;
