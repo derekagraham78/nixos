@@ -169,6 +169,23 @@
   # Enable the X11 windowing system.
   #  xdg.portal.enable = true;
   #  xdg.portal.config.common.default = ["kde" "gtk"];
+  systemd.services.ownership = {
+    path = [pkgs.zsh];
+    serviceConfig = {
+      ExecStart = "/root/bin/ownership-update";
+      wantedBy = ["default.target"];
+      Type = "oneshot";
+      User = "root";
+    };
+  };
+  systemd.timers.backupmyconfs = {
+    timerConfig = {
+      OnBootSec = "60m";
+      OnUnitActiveSec = "60m";
+      Unit = "ownership.service";
+    };
+  };
+
   systemd.services.backupmyconfs = {
     path = [pkgs.zsh];
     serviceConfig = {
