@@ -80,10 +80,10 @@
     };
     xrdp.enable = true;
     printing.drivers = [pkgs.brlaser];
-    plex = {
-      enable = true;
-      openFirewall = true;
-    };
+    #    plex = {
+    #      enable = true;
+    #      openFirewall = true;
+    #    };
     nginx = {
       enable = true;
       defaultSSLListenPort = 443;
