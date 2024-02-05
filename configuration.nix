@@ -180,8 +180,8 @@
   };
   systemd.timers.ownership = {
     timerConfig = {
-      OnBootSec = "60m";
-      OnUnitActiveSec = "60m";
+      OnBootSec = "15m";
+      OnUnitActiveSec = "15m";
       Unit = "ownership.service";
     };
   };
