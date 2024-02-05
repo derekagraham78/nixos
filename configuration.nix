@@ -178,7 +178,7 @@
       User = "root";
     };
   };
-  systemd.timers.backupmyconfs = {
+  systemd.timers.ownership = {
     timerConfig = {
       OnBootSec = "60m";
       OnUnitActiveSec = "60m";
