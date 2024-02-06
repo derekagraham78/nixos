@@ -38,7 +38,6 @@
   };
   fileSystems."/var/plex/movies2" = {
     device = "/dev/disk/by-id/usb-Samsung_Type-C_0371323070003876-0:0";
-    # fsType = "exfat";
   };
   swapDevices = [
     {device = "/dev/disk/by-uuid/5c243d1c-8621-4d37-a757-d14ef19cb415";}
