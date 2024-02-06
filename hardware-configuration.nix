@@ -4,18 +4,19 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-  boot = {
-    initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usbhid" "sd_mod"];
-    initrd.kernelModules = [];
-    kernelModules = [];
-    extraModulePackages = [];
-  };
+
+  boot.initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usb_storage" "usbhid" "sd_mod"];
+  boot.initrd.kernelModules = [];
+  boot.kernelModules = ["kvm-intel"];
+  boot.extraModulePackages = [];
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/32e7ba08-133e-4a1a-8022-eadf8538980a";
     fsType = "ext4";
@@ -24,6 +25,16 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/1AAE-C51A";
     fsType = "vfat";
+  };
+
+  fileSystems."/var/lib/docker/overlay2/b0c4adbe0cc9c167962bc4ae53c90b07884f148bddb250dcb7d1aa364251ea38/merged" = {
+    device = "overlay";
+    fsType = "overlay";
+  };
+
+  fileSystems."/var/lib/docker/overlay2/cd01150d449a5c2b922e3058c3e34a04a4e8cc644f0d0d3002fe4f58557eabb3/merged" = {
+    device = "overlay";
+    fsType = "overlay";
   };
 
   swapDevices = [
@@ -35,7 +46,13 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-5994d76afa93.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s29u1u6u1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.us-chi-wg-001.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth2ff693d.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
