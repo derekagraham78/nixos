@@ -36,7 +36,10 @@
     device = "overlay";
     fsType = "overlay";
   };
-
+  fileSystems."/var/plex/movies2" = {
+    device = "/dev/disk/by-label/SAMSUNG";
+    # fsType = "exfat";
+  };
   swapDevices = [
     {device = "/dev/disk/by-uuid/5c243d1c-8621-4d37-a757-d14ef19cb415";}
   ];
