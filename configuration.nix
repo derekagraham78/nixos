@@ -13,6 +13,11 @@
     ./wordpress.nix
     ./vscode.nix
   ];
+  fileSystems."/var/plex/movies2" = {
+    device = "/dev/disk/by-label/SAMSUNG";
+    fsType = "exFAT";
+  };
+
   vscode = {
     user = "dgraham";
     homeDir = "/home/dgraham";
