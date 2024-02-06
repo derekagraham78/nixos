@@ -37,7 +37,7 @@
     fsType = "overlay";
   };
   fileSystems."/var/plex/movies2" = {
-    device = "/dev/disk/by-uuid/5447-B9CB";
+    device = "/dev/disk/by-uuid/c35f5afd-0896-410c-90d8-1aa7a9f65d6a";
   };
   swapDevices = [
     {device = "/dev/disk/by-uuid/5c243d1c-8621-4d37-a757-d14ef19cb415";}
