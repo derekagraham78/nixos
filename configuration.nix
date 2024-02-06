@@ -15,7 +15,7 @@
   ];
   fileSystems."/var/plex/movies2" = {
     device = "/dev/disk/by-label/SAMSUNG";
-    fsType = "exFAT";
+    fsType = "exfat";
   };
 
   vscode = {
