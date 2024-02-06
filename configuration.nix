@@ -62,6 +62,15 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    cockpit = {
+      enable = true;
+      port = 9090;
+      settings = {
+        WebService = {
+          AllowUnencrypted = true;
+        };
+      };
+    };
     tailscale.enable = true;
     openssh = {
       enable = true;
@@ -273,6 +282,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    cockpit
     gnome.gnome-disk-utility
     gparted
     whois
