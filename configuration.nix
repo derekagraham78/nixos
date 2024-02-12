@@ -107,7 +107,7 @@
         enableACME = true;
         forceSSL = true;
         serverAliases = ["www.papalpenguin.com"];
-      };
+      }
     };
     phpfpm.pools.mypool = {
       user = "nobody";
