@@ -101,7 +101,7 @@
     };
     nginx = {
       enable = true;
-      defaultListen = { addr = "0.0.0.0"; }
+      defaultListen = {addr = "0.0.0.0";};
       defaultSSLListenPort = 443;
       virtualHosts."papalpenguin.com" = {
         enableACME = true;
