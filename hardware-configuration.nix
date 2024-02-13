@@ -22,24 +22,14 @@
     fsType = "ext4";
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/1AAE-C51A";
-    fsType = "vfat";
-  };
-
-  fileSystems."/var/lib/docker/overlay2/b0c4adbe0cc9c167962bc4ae53c90b07884f148bddb250dcb7d1aa364251ea38/merged" = {
-    device = "overlay";
-    fsType = "overlay";
-  };
-
-  fileSystems."/var/lib/docker/overlay2/cd01150d449a5c2b922e3058c3e34a04a4e8cc644f0d0d3002fe4f58557eabb3/merged" = {
-    device = "overlay";
-    fsType = "overlay";
-  };
-
   fileSystems."/var/plex/movies2" = {
     device = "/dev/disk/by-uuid/c35f5afd-0896-410c-90d8-1aa7a9f65d6a";
     fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/1AAE-C51A";
+    fsType = "vfat";
   };
 
   swapDevices = [
@@ -51,13 +41,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-5994d76afa93.useDHCP = lib.mkDefault true;
-  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp0s29u1u6u1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.us-chi-wg-001.useDHCP = lib.mkDefault true;
-  # networking.interfaces.vethfc03278.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
