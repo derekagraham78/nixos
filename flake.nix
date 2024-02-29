@@ -20,7 +20,6 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          kde2nix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager = {
