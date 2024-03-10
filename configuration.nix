@@ -62,6 +62,7 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    certmgr.renewInterval = "30m";
     cockpit = {
       enable = true;
       port = 9090;
