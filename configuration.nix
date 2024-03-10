@@ -149,6 +149,7 @@
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
+      defaults.renewInterval = "daily";
     };
     doas = {
       enable = true;
