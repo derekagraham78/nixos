@@ -148,6 +148,7 @@
     rtkit.enable = true;
     acme = {
       acceptTerms = true;
+      certs.papalpenguin.renewInterval = "daily";
       defaults.email = "derek@papalpenguin.com";
       defaults.renewInterval = "daily";
     };
