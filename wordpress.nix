@@ -2,6 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {pkgs, ...}: let
+  wordpress-plugin-safe-redirect-manager = pkgs.stdenv.mkDerivation rec {
+    name = "safe-redirect-manager";
+    version = "2.1.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/safe-redirect-manager.2.1.1.zip";
+      hash = "sha256-PRhzcx/G5HffgcVkE13I4uVmpozLME8cduqButyM1kk=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
     name = "ollie";
     version = "1.1.0";
@@ -37,6 +47,9 @@ in {
           inherit wordpress-theme-ollie;
           inherit wordpress-theme-responsive;
           inherit wordpress-theme-astra;
+        };
+        "papalpenguin.com".plugins = {
+          inherit wordpress-plugin-safe-redirect-manager;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
