@@ -20,7 +20,7 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-  wordpress-plugin-indieweb = pkgs.stdenv.mkDerivation rec {
+  wordpress-plugin-webmention = pkgs.stdenv.mkDerivation rec {
     name = "webmention";
     version = "5.2.4";
     src = pkgs.fetchzip {
