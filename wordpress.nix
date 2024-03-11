@@ -30,6 +30,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-indieauth = pkgs.stdenv.mkDerivation rec {
+    name = "indieauth";
+    version = "4.4.2";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/indieauth.4.4.2.zip";
+      hash = "sha256-vJ1Hy77C+FKHhnS0hf/yNyzYxsTRWdL2LiCSDqBJqrg=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
 
   wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
     name = "ollie";
@@ -71,6 +80,7 @@ in {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-indieweb;
           inherit wordpress-plugin-webmention;
+          inherit wordpress-plugin-indieauth;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
