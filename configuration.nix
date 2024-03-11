@@ -348,7 +348,6 @@
     # utils
     ripgrep # recursively searches directories>
     wp4nix
-    gimp-with-plugins
     jq # A lightweight and flexible command-li>
     # networking tools
     nm-tray
