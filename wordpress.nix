@@ -11,6 +11,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-indieweb = pkgs.stdenv.mkDerivation rec {
+    name = "indieweb";
+    version = "2.1.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/indieweb.4.0.4.zip";
+      hash = "sha256-KJqD00C74KO/GL+KVwGuy/IqpfCrKASr9LuIPDPD1ao=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
 
   wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
     name = "ollie";
@@ -50,6 +59,7 @@ in {
         };
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
+          inherit wordpress-plugin-indieweb;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
