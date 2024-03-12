@@ -43,7 +43,7 @@
     name = "wp-social-ninja-pro";
     version = "3.12.1";
     src = pkgs.fetchzip {
-      url = "file:///root/wp-social-ninja-pro-3.12.1.zip";
+      url = "http://www.papalpenguin.com/wp-content/uploads/2024/03/wp-social-ninja-pro-3.12.1.zip";
       hash = "sha256-FKeHyRd+rAB+Kv4CYbpDxiagthNId5w84FxO3DgzJbY=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
