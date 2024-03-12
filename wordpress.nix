@@ -39,7 +39,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-
+  wordpress-plugin-wp-social-ninja = pkgs.stdenv.mkDerivation rec {
+    name = "wp-social-ninja";
+    version = "3.12.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/wp-social-reviews.3.12.1.zip";
+      hash = "sha256-Dc5C7IDuBW6C9HyHMrCmlhRHNNKJwR4r1i7Lc0WJ8Bo=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
     name = "ollie";
     version = "1.1.0";
@@ -81,6 +89,7 @@ in {
           inherit wordpress-plugin-indieweb;
           inherit wordpress-plugin-webmention;
           inherit wordpress-plugin-indieauth;
+          inherit wordpress-plugin-wp-social-ninja;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
