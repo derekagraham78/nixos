@@ -48,6 +48,16 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin- = pkgs.stdenv.mkDerivation rec {
+    name = "include-mastodon-feed";
+    version = "1.9.3";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/include-mastodon-feed.1.9.3.zip";
+      hash = "sha256-57nub2/Xa/pyvkmMy119B6/gLDTwodiRr9PkHPjBgwY=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-theme-ollie = pkgs.stdenv.mkDerivation rec {
     name = "ollie";
     version = "1.1.0";
@@ -90,6 +100,7 @@ in {
           inherit wordpress-plugin-webmention;
           inherit wordpress-plugin-indieauth;
           inherit wordpress-plugin-wp-social-ninja;
+          inherit wordpress-plugin-include-mastodon-feed;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
