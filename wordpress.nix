@@ -48,7 +48,7 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-  wordpress-plugin- = pkgs.stdenv.mkDerivation rec {
+  wordpress-plugin-include-mastodon-feed = pkgs.stdenv.mkDerivation rec {
     name = "include-mastodon-feed";
     version = "1.9.3";
     src = pkgs.fetchzip {
