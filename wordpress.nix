@@ -11,6 +11,16 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-newsletter = pkgs.stdenv.mkDerivation rec {
+    name = "newsletter";
+    version = "8.2.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/newsletter.8.2.1.zip";
+      hash = "sha256-jZux6Vuhnll7aDnZq67FD1su5XX945Q5RjdejdIkY1w=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-plugin-social-feed-for-threads = pkgs.stdenv.mkDerivation rec {
     name = "social-feed-for-threads";
     version = "0.0.4";
@@ -124,6 +134,7 @@ in {
           inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
           inherit wordpress-plugin-social-feed-for-threads;
+          inherit wordpress-plugin-newsletter;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
