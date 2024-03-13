@@ -11,6 +11,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-wp-mail-smtp = pkgs.stdenv.mkDerivation rec {
+    name = "wp-mail-smtp";
+    version = "4.0.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.0.1.zip";
+      hash = "sha256-iWMQ2aEacnDbqGekkctUvkOf7JD5GwXPtvJxWvWLbEM=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-plugin-newsletter = pkgs.stdenv.mkDerivation rec {
     name = "newsletter";
     version = "8.2.1";
@@ -135,6 +144,7 @@ in {
           inherit wordpress-plugin-include-mastodon-feed;
           inherit wordpress-plugin-social-feed-for-threads;
           inherit wordpress-plugin-newsletter;
+          inherit wordpress-plugin-wp-mail-smtp;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
