@@ -11,6 +11,17 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-social-feed-for-threads = pkgs.stdenv.mkDerivation rec {
+    name = "social-feed-for-threads";
+    version = "0.0.4";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.4.zip";
+
+      hash = "sha256-HehMBKPGA+NY1oFnCkWzOKFGE6z/+yIEm9IOBJ4YPog=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-plugin-indieweb = pkgs.stdenv.mkDerivation rec {
     name = "indieweb";
     version = "4.0.4";
@@ -112,6 +123,7 @@ in {
           inherit wordpress-plugin-wp-social-ninja;
           inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
+          inherit wordpress-plugin-social-feed-for-threads;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
