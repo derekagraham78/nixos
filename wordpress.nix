@@ -20,12 +20,12 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-  wordpress-plugin-newsletter = pkgs.stdenv.mkDerivation rec {
-    name = "newsletter";
-    version = "8.2.1";
+  wordpress-plugin-mailpoet = pkgs.stdenv.mkDerivation rec {
+    name = "mailpoet";
+    version = "4.46.0";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/newsletter.8.2.1.zip";
-      hash = "sha256-jZux6Vuhnll7aDnZq67FD1su5XX945Q5RjdejdIkY1w=";
+      url = "https://downloads.wordpress.org/plugin/mailpoet.4.46.0.zip";
+      hash = "sha256-DUkmB1j67EPu/b75yThEY5FNmY/g5TuR/l/uJ84QxG8=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -143,7 +143,7 @@ in {
           inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
           inherit wordpress-plugin-social-feed-for-threads;
-          inherit wordpress-plugin-newsletter;
+          inherit wordpress-plugin-mailpoet;
           inherit wordpress-plugin-wp-mail-smtp;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
