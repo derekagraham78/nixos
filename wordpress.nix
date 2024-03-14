@@ -2,6 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {pkgs, ...}: let
+  wordpress-plugin-wp-user-manager = pkgs.stdenv.mkDerivation rec {
+    name = "wp-user-manager";
+    version = "2.9.9";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/wp-user-manager.2.9.9.zip";
+      hash = "sha256-c5swKNm340dt0v2LX9E3Zh+mSIREL6rvQE/JWQ9NnJU=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-plugin-wpforms-lite = pkgs.stdenv.mkDerivation rec {
     name = "wpforms-lite";
     version = "1.8.7.2";
@@ -155,6 +165,7 @@ in {
           inherit wordpress-plugin-mailpoet;
           inherit wordpress-plugin-wp-mail-smtp;
           inherit wordpress-plugin-wpforms-lite;
+          inherit wordpress-plugin-wp-user-manager;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
