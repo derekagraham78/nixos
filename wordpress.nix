@@ -2,6 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {pkgs, ...}: let
+  wordpress-plugin-wpforms-lite = pkgs.stdenv.mkDerivation rec {
+    name = "wpforms-lite";
+    version = "1.8.7.2";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/wpforms-lite.1.8.7.2.zip";
+      hash = "sha256-qqjuqSHMppMRvCcFh/003rPyE1kqxJQe3inabTfdRtk=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-plugin-safe-redirect-manager = pkgs.stdenv.mkDerivation rec {
     name = "safe-redirect-manager";
     version = "2.1.1";
@@ -144,6 +154,7 @@ in {
           inherit wordpress-plugin-social-feed-for-threads;
           inherit wordpress-plugin-mailpoet;
           inherit wordpress-plugin-wp-mail-smtp;
+          inherit wordpress-plugin-wpforms-lite;
         };
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.enableACME = true;
