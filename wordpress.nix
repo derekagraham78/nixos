@@ -52,11 +52,10 @@
   };
   wordpress-plugin-webmention = pkgs.stdenv.mkDerivation rec {
     name = "webmention";
-    version = "5.2.4";
+    version = "5.2.5";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/webmention.5.2.4.zip";
-
-      hash = "sha256-ZnQq4zhn9ztLb3vZ1XTrLIDEAyzGm1yvs4ewbDcAeZA=";
+      url = "https://downloads.wordpress.org/plugin/webmention.5.2.5.zip";
+      hash = "sha256-zrHFRZFAX09Og1JoCScPQdRd/E20lsoXQeikcAw3Zl0=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -71,20 +70,20 @@
   };
   wordpress-plugin-wp-social-ninja = pkgs.stdenv.mkDerivation rec {
     name = "wp-social-ninja";
-    version = "3.12.1";
+    version = "3.13.0";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/wp-social-reviews.3.12.1.zip";
-      hash = "sha256-Dc5C7IDuBW6C9HyHMrCmlhRHNNKJwR4r1i7Lc0WJ8Bo=";
+      url = "https://downloads.wordpress.org/plugin/wp-social-reviews.3.13.0.zip";
+      hash = "sha256-O+rFNCS7qkft2HwsFNUlN+LosGY4LiiV3011zvT3rb4=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
 
   wordpress-plugin-wp-social-ninja-pro = pkgs.stdenv.mkDerivation rec {
     name = "wp-social-ninja-pro";
-    version = "3.12.1";
+    version = "3.13.0";
     src = pkgs.fetchzip {
-      url = "http://www.papalpenguin.com/wp-content/uploads/2024/03/wp-social-ninja-pro-3.12.1.zip";
-      hash = "sha256-FKeHyRd+rAB+Kv4CYbpDxiagthNId5w84FxO3DgzJbY=";
+      url = "http://www.papalpenguin.com/wp-content/uploads/2024/03/wp-social-ninja-pro-3.13.0.zip";
+      hash = "sha256-3jnIz4NypxaWFfvqsdFPHYraxRBQhM1BNjyRQrZ7k0o=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };

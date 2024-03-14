@@ -73,6 +73,7 @@
         };
       };
     };
+    desktopManager.plasma6.enable = true;
     tailscale.enable = true;
     openssh = {
       enable = true;
@@ -139,7 +140,6 @@
           user = "dgraham";
         };
       };
-      desktopManager.plasma6.enable = true;
     };
   };
   # List services that you want to enable:
