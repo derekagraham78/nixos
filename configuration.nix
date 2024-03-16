@@ -287,12 +287,11 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     microsoft-edge
-    brave
+    imagemagick
     cockpit
     gnome.gnome-disk-utility
     gparted
     whois
-    mastodon
     docker-compose
     matrix-synapse
     zammad
@@ -302,7 +301,6 @@
     cachix
     statix
     wev
-    imagemagick
     w3m
     ox
     floorp
