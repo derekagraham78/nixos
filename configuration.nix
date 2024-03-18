@@ -287,6 +287,7 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     microsoft-edge
+    fluffychat
     imagemagick
     cockpit
     gnome.gnome-disk-utility
@@ -321,7 +322,6 @@
     patray
     noisetorch
     volctl
-    element-desktop
     vscode
     git
     wget
@@ -396,8 +396,6 @@
     pciutils # lspci
     usbutils # lsusb
     gh
-    vivaldi
-    vivaldi-ffmpeg-codecs
     webp-pixbuf-loader
     poppler
     ffmpegthumbnailer
