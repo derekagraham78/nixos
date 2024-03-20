@@ -34,9 +34,9 @@
     dconf.enable = true;
     mtr.enable = true;
     xfconf.enable = true;
-    gnupg.agent = {
-      enable = true;
-    };
+    #    gnupg.agent = {
+    #      enable = true;
+    #    };
     nm-applet.enable = true;
   };
   nix.gc = {
