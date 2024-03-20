@@ -34,9 +34,6 @@
     dconf.enable = true;
     mtr.enable = true;
     xfconf.enable = true;
-    #    gnupg.agent = {
-    #      enable = true;
-    #    };
     nm-applet.enable = true;
   };
   nix.gc = {
@@ -429,7 +426,6 @@
     fontconfig
     gnumake
     gcc13
-    waybar
     resilio-sync
     #    python311Packages.qpageview
     fmt
