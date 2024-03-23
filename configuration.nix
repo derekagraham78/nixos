@@ -52,7 +52,7 @@
     kernelParams = ["reboot=acpi" "coretemp"];
   };
   networking = {
-    hostName = "Mulder"; # Define your hostname.
+    hostName = "Mulder.papalpenguin.com"; # Define your hostname.
     firewall.enable = false;
     networkmanager.enable = true;
     enableIPv6 = false;
@@ -183,8 +183,8 @@
     LC_TIME = "en_US.UTF-8";
   };
   # Enable the X11 windowing system.
-  #  xdg.portal.enable = true;
-  #  xdg.portal.config.common.default = ["kde" "gtk"];
+  xdg.portal.enable = true;
+  xdg.portal.config.common.default = ["kde" "gtk"];
   systemd.services.ownership = {
     path = [pkgs.zsh];
     serviceConfig = {
@@ -284,14 +284,15 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     microsoft-edge
-    fluffychat
+    element-desktop
+    element-desktop-wayland
+    element-web
     imagemagick
     cockpit
     gnome.gnome-disk-utility
     gparted
     whois
     docker-compose
-    matrix-synapse
     zammad
     eza
     deadnix
@@ -433,5 +434,5 @@
     rPackages.trekfont
   ];
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "unstable-small"; # Did you read the comment?
 }
