@@ -187,7 +187,7 @@
   xdg.portal.enable = true;
   xdg.portal.config.common.default = ["kde" "gtk"];
   systemd.services.ownership = {
-    path = [pkgs.zsh];
+    path = [zsh];
     serviceConfig = {
       ExecStart = "/root/bin/ownership-update";
       wantedBy = ["default.target"];
