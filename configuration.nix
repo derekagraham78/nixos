@@ -52,7 +52,7 @@
     kernelParams = ["reboot=acpi" "coretemp"];
   };
   networking = {
-    hostName = "Mulder.papalpenguin.com"; # Define your hostname.
+    hostName = "mulder.papalpenguin.com"; # Define your hostname.
     firewall.enable = false;
     networkmanager.enable = true;
     enableIPv6 = false;
