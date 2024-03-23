@@ -48,7 +48,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
   };
