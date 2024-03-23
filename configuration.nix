@@ -52,7 +52,7 @@
     kernelParams = ["reboot=acpi" "coretemp"];
   };
   networking = {
-    hostName = "mulder"; # Define your hostname.
+    hostName = "Mulder"; # Define your hostname.
     firewall.enable = false;
     networkmanager.enable = true;
     enableIPv6 = false;
