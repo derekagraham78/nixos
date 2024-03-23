@@ -1,10 +1,10 @@
 {
-  description = "PapalPenguin's NixOS Flake";
+  description = "PapalPenguin's NixOS Flake for Mulder";
 
   inputs = {
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,7 +16,7 @@
     ...
   }: {
     nixosConfigurations = {
-      "mulder" = nixpkgs.lib.nixosSystem {
+      "Mulder.papalpenguin.com" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
