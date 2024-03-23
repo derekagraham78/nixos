@@ -397,7 +397,6 @@
     poppler
     ffmpegthumbnailer
     evince
-    mcomix
     stacer
     digikam
     _1password-gui
@@ -427,7 +426,6 @@
     gnumake
     gcc13
     resilio-sync
-    #    python311Packages.qpageview
     fmt
     pciutils
     geekbench
