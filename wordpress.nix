@@ -112,7 +112,7 @@
     version = "1.9.3";
     src = pkgs.fetchzip {
       url = "https://downloads.wordpress.org/plugin/include-mastodon-feed.1.9.3.zip";
-      hash = "sha256-57nub2/Xa/pyvkmMy119B6/gLDTwodiRr9PkHPjBgwY=";
+      hash = "sha256-C10h/lNwa3zl22fQxejQYTgYUyasMQP438HHyiPAAtY=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
