@@ -4,34 +4,36 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-
-  boot.initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usb_storage" "usbhid" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/32e7ba08-133e-4a1a-8022-eadf8538980a";
-    fsType = "ext4";
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "ehci_pci" "ata_piix" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = [];
+    };
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
   };
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/32e7ba08-133e-4a1a-8022-eadf8538980a";
+      fsType = "ext4";
+    };
 
-  fileSystems."/var/plex/movies2" = {
-    device = "/dev/disk/by-uuid/c35f5afd-0896-410c-90d8-1aa7a9f65d6a";
-    fsType = "ext4";
+    "/var/plex/movies2" = {
+      device = "/dev/disk/by-uuid/c35f5afd-0896-410c-90d8-1aa7a9f65d6a";
+      fsType = "ext4";
+    };
+
+    "/boot" = {
+      device = "/dev/disk/by-uuid/1AAE-C51A";
+      fsType = "vfat";
+    };
   };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/1AAE-C51A";
-    fsType = "vfat";
-  };
-
   swapDevices = [
     {device = "/dev/disk/by-uuid/5c243d1c-8621-4d37-a757-d14ef19cb415";}
   ];

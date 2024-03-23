@@ -1,11 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -13,8 +9,18 @@
     ./wordpress.nix
     ./vscode.nix
   ];
-  nix.optimise.automatic = true;
-  nix.optimise.dates = ["03:45"]; # Optional; allows customizing optimisation schedule
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = ["03:45"]; # Optional; allows customizing optimisation schedule
+    };
+  };
   vscode = {
     user = "dgraham";
     homeDir = "/home/dgraham";
@@ -35,11 +41,6 @@
     mtr.enable = true;
     xfconf.enable = true;
     nm-applet.enable = true;
-  };
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
   };
   # Bootloader.
   boot = {
@@ -229,7 +230,6 @@
       extraConfig = "load-module module-equalizer-sink";
     };
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   fonts.packages = with pkgs; [
     rPackages.trekfont
