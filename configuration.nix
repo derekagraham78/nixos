@@ -187,7 +187,7 @@
   xdg.portal.enable = true;
   xdg.portal.config.common.default = ["kde" "gtk"];
   systemd.services.ownership = {
-    path = [zsh];
+    path = [pkgs.zsh];
     serviceConfig = {
       ExecStart = "/root/bin/ownership-update";
       wantedBy = ["default.target"];
@@ -260,7 +260,7 @@
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
     };
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = /run/current-system/sw/bin/zsh;
   };
   # Auto Upgrade
   system.autoUpgrade = {
