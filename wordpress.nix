@@ -93,7 +93,7 @@
     version = "3.13.0";
     src = pkgs.fetchzip {
       url = "https://downloads.wordpress.org/plugin/wp-social-reviews.3.13.0.zip";
-      hash = "sha256-O+rFNCS7qkft2HwsFNUlN+LosGY4LiiV3011zvT3rb4=";
+      hash = "sha256-VF6gdLEkWpF+NZP9aC+R6V3lVT0WHr5yPJIpq+J8JHQ=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
