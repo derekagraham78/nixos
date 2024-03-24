@@ -48,10 +48,10 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages-latest;
-    kernelModules = ["drivetemp"];
-    kernelParams = ["reboot=acpi" "coretemp"];
   };
+  boot.kernelPackages = pkgs.linuxPackages-latest;
+  boot.kernelModules = ["drivetemp"];
+  boot.kernelParams = ["reboot=acpi" "coretemp"];
   networking = {
     hostName = "Mulder"; # Define your hostname.
     firewall.enable = false;
