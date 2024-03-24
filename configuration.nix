@@ -53,7 +53,7 @@
       efi.canTouchEfiVariables = true;
     };
   };
-  boot.kernelPackages = pkgs.linuxPackages-rtlatest;
+  boot.kernelPackages = linuxPackages-rtlatest;
   boot.kernelModules = ["drivetemp"];
   boot.kernelParams = ["reboot=acpi" "coretemp"];
   networking = {
