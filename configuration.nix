@@ -47,13 +47,11 @@
     nm-applet.enable = true;
   };
   # Bootloader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
-  boot.kernelPackages = linuxPackages-rtlatest;
   boot.kernelModules = ["drivetemp"];
   boot.kernelParams = ["reboot=acpi" "coretemp"];
   networking = {
@@ -264,7 +262,7 @@
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
     };
-    defaultUserShell = /run/current-system/sw/bin/zsh;
+    defaultUserShell = pkgs.zsh;
   };
   # Auto Upgrade
   system.autoUpgrade = {
