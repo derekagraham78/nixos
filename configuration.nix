@@ -48,7 +48,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = linuxPackages-latest;
+    kernelPackages = pkgs.linuxPackages-latest;
     kernelModules = ["drivetemp"];
     kernelParams = ["reboot=acpi" "coretemp"];
   };
