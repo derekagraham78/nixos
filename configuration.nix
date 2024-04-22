@@ -82,87 +82,87 @@
         user = "dgraham";
       };
     };
-  cockpit = {
-    enable = true;
-    port = 9090;
-    settings = {
-      WebService = {
-        AllowUnencrypted = true;
+    cockpit = {
+      enable = true;
+      port = 9090;
+      settings = {
+        WebService = {
+          AllowUnencrypted = true;
+        };
+      };
+    };
+    desktopManager.plasma6.enable = true;
+    tailscale.enable = true;
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = "yes";
+      allowSFTP = true;
+    };
+    flatpak.enable = true;
+    printing.enable = true;
+    pipewire = {
+      enable = false;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      jack.enable = true;
+    };
+    fwupd.enable = true;
+    xrdp.enable = true;
+    printing.drivers = [pkgs.brlaser];
+    plex = {
+      enable = true;
+      openFirewall = true;
+    };
+    nginx = {
+      enable = true;
+      defaultListen = [{addr = "0.0.0.0";}];
+      defaultSSLListenPort = 443;
+      virtualHosts."papalpenguin.com" = {
+        enableACME = true;
+        forceSSL = true;
+        serverAliases = ["www.papalpenguin.com"];
+      };
+    };
+    phpfpm.pools.mypool = {
+      user = "nobody";
+      settings = {
+        "pm" = "dynamic";
+        "listen.owner" = config.services.nginx.user;
+        "pm.max_children" = 5;
+        "pm.start_servers" = 2;
+        "pm.min_spare_servers" = 1;
+        "pm.max_spare_servers" = 3;
+        "pm.max_requests" = 500;
+      };
+    };
+    xserver = {
+      xkb.model = "Logitech K270";
+      enable = true;
+      libinput.enable = true;
+    };
+    # List services that you want to enable:
+    systemd = {
+      extraConfig = "DefaultTimeoutStopSec=10s";
+    };
+    security = {
+      rtkit.enable = true;
+      acme = {
+        acceptTerms = true;
+        defaults.email = "derek@papalpenguin.com";
+        defaults.renewInterval = "daily";
+      };
+      doas = {
+        enable = true;
+        wheelNeedsPassword = false;
+      };
+      sudo = {
+        enable = true;
+        wheelNeedsPassword = false;
       };
     };
   };
-  desktopManager.plasma6.enable = true;
-  tailscale.enable = true;
-  openssh = {
-    enable = true;
-    settings.PermitRootLogin = "yes";
-    allowSFTP = true;
-  };
-  flatpak.enable = true;
-  printing.enable = true;
-  pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
-  fwupd.enable = true;
-  xrdp.enable = true;
-  printing.drivers = [pkgs.brlaser];
-  plex = {
-    enable = true;
-    openFirewall = true;
-  };
-  nginx = {
-    enable = true;
-    defaultListen = [{addr = "0.0.0.0";}];
-    defaultSSLListenPort = 443;
-    virtualHosts."papalpenguin.com" = {
-      enableACME = true;
-      forceSSL = true;
-      serverAliases = ["www.papalpenguin.com"];
-    };
-  };
-  phpfpm.pools.mypool = {
-    user = "nobody";
-    settings = {
-      "pm" = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 5;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 3;
-      "pm.max_requests" = 500;
-    };
-  };
-  xserver = {
-    xkb.model = "Logitech K270";
-    enable = true;
-    libinput.enable = true;
-  };
-  # List services that you want to enable:
-  systemd = {
-    extraConfig = "DefaultTimeoutStopSec=10s";
-  };
-  security = {
-    rtkit.enable = true;
-    acme = {
-      acceptTerms = true;
-      defaults.email = "derek@papalpenguin.com";
-      defaults.renewInterval = "daily";
-    };
-    doas = {
-      enable = true;
-      wheelNeedsPassword = false;
-    };
-    sudo = {
-      enable = true;
-      wheelNeedsPassword = false;
-    };
-  };
-
   # services.httpd.enable = true;
   # Enable the OpenSSH daemon.
   # Configure network proxy if necessary
