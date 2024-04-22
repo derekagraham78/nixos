@@ -64,6 +64,19 @@
   # Printer
   services = {
     certmgr.renewInterval = "30m";
+ displayManager = {
+ defaultSession = "plasmax11";
+ sddm = {
+ enable = true;
+ wayland.enable = true;
+ autoNumlock = true;
+};
+ autoLogin = {
+ enable = true;
+ user = "dgraham";
+};
+};
+};
     cockpit = {
       enable = true;
       port = 9090;
@@ -128,16 +141,6 @@
       xkb.model = "Logitech K270";
       enable = true;
       libinput.enable = true;
-      displayManager = {
-        defaultSession = "plasmax11";
-        sddm = {
-          enable = true;
-          wayland.enable = true;
-          autoNumlock = true;
-        };
-        autoLogin = {
-          enable = true;
-          user = "dgraham";
         };
       };
     };
