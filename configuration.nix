@@ -439,4 +439,4 @@
   ];
 
   system.stateVersion = "unstable-small"; # Did you read the comment?
-}
+};
