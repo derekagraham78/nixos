@@ -419,6 +419,7 @@
     kitty-themes
     yarn2nix
     yarn
+
     moc
     qt6.qt5compat
     pkgs.qt6.full
@@ -439,4 +440,4 @@
   ];
 
   system.stateVersion = "unstable-small"; # Did you read the comment?
-};
+}
