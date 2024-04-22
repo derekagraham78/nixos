@@ -137,31 +137,30 @@
         "pm.max_requests" = 500;
       };
     };
-   }; 
-   xserver = {
-      xkb.model = "Logitech K270";
+  };
+  xserver = {
+    xkb.model = "Logitech K270";
+    enable = true;
+    libinput.enable = true;
+  };
+  # List services that you want to enable:
+  systemd = {
+    extraConfig = "DefaultTimeoutStopSec=10s";
+  };
+  security = {
+    rtkit.enable = true;
+    acme = {
+      acceptTerms = true;
+      defaults.email = "derek@papalpenguin.com";
+      defaults.renewInterval = "daily";
+    };
+    doas = {
       enable = true;
-      libinput.enable = true;
+      wheelNeedsPassword = false;
     };
-    # List services that you want to enable:
-    systemd = {
-      extraConfig = "DefaultTimeoutStopSec=10s";
-    };
-    security = {
-      rtkit.enable = true;
-      acme = {
-        acceptTerms = true;
-        defaults.email = "derek@papalpenguin.com";
-        defaults.renewInterval = "daily";
-      };
-      doas = {
-        enable = true;
-        wheelNeedsPassword = false;
-      };
-      sudo = {
-        enable = true;
-        wheelNeedsPassword = false;
-      };
+    sudo = {
+      enable = true;
+      wheelNeedsPassword = false;
     };
   };
   # services.httpd.enable = true;
