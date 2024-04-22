@@ -63,6 +63,12 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+    };
+
     certmgr.renewInterval = "30m";
     displayManager = {
       defaultSession = "plasmax11";
@@ -104,11 +110,6 @@
     jack.enable = true;
   };
   fwupd.enable = true;
-  avahi = {
-    enable = true;
-    nssmdns = true;
-    openFirewall = true;
-  };
   xrdp.enable = true;
   printing.drivers = [pkgs.brlaser];
   plex = {
