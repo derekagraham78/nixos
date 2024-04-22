@@ -141,7 +141,6 @@
       xkb.model = "Logitech K270";
       enable = true;
       libinput.enable = true;
-        };
       };
     };
   };
