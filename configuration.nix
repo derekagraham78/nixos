@@ -104,7 +104,7 @@
     jack.enable = true;
   };
   fwupd.enable = true;
-  avahi.nssmdns4 = {
+  avahi = {
     enable = true;
     nssmdns = true;
     openFirewall = true;
