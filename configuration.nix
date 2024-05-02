@@ -137,7 +137,7 @@
         "pm.max_requests" = 500;
       };
     };
-      libinput.enable = true;
+    libinput.enable = true;
 
     xserver = {
       xkb.model = "Logitech K270";
