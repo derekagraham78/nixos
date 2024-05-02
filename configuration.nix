@@ -137,10 +137,11 @@
         "pm.max_requests" = 500;
       };
     };
+      libinput.enable = true;
+
     xserver = {
       xkb.model = "Logitech K270";
       enable = true;
-      libinput.enable = true;
     };
     # List services that you want to enable:
   };
