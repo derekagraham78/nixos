@@ -1,0 +1,14 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+  devices:
+   - /dev/video0:/dev/video0
+  volumes:
+      - /PATH_TO_YOUR_CONFIG:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+  restart: unless-stopped
+  privileged: true
+  network_mode: host
