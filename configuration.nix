@@ -292,6 +292,8 @@
     element-desktop
     element-desktop-wayland
     element-web
+    vivaldi
+    vivaldi-ffmpeg-codecs
     imagemagick
     cockpit
     gnome.gnome-disk-utility
