@@ -217,6 +217,7 @@ in {
         "papalpenguin.com".database.tablePrefix = "wp_";
         "papalpenguin.com".settings = {
           WP_HOME = "http://www.papalpenguin.com";
+          WP_DEFAULT_THEME = "responsive";
           FORCE_SSL_ADMIN = false;
           AUTOMATIC_UPDATER_DISABLED = false;
         };
