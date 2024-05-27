@@ -31,6 +31,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-jetpack = pkgs.stdenv.mkDerivation rec {
+    name = "jetpack";
+    version = "13.4.3";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/jetpack.13.4.3.zip";
+      hash = "sha256-Jvr7ZZ1dWjTP2ulfsQ9eUw1Z0uxlJyGfSn0E6m0iiLU=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-plugin-wp-mail-smtp = pkgs.stdenv.mkDerivation rec {
     name = "wp-mail-smtp";
     version = "4.0.1";
@@ -157,6 +166,7 @@ in {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-indieweb;
           inherit wordpress-plugin-webmention;
+          inherit wordpress-plugin-jetpack;
           inherit wordpress-plugin-indieauth;
           inherit wordpress-plugin-wp-social-ninja;
           inherit wordpress-plugin-wp-social-ninja-pro;
