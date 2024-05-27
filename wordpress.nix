@@ -11,12 +11,49 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-jetpack-protect = pkgs.stdenv.mkDerivation rec {
+    name = "jetpack-protect";
+    version = "2.2.0";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/jetpack-protect.2.2.0.zip";
+      hash = "sha256-gATMvhkTilCTEFIw4fJM1EZ5MvxuY1St2qYhGjiny7M=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+  wordpress-plugin-jetpack-social = pkgs.stdenv.mkDerivation rec {
+    name = "jetpack-social";
+    version = "4.2.0";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/jetpack-social.4.2.0.zip";
+      hash = "sha256-hwlx421pCTfBdQyCPW0hrsFVLuQahpOkEL7/V0S0/AA=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+  wordpress-plugin-jetpack-search = pkgs.stdenv.mkDerivation rec {
+    name = "jetpack-search";
+    version = "2.1.0";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/jetpack-search.2.1.0.zip";
+      hash = "sha256-z6BHzZZG6sJIV+ZN/9Nn+cHDHjkDYco1pKyxUtgDEqw=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
   wordpress-plugin-jetpack-boost = pkgs.stdenv.mkDerivation rec {
     name = "jetpack-boost";
     version = "3.3.1";
     src = pkgs.fetchzip {
       url = "https://downloads.wordpress.org/plugin/jetpack-boost.3.3.1.zip";
       hash = "sha256-hWDdnq78a2UvjHTfXAGWNHMprxY0k/6FVwGekwbutLQ=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+  wordpress-plugin-akismet = pkgs.stdenv.mkDerivation rec {
+    name = "akismet";
+    version = "5.3.2";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/akismet.5.3.2.zip";
+      hash = "sha256-HB8gfMz0VH+8obpdPvgkID9GmgGW6vp+9M2SjSvJKIk=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -144,7 +181,11 @@ in {
         };
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
+          inherit wordpress-plugin-akismet;
           inherit wordpress-plugin-jetpack;
+          inherit wordpress-plugin-jetpack-social;
+          inherit wordpress-plugin-jetpack-search;
+          inherit wordpress-plugin-jetpack-protect;
           inherit wordpress-plugin-jetpack-boost;
           inherit wordpress-plugin-wp-social-ninja;
           inherit wordpress-plugin-wp-social-ninja-pro;
