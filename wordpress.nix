@@ -11,7 +11,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-
+  wordpress-plugin-jetpack-boost = pkgs.stdenv.mkDerivation rec {
+    name = "jetpack-boost";
+    version = "3.3.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/jetpack-boost.3.3.1.zip";
+      hash = "sha256-hWDdnq78a2UvjHTfXAGWNHMprxY0k/6FVwGekwbutLQ=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-plugin-wpforms-lite = pkgs.stdenv.mkDerivation rec {
     name = "wpforms-lite";
     version = "1.8.7.2";
@@ -137,6 +145,7 @@ in {
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-jetpack;
+          inherit wordpress-plugin-jetpack-boost;
           inherit wordpress-plugin-wp-social-ninja;
           inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
