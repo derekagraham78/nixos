@@ -69,34 +69,6 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-
-  wordpress-plugin-indieweb = pkgs.stdenv.mkDerivation rec {
-    name = "indieweb";
-    version = "4.0.4";
-    src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/indieweb.4.0.4.zip";
-      hash = "sha256-KJqD00C74KO/GL+KVwGuy/IqpfCrKASr9LuIPDPD1ao=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
-  wordpress-plugin-webmention = pkgs.stdenv.mkDerivation rec {
-    name = "webmention";
-    version = "5.2.5";
-    src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/webmention.5.2.5.zip";
-      hash = "sha256-zrHFRZFAX09Og1JoCScPQdRd/E20lsoXQeikcAw3Zl0=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
-  wordpress-plugin-indieauth = pkgs.stdenv.mkDerivation rec {
-    name = "indieauth";
-    version = "4.4.2";
-    src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/indieauth.4.4.2.zip";
-      hash = "sha256-vJ1Hy77C+FKHhnS0hf/yNyzYxsTRWdL2LiCSDqBJqrg=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
   wordpress-plugin-wp-social-ninja = pkgs.stdenv.mkDerivation rec {
     name = "wp-social-ninja";
     version = "3.13.0";
@@ -164,10 +136,7 @@ in {
         };
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
-          inherit wordpress-plugin-indieweb;
-          inherit wordpress-plugin-webmention;
           inherit wordpress-plugin-jetpack;
-          inherit wordpress-plugin-indieauth;
           inherit wordpress-plugin-wp-social-ninja;
           inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
