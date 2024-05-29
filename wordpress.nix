@@ -4,10 +4,10 @@
 {pkgs, ...}: let
   wordpress-plugin-wp-user-manager = pkgs.stdenv.mkDerivation rec {
     name = "wp-user-manager";
-    version = "2.9.9";
+    version = "2.9.10";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/wp-user-manager.2.9.9.zip";
-      hash = "sha256-c5swKNm340dt0v2LX9E3Zh+mSIREL6rvQE/JWQ9NnJU=";
+      url = "https://downloads.wordpress.org/plugin/wp-user-manager.2.9.10.zip";
+      hash = "sha256-pKTLu3WtNwHwd6hu1MfUDs2gIA/H92gAusBC3u4ovR8=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -59,10 +59,10 @@
   };
   wordpress-plugin-wpforms-lite = pkgs.stdenv.mkDerivation rec {
     name = "wpforms-lite";
-    version = "1.8.7.2";
+    version = "1.8.8.3";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/wpforms-lite.1.8.7.2.zip";
-      hash = "sha256-qqjuqSHMppMRvCcFh/003rPyE1kqxJQe3inabTfdRtk=";
+      url = "https://downloads.wordpress.org/plugin/wpforms-lite.1.8.8.3.zip";
+      hash = "sha256-2VRoDMELXDHckV/URFdYp5Fo9Pox94kJQtbwrLuE9A0=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -96,40 +96,20 @@
   };
   wordpress-plugin-mailpoet = pkgs.stdenv.mkDerivation rec {
     name = "mailpoet";
-    version = "4.46.0";
+    version = "4.51.0";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/mailpoet.4.46.0.zip";
-      hash = "sha256-DUkmB1j67EPu/b75yThEY5FNmY/g5TuR/l/uJ84QxG8=";
+      url = "https://downloads.wordpress.org/plugin/mailpoet.4.51.0.zip";
+      hash = "sha256-Q2nSKnJvpF7nY3yxO/xco6yYTIFjtWy4g/N4O/pVnQE=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
 
   wordpress-plugin-social-feed-for-threads = pkgs.stdenv.mkDerivation rec {
     name = "social-feed-for-threads";
-    version = "0.0.4";
+    version = "0.0.5";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.4.zip";
-
-      hash = "sha256-HehMBKPGA+NY1oFnCkWzOKFGE6z/+yIEm9IOBJ4YPog=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
-  wordpress-plugin-wp-social-ninja = pkgs.stdenv.mkDerivation rec {
-    name = "wp-social-ninja";
-    version = "3.13.0";
-    src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/wp-social-reviews.3.13.0.zip";
-      hash = "sha256-VF6gdLEkWpF+NZP9aC+R6V3lVT0WHr5yPJIpq+J8JHQ=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
-
-  wordpress-plugin-wp-social-ninja-pro = pkgs.stdenv.mkDerivation rec {
-    name = "wp-social-ninja-pro";
-    version = "3.13.0";
-    src = pkgs.fetchzip {
-      url = "http://www.papalpenguin.com/wp-content/uploads/2024/03/wp-social-ninja-pro-3.13.0.zip";
-      hash = "sha256-3jnIz4NypxaWFfvqsdFPHYraxRBQhM1BNjyRQrZ7k0o=";
+      url = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.5.zip";
+      hash = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.5.zip";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
