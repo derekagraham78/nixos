@@ -157,7 +157,7 @@ in {
         "papalpenguin.com".themes = {
           inherit wordpress-theme-responsive;
         };
-        "papalpenguin.com".package = "pkgs.wordpress6_5";
+        "papalpenguin.com".package = "wordpress6_5";
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
