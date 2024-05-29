@@ -10,7 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./mysql.nix
+    #    ./mysql.nix
     #    ./wordpress.nix
     ./vscode.nix
   ];
