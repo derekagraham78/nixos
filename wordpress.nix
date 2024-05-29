@@ -24,8 +24,8 @@
     name = "jetpack-social";
     version = "4.2.0";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/jetpack-social.4.2.0.zip";
-      hash = "sha256-hwlx421pCTfBdQyCPW0hrsFVLuQahpOkEL7/V0S0/AA=";
+      url = "https://downloads.wordpress.org/plugin/jetpack-social.4.3.0.zip";
+      hash = "sha256-Nw8m5q5cX4W35JUxuOXexVUWYcPuS1xUuFDSCycZG3o=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
