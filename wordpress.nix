@@ -171,7 +171,7 @@ in {
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
-          inherit wordpress-plugin-cache-enabler;;
+          inherit wordpress-plugin-cache-enabler;
           inherit wordpress-plugin-jetpack;
           inherit wordpress-plugin-jetpack-social;
           inherit wordpress-plugin-jetpack-search;
