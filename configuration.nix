@@ -122,7 +122,7 @@
       defaultSSLListenPort = 443;
       virtualHosts."papalpenguin.com" = {
         enableACME = true;
-        root = "/var/www/papalpenguin.com";
+        root = libmkDefault "/var/www/papalpenguin.com";
         forceSSL = true;
         serverAliases = ["www.papalpenguin.com"];
       };
@@ -243,6 +243,7 @@
     noto-fonts-emoji
     liberation_ttf
     fira-code
+    w
     nginx
     fira-code-symbols
     mplus-outline-fonts.githubRelease
