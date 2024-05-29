@@ -122,6 +122,7 @@
       defaultSSLListenPort = 443;
       virtualHosts."papalpenguin.com" = {
         enableACME = true;
+        root = "/var/www/papalpenguin.com";
         forceSSL = true;
         serverAliases = ["www.papalpenguin.com"];
       };
