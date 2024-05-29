@@ -11,6 +11,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-plugin-sg-cachepress = pkgs.stdenv.mkDerivation rec {
+    name = "sg-cachepress";
+    version = "7.6.0";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/sg-cachepress.7.6.0.zip";
+      hash = "sha256-10yCnsCuHkwET/SYIgdBTkWjSJCPw5ww38NhDd7MZJ4=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-plugin-jetpack-protect = pkgs.stdenv.mkDerivation rec {
     name = "jetpack-protect";
     version = "2.2.0";
@@ -162,6 +171,7 @@ in {
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
+          inherit wordpress-plugin-sg-cachepress;
           inherit wordpress-plugin-jetpack;
           inherit wordpress-plugin-jetpack-social;
           inherit wordpress-plugin-jetpack-search;
