@@ -157,7 +157,7 @@ in {
         "papalpenguin.com".themes = {
           inherit wordpress-theme-responsive;
         };
-        "papalpenguin.com".package = "wordpress6_5";
+        "papalpenguin.com".package = wordpress6_5;
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
@@ -173,7 +173,7 @@ in {
           inherit wordpress-plugin-wpforms-lite;
           inherit wordpress-plugin-wp-user-manager;
         };
-        "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
+        "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin";
         "papalpenguin.com".virtualHost.enableACME = true;
         "papalpenguin.com" = {};
         "papalpenguin.com".virtualHost.listen = [
