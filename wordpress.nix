@@ -11,12 +11,12 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-  wordpress-plugin-wp-super-cache = pkgs.stdenv.mkDerivation rec {
-    name = "wp-super-cache";
-    version = "1.12.1";
+  wordpress-plugin-cache-enabler = pkgs.stdenv.mkDerivation rec {
+    name = "cache-enabler";
+    version = "1.8.15";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/wp-super-cache.1.12.1.zip";
-      hash = "sha256-4ul50NlkOKrhABuac8Yk7EKlITaDdgaIjwtIDrU6gvU=";
+      url = "https://downloads.wordpress.org/plugin/cache-enabler.1.8.15.zip";
+      hash = "sha256-jI8vJg6GIpk6bE0qzDXQAdW7OHs2dEGXxfS7kMMYzMk=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -171,7 +171,7 @@ in {
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
-          inherit wordpress-plugin-wp-super-cache;
+          inherit wordpress-plugin-cache-enabler;;
           inherit wordpress-plugin-jetpack;
           inherit wordpress-plugin-jetpack-social;
           inherit wordpress-plugin-jetpack-search;
