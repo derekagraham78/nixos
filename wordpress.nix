@@ -176,8 +176,8 @@ in {
         "papalpenguin.com".virtualHost.documentRoot = "/var/www/papalpenguin.com";
         "papalpenguin.com".virtualHost.servedDirs = [
 { dir = "/var/www/papalpenguin.com";
-} 
-]
+}; 
+];
         "papalpenguin.com".virtualHost.enableACME = true;
         "papalpenguin.com" = {};
         "papalpenguin.com".virtualHost.listen = [
