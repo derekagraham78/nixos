@@ -82,7 +82,7 @@
         enable = true;
         user = "dgraham";
       };
-#    };
+    };
     cockpit = {
       enable = true;
       port = 9090;
@@ -132,7 +132,7 @@
           gzip_proxied expired no-cache no-store private no_last_modified no_etag auth;
           gzip_types application/atom+xml application/javascript application/json application/ld+json application/manifest+json a>
         '';
-      };
+#      };
     };
     phpfpm.pools.mypool = {
       user = "nobody";
