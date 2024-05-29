@@ -155,9 +155,7 @@ in {
     wordpress = {
       sites = {
         "papalpenguin.com".themes = {
-          inherit wordpress-theme-ollie;
           inherit wordpress-theme-responsive;
-          inherit wordpress-theme-astra;
         };
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
