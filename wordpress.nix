@@ -167,8 +167,6 @@ in {
           inherit wordpress-plugin-jetpack-search;
           inherit wordpress-plugin-jetpack-protect;
           inherit wordpress-plugin-jetpack-boost;
-          inherit wordpress-plugin-wp-social-ninja;
-          inherit wordpress-plugin-wp-social-ninja-pro;
           inherit wordpress-plugin-include-mastodon-feed;
           inherit wordpress-plugin-social-feed-for-threads;
           inherit wordpress-plugin-mailpoet;
