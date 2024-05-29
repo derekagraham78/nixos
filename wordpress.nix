@@ -22,7 +22,7 @@
   };
   wordpress-plugin-jetpack-social = pkgs.stdenv.mkDerivation rec {
     name = "jetpack-social";
-    version = "4.2.0";
+    version = "4.3.0";
     src = pkgs.fetchzip {
       url = "https://downloads.wordpress.org/plugin/jetpack-social.4.3.0.zip";
       hash = "sha256-Nw8m5q5cX4W35JUxuOXexVUWYcPuS1xUuFDSCycZG3o=";
@@ -157,6 +157,7 @@ in {
         "papalpenguin.com".themes = {
           inherit wordpress-theme-responsive;
         };
+        "papalpenguin.com".package = wordpress6_5;
         "papalpenguin.com".plugins = {
           inherit wordpress-plugin-safe-redirect-manager;
           inherit wordpress-plugin-akismet;
