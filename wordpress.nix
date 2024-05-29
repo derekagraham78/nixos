@@ -109,7 +109,7 @@
     version = "0.0.5";
     src = pkgs.fetchzip {
       url = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.5.zip";
-      hash = "https://downloads.wordpress.org/plugin/better-social-feeds.0.0.5.zip";
+      hash = "sha256-oEEKjHpjjo8B8OZv5ClqCjrsYuK/ULnCV5eJh+i0o0U=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
