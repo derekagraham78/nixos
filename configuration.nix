@@ -63,6 +63,7 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    memcached.enable = true;
     avahi = {
       enable = true;
       nssmdns4 = true;
