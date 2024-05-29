@@ -11,15 +11,6 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
-  wordpress-plugin-cache-enabler = pkgs.stdenv.mkDerivation rec {
-    name = "cache-enabler";
-    version = "1.8.15";
-    src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/cache-enabler.1.8.15.zip";
-      hash = "sha256-jI8vJg6GIpk6bE0qzDXQAdW7OHs2dEGXxfS7kMMYzMk=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  };
   wordpress-plugin-jetpack-protect = pkgs.stdenv.mkDerivation rec {
     name = "jetpack-protect";
     version = "2.2.0";
