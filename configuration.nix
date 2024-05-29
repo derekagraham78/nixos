@@ -124,15 +124,7 @@
         enableACME = true;
         forceSSL = true;
         serverAliases = ["www.papalpenguin.com"];
-        extraConfig = ''
-          gzip on;
-          gzip_vary on;
-          gzip_comp_level 4;
-          gzip_min_length 256;
-          gzip_proxied expired no-cache no-store private no_last_modified no_etag auth;
-          gzip_types application/atom+xml application/javascript application/json application/ld+json application/manifest+json a>
-        '';
-#      };
+      };
     };
     phpfpm.pools.mypool = {
       user = "nobody";
