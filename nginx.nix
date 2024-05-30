@@ -3,21 +3,21 @@
   lib,
   ...
 }: {
-  services.nginx = {
-    enable = true;
-    defaultListen = [{addr = "0.0.0.0";}];
-    defaultSSLListenPort = 443;
-    virtualHosts."papalpenguin.com" = {
-      enableACME = true;
-      #      root = lib.mkDefault "/var/www/papalpenguin.com";
-      locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-         fastcgi_index index.php;
-      '';
-      forceSSL = false;
-      serverAliases = ["www.papalpenguin.com"];
-    };
-  };
+  #  services.nginx = {
+  #    enable = true;
+  #    defaultListen = [{addr = "0.0.0.0";}];
+  #    defaultSSLListenPort = 443;
+  #    virtualHosts."papalpenguin.com" = {
+  #      enableACME = true;
+  #      #      root = lib.mkDefault "/var/www/papalpenguin.com";
+  #      locations."~ \\.php$".extraConfig = ''
+  #        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+  #         fastcgi_index index.php;
+  #      '';
+  #      forceSSL = false;
+  #      serverAliases = ["www.papalpenguin.com"];
+  #    };
+  #  };
   services.phpfpm.pools.mypool = {
     user = "nobody";
     settings = {
