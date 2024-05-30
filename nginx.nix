@@ -29,7 +29,7 @@
     user = "nobody";
     settings = {
       "pm" = "dynamic";
-      "listen.owner" = caddy;
+      "listen.owner" = "caddy";
       "pm.max_children" = 5;
       "pm.start_servers" = 2;
       "pm.min_spare_servers" = 1;
