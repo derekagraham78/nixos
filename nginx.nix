@@ -8,8 +8,8 @@
     recommendedOptimisation = true;
     defaultListen = [
       {
-        ADDR = "0.0.0.0";
-        SSL = true;
+        addr = "0.0.0.0";
+        ssl = true;
         port = 443;
       }
       {
