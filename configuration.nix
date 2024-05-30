@@ -68,7 +68,7 @@
       enable = true;
       writeEnable = true;
       localUsers = true;
-      userlist = ["dgraham" "root"];
+      userlist = ["dgraham" "root" "nginx"];
       userlistEnable = true;
       virtualUseLocalPrivs = true;
     };
