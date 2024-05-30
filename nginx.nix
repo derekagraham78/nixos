@@ -15,7 +15,7 @@
       fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
       fastcgi_index index.php;
       '';
-    };
+    }
       forceSSL = true;
       serverAliases = ["www.papalpenguin.com"];
     };
