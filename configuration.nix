@@ -64,6 +64,11 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    vsftp = {
+      enable = true;
+      userlist = [dgraham root];
+      userlistEnable = true;
+    };
     memcached.enable = true;
     avahi = {
       enable = true;
