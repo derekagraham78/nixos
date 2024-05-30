@@ -70,6 +70,7 @@
       localUsers = true;
       userlist = ["dgraham" "root"];
       userlistEnable = true;
+      virtualUseLocalPrivs = true;
     };
     memcached.enable = true;
     avahi = {
