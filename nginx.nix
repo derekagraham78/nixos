@@ -1,17 +1,28 @@
 {config, ...}: {
-  services.nginx = {
+  #  services.nginx = {
+  #    enable = true;
+  #    defaultListen = [{addr = "0.0.0.0";}];
+  #    defaultSSLListenPort = 443;
+  #    virtualHosts."papalpenguin.com" = {
+  #      enableACME = true;
+  #      root = "/var/www/papalpenguin.com";
+  #      locations."~ \\.php$".extraConfig = ''
+  #        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+  #         fastcgi_index index.php;
+  #      '';
+  #      forceSSL = false;
+  #      serverAliases = ["www.papalpenguin.com"];
+  #    };
+  #  };
+  services.caddy = {
     enable = true;
-    defaultListen = [{addr = "0.0.0.0";}];
-    defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
-      enableACME = true;
-      root = "/var/www/papalpenguin.com";
-      locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-         fastcgi_index index.php;
-      '';
-      forceSSL = false;
       serverAliases = ["www.papalpenguin.com"];
+      extraConfig = ''
+        root    * /var/www/papalpenguin.com
+        file_server
+        php_fastcgi unix/var/run/phpfpm/localhost.sock
+      '';
     };
   };
   services.phpfpm.pools.mypool = {
