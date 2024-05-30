@@ -64,8 +64,16 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
-    atftpd = {
-      enable = true;
+    vsftpd = {
+        enable = true;
+	writeEnable = true;
+	localUsers = true;
+	userlist = [ "dgraham" "root" ];
+	userlistEnable = true;
+	extraConfig = ''
+		pasv_enable=Yes
+		pasv_min_port=21
+		pasv_max_port=22
     };
     memcached.enable = true;
     avahi = {
