@@ -12,9 +12,9 @@
       enableACME = true;
       root = lib.mkDefault "/var/www/papalpenguin.com";
       locations."~ \\.php$".extraConfig = ''
-        #        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        #         fastcgi_index index.php;
-        #      '';
+        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+         fastcgi_index index.php;
+      '';
       forceSSL = false;
       serverAliases = ["www.papalpenguin.com"];
     };
