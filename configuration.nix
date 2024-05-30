@@ -10,10 +10,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    #./mysql.nix
-    #./wordpress.nix
+    ./mysql.nix
     ./vscode.nix
-    #./nginx.nix
+    ./nginx.nix
   ];
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
