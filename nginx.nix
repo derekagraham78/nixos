@@ -17,7 +17,7 @@
             rewrite ^ /index.php;
           '';
         };
-{ /var/www/papalpenguin.com = { autoindex on; } };
+locations = { /var/www/papalpenguin.com = { autoindex on; } };
         "~ \.php$" = {
           extraConfig = ''
             try_files $uri =404;
