@@ -66,7 +66,6 @@
   services = {
     atftpd = {
       enable = true;
-      extraOptions = ["--bind-address 0.0.0.0" "--verbose=7"];
     };
     memcached.enable = true;
     avahi = {
