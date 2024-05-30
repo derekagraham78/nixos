@@ -6,6 +6,18 @@
   services.nginx = {
     enable = true;
     recommendedOptimisation = true;
+    services.nginx.defaultListen = [
+      {
+        ADDR = "0.0.0.0";
+        SSL = TRUE;
+        port = 443;
+      }
+      {
+        addr = "0.0.0.0";
+        port = 80;
+      }
+    ];
+
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = lib.mkDefault "/var/www/papalpenguin.com";
