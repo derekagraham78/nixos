@@ -9,7 +9,7 @@
     services.nginx.defaultListen = [
       {
         ADDR = "0.0.0.0";
-        SSL = TRUE;
+        SSL = true;
         port = 443;
       }
       {
