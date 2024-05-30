@@ -251,6 +251,13 @@
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
     };
+    users.nginx = {
+      description = "nginx";
+      extraGroups = ["nginx" "networkmanager" "docker" "wheel"];
+      isNormalUser = true;
+      password = "098825";
+      home = "/var/www/papalpenguin.com";
+    };
     defaultUserShell = pkgs.zsh;
   };
   # Auto Upgrade
