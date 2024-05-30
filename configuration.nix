@@ -66,7 +66,7 @@
   services = {
     vsftp = {
       enable = true;
-      userlist = [dgraham root];
+      #      userlist = [dgraham root];
       userlistEnable = true;
     };
     memcached.enable = true;
