@@ -71,6 +71,7 @@
       userlist = ["dgraham" "root" "nginx"];
       userlistEnable = true;
       virtualUseLocalPrivs = true;
+      serviceConfig.ReadWritePaths = ["/var/www/papalpenguin.com"];
     };
     memcached.enable = true;
     avahi = {
