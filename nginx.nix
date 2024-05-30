@@ -6,7 +6,6 @@
   services.nginx = {
     enable = true;
     recommendedOptimisation = true;
-    serviceConfig.ReadWritePaths = ["/var/www/papalpenguin.com/"];
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
