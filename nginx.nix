@@ -5,7 +5,7 @@
 }: {
   services.nginx = {
     enable = true;
-    recommendedOptmisation = true;
+    recommendedOptimisation = true;
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
