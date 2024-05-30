@@ -6,11 +6,20 @@
   services.nginx = {
     enable = true;
     recommendedOptimisation = true;
-    defaultListen = [{addr = "0.0.0.0";}];
-    defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = lib.mkDefault "/var/www/papalpenguin.com";
+      listen = [
+         { 
+	   addr = "208.59.78.209";
+  	   port = 443;
+	   ssl = true;
+         }
+	 {
+	   addr = "208.59.78.209";
+	   port = 80;
+	 }
+]
       locations."~ \\.php$".extraConfig = ''
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
          fastcgi_index index.php;
