@@ -65,9 +65,8 @@
   # Printer
   services = {
     sftpgo = {
-	enable = true;
-	settings.ftpd.bindings.*.port = 21;
-	};
+      enable = true;
+    };
     memcached.enable = true;
     avahi = {
       enable = true;
