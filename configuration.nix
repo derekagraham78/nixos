@@ -65,15 +65,11 @@
   # Printer
   services = {
     vsftpd = {
-        enable = true;
-	writeEnable = true;
-	localUsers = true;
-	userlist = [ "dgraham" "root" ];
-	userlistEnable = true;
-	extraConfig = ''
-		pasv_enable=Yes
-		pasv_min_port=21
-		pasv_max_port=22
+      enable = true;
+      writeEnable = true;
+      localUsers = true;
+      userlist = ["dgraham" "root"];
+      userlistEnable = true;
     };
     memcached.enable = true;
     avahi = {
