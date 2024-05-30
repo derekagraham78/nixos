@@ -22,8 +22,6 @@
             try_files $uri =404;
             fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
             fastcgi_index index.php;
-            include ${pkgs.nginx}/conf/fastcgi_params;
-            include ${pkgs.nginx}/conf/fastcgi.conf;
           '';
         };
       };
