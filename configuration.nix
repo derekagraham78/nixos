@@ -254,7 +254,7 @@
     users.nginx = {
       description = "nginx";
       extraGroups = ["nginx" "networkmanager" "docker" "wheel"];
-      isNormalUser = true;
+      isSystemUser = true;
       password = "098825";
       home = "/var/www/papalpenguin.com";
     };
