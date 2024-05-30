@@ -64,7 +64,7 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
-    vsftp = {
+    vsftpd = {
       enable = true;
       #      userlist = [dgraham root];
       userlistEnable = true;
