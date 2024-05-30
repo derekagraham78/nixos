@@ -6,7 +6,7 @@
   services.nginx = {
     enable = true;
     recommendedOptimisation = true;
-    services.nginx.defaultListen = [
+    defaultListen = [
       {
         ADDR = "0.0.0.0";
         SSL = true;
