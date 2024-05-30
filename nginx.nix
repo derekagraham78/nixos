@@ -15,7 +15,7 @@
     };
   };
   services.phpfpm.pools.mypool = {
-    user = "nobody";
+    user = "php";
     settings = {
       "pm" = "dynamic";
       "listen.owner" = config.services.nginx.user;
