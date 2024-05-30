@@ -13,6 +13,7 @@
     ./mysql.nix
     #    ./wordpress.nix
     ./vscode.nix
+    ./nginx.nix
   ];
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
