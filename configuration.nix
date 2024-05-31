@@ -302,7 +302,12 @@
     })
     php82Extensions.imagick
     php82Extensions.memcache
-
+    php.withExtensions
+    ({
+      enabled,
+      all,
+    }:
+      enabled ++ [all.imagick])
     filezilla
     microsoft-edge
     altserver-linux
