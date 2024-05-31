@@ -16,19 +16,20 @@
       locations."~ \\.php$".extraConfig = ''
         location "~ \\.php$"  { "autoindex on" };
 
-          fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-          fastcgi_index index.php;
+            fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+            fastcgi_index index.php;
       '';
       forceSSL = true;
-#      locations = {
-#        "= /" = {
-#          index = "index.php";
-#          extraConfig = ''
-#            rewrite ^ /index.php;
-#          '';
-#        };
-#      };
+      #      locations = {
+      #        "= /" = {
+      #          index = "index.php";
+      #          extraConfig = ''
+      #            rewrite ^ /index.php;
+      #          '';
+      #        };
+      #      };
       serverAliases = ["www.papalpenguin.com"];
+    };
   };
   services.phpfpm.pools.mypool = {
     user = "nginx";
@@ -42,3 +43,4 @@
       "pm.max_requests" = 500;
     };
   };
+}
