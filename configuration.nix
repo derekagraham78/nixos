@@ -281,17 +281,26 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-(pkgs.php82.buildEnv {
-      extensions = ({enabled, all}: enabled ++ (with all; [
-        apcu
-        bcmath
-        gmp
-        imagick
-        opcache
-        pdo
-        pdo_pgsql
-        memcached
-      ]));
+    (pkgs.php82.buildEnv {
+      extensions = {
+        enabled,
+        all,
+      }:
+        enabled
+        ++ (with all; [
+          apcu
+          bcmath
+          gmp
+          imagick
+          opcache
+          pdo
+          pdo_pgsql
+          memcached
+        ]);
+      extraConfig = ''
+        apc.enable_cli = 1
+      '';
+    })
     filezilla
     microsoft-edge
     altserver-linux
