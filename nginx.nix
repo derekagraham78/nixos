@@ -12,8 +12,9 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
+      locations." / " = "autoindex on";
       locations."~ \\.php$".index = "index.php";
-      locations."~ \\.php$".extraConfig = "autoindex on"; ''
+      locations."~ \\.php$".extraConfig = ''
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_index index.php;
       '';
@@ -21,7 +22,7 @@
       locations = {
         "= /" = {
           index = "index.php";
-          extraConfig = "autoindex on";
+          extraConfig = ''
             rewrite ^ /index.php;
           '';
         };
