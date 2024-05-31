@@ -6,7 +6,7 @@
   services.nginx = {
     enable = true;
     recommendedOptimisation = true;
-    logError =[ "syslog" "error" ]
+    logError = ["syslog" "error"];
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
