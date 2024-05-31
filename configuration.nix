@@ -291,11 +291,12 @@
           apcu
           bcmath
           gmp
-          imagick
+          php82Extensions.imagick
+          php82Extensions.memcache
+
           opcache
           pdo
           pdo_pgsql
-          memcached
         ]);
       extraConfig = ''
         apc.enable_cli = 1
