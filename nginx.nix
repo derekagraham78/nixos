@@ -32,17 +32,22 @@
   };
   services.phpfpm.pools.mypool = {
     user = "nginx";
-phpPackage = pkgs.php83.buildEnv {
-      extensions = {enabled, all}: enabled ++ (with all; [
-        apcu
-        bcmath
-        gmp
-        imagick
-        opcache
-        pdo
-        pdo_pgsql
-        memcache
-      ]);
+    phpPackage = pkgs.php83.buildEnv {
+      extensions = {
+        enabled,
+        all,
+      }:
+        enabled
+        ++ (with all; [
+          apcu
+          bcmath
+          gmp
+          imagick
+          opcache
+          pdo
+          pdo_pgsql
+          memcache
+        ]);
       extraConfig = ''
         output_buffering = off
         memory_limit = 1G
@@ -53,6 +58,7 @@ phpPackage = pkgs.php83.buildEnv {
         opcache.validate_timestamps=0
         opcache.enable_cli=1
       '';
+    };
     settings = {
       "pm" = "dynamic";
       "listen.owner" = config.services.nginx.user;
