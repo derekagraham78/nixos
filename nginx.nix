@@ -12,11 +12,12 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
-      location /  { "autoindex on" };
       locations."~ \\.php$".index = "index.php";
       locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        fastcgi_index index.php;
+        location /  { "autoindex on" };
+
+          fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+          fastcgi_index index.php;
       '';
       forceSSL = true;
       locations = {
