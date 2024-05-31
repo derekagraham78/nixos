@@ -18,13 +18,10 @@
             fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
             fastcgi_index index.php;
       forceSSL = true;
-      locations = {
-        "= /" = {
-          extraConfig = ''
+      locations."= /".extraConfig = ''
             rewrite ^ /index.php;
           '';
         };
-      };
       serverAliases = ["www.papalpenguin.com"];
     };
   };
