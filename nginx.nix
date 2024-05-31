@@ -10,22 +10,21 @@
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
-        enableACME = true;
-        root = "/var/www/papalpenguin.com";
-        locations."~ \\.php$".index = "index.php";
-        locations."~ \\.php$".extraConfig = ''
-            autoindex on;
-            fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-            fastcgi_index index.php;
-        '';
-        forceSSL = true;
-        locations."= /".extraConfig = ''
-             autoindex on;
-             rewrite ^ /index.php;
-          '';
-        };
-      serverAliases = ["www.papalpenguin.com"];
+      enableACME = true;
+      root = "/var/www/papalpenguin.com";
+      locations."~ \\.php$".index = "index.php";
+      locations."~ \\.php$".extraConfig = ''
+        autoindex on;
+        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        fastcgi_index index.php;
+      '';
+      forceSSL = true;
+      locations."= /".extraConfig = ''
+        autoindex on;
+        rewrite ^ /index.php;
+      '';
     };
+    serverAliases = ["www.papalpenguin.com"];
   };
   services.phpfpm.pools.mypool = {
     user = "nginx";
