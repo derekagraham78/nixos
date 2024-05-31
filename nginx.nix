@@ -17,9 +17,10 @@
             rewrite ^ /index.php;
           '';
         };
-
-      serverAliases = ["www.papalpenguin.com"];
+      };
     };
+    serverAliases = ["www.papalpenguin.com"];
+  };
   services.phpfpm.pools.mypool = {
     user = "nobody";
     settings = {
