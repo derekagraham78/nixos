@@ -20,7 +20,6 @@
       forceSSL = true;
       locations = {
         "= /" = {
-          index = "index.php";
           extraConfig = ''
             rewrite ^ /index.php;
           '';
