@@ -12,8 +12,8 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
-      locations."~ \\.php$".index = "index.php";
-      locations."~ \\.php$".extraConfig = ''
+#      locations."~ \\.php$".index = "index.php";
+#      locations."~ \\.php$".extraConfig = ''
         location /  { "autoindex on" };
 
           fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
