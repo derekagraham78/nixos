@@ -281,7 +281,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    php83Extensions.imagick
+    php82Extensions.imagick
     filezilla
     idevicerestore
     microsoft-edge
