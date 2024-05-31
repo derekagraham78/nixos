@@ -11,18 +11,17 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
-
       locations."~ \\.php$".extraConfig = ''
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_index index.php;
       '';
-    };
-    forceSSL = true;
-    locations = {
-      "= /" = {
-        extraConfig = ''
-          rewrite ^ /index.php;
-        '';
+      forceSSL = true;
+      locations = {
+        "= /" = {
+          extraConfig = ''
+            rewrite ^ /index.php;
+          '';
+        };
       };
     };
     serverAliases = ["www.papalpenguin.com"];
