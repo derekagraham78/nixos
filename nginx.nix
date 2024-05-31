@@ -21,7 +21,7 @@
       locations = {
         "= /" = {
           index = "index.php";
-          extraConfig = "autoindex on""
+          extraConfig = "autoindex on"
             rewrite ^ /index.php;
           '';
         };
