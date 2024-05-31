@@ -293,7 +293,6 @@
         memcached
       ]));
     filezilla
-    idevicerestore
     microsoft-edge
     altserver-linux
     element-desktop
