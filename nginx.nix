@@ -18,7 +18,7 @@
           '';
         };
 
-locations = { "/var/www/papalpenguin.com" autoindex on; } }; "~ \.php$" = { location ~* \.(xml|xsl)$ { add_header Cache-Control "no-cache, 
+location ~* \.(xml|xsl)$ { add_header Cache-Control "no-cache, 
     no-store, must-revalidate, max-age=0"; expires -1; } extraConfig = ''
 location /robots.txt { add_header Cache-Control "no-cache, no-store, must-revalidate, max-age=0"; expires -1; } try_files $uri =404; 
             fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket}; fastcgi_index index.php;
