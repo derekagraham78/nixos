@@ -291,8 +291,6 @@
           apcu
           bcmath
           gmp
-          php82Extensions.imagick
-          php82Extensions.memcache
 
           opcache
           pdo
@@ -302,6 +300,9 @@
         apc.enable_cli = 1
       '';
     })
+    php82Extensions.imagick
+    php82Extensions.memcache
+
     filezilla
     microsoft-edge
     altserver-linux
