@@ -43,4 +43,3 @@
       "pm.max_requests" = 500;
     };
   };
-}
