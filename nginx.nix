@@ -23,6 +23,10 @@
         autoindex on;
         rewrite ^ /index.php;
       '';
+      locations."/".index = "index.php";
+      locations."/".extraConfig = ''
+        autoindex on;
+      ''
       serverAliases = ["www.papalpenguin.com"];
     };
   };
