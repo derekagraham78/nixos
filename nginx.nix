@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -32,7 +33,7 @@
   };
   services.phpfpm.pools.mypool = {
     user = "nginx";
-    phpPackage = pkgs.php83.buildEnv {
+    phpPackage = pkgs.php82.buildEnv {
       extensions = {
         enabled,
         all,
