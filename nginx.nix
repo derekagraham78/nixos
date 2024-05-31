@@ -20,16 +20,15 @@
           fastcgi_index index.php;
       '';
       forceSSL = true;
-      locations = {
-        "= /" = {
-          index = "index.php";
-          extraConfig = ''
-            rewrite ^ /index.php;
-          '';
-        };
-      };
+#      locations = {
+#        "= /" = {
+#          index = "index.php";
+#          extraConfig = ''
+#            rewrite ^ /index.php;
+#          '';
+#        };
+#      };
       serverAliases = ["www.papalpenguin.com"];
-    };
   };
   services.phpfpm.pools.mypool = {
     user = "nginx";
