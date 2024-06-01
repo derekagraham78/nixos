@@ -22,15 +22,11 @@
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_index index.php;
       '';
-      #      locations."/".index = "index.php";
-      #      locations."/".extraConfig = ''
-      #        autoindex on;
-      #        try_files $uri =404;
-      #        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-      #        fastcgi_split_path_info ^(.+\.php)(.*)$;
-      #        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-      #        fastcgi_index index.php;
-      #      '';
+      locations."/".index = "index.php";
+      locations."/".extraConfig = ''
+                autoindex on;
+                try_files $uri =404;
+        #      '';
       serverAliases = ["www.papalpenguin.com"];
     };
   };
