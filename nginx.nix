@@ -30,13 +30,10 @@
       serverAliases = ["www.papalpenguin.com"];
     };
   };
-  services.phpfpm = { 
-phpOptions = ''
-  upload_max_filesize = 128M;
-''
-
-pools.mypool = {
+  services.phpfpm.pools.mypool = { 
     user = "nginx";
+    phpOptions =   upload_max_filesize = 128M;
+
     phpPackage = pkgs.php82.buildEnv {
       extensions = {
         enabled,
@@ -60,6 +57,7 @@ pools.mypool = {
         opcache.memory_consumption=256
         opcache.interned_strings_buffer=64
         opcache.max_accelerated_files=32531
+
         opcache.validate_timestamps=0
         opcache.enable_cli=1
       '';
@@ -74,5 +72,4 @@ pools.mypool = {
       "pm.max_requests" = 500;
     };
   };
-};
 }
