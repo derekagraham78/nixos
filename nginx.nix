@@ -32,9 +32,6 @@
   };
   services.phpfpm.pools.mypool = { 
     user = "nginx";
-    phpOptions = ''
-       upload_max_filesize = 128M;
-  ''
     phpPackage = pkgs.php82.buildEnv {
       extensions = {
         enabled,
@@ -63,6 +60,10 @@
         opcache.enable_cli=1
       '';
     };
+    phpOptions = ''
+       upload_max_filesize = 128M;
+  ''
+
     settings = {
       "pm" = "dynamic";
       "listen.owner" = config.services.nginx.user;
