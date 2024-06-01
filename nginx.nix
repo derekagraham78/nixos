@@ -22,10 +22,13 @@
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_index index.php;
       '';
+      locations."= /".extraConfig = ''
+        autoindex on;
+        rewrite ^ /index.php;
+      '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
                 autoindex on;
-                try_files $uri =404;
         #      '';
       serverAliases = ["www.papalpenguin.com"];
     };
