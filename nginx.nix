@@ -31,6 +31,9 @@
     };
   };
   services.phpfpm.pools.mypool = { 
+   #x phpOptions = ''
+     # '';
+
     user = "nginx";
     phpPackage = pkgs.php82.buildEnv {
       extensions = {
@@ -41,6 +44,7 @@
         ++ (with all; [
           apcu
           bcmath
+          zlib
           gmp
           imagick
           opcache
@@ -55,13 +59,11 @@
         opcache.memory_consumption=256
         opcache.interned_strings_buffer=64
         opcache.max_accelerated_files=32531
-
+        upload_max_filesize = 128M;
+ 
         opcache.validate_timestamps=0
         opcache.enable_cli=1
-      '';
     };
-    phpOptions = ''
-       upload_max_filesize = 128M;
   ''
 
     settings = {
