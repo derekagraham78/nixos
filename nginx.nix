@@ -12,20 +12,7 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
-      locations."~ \\.php$".index = "index.php";
-      locations."~ \\.php$".extraConfig = ''
-        autoindex on;
-        try_files $uri =404;
-        fastcgi_index index.php;
-        fastcgi_split_path_info ^(.+\.php)(.*)$;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_index index.php;
-      '';
       forceSSL = true;
-      locations."= /".extraConfig = ''
-        autoindex on;
-        rewrite ^ /index.php;
-      '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
         autoindex on;
