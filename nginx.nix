@@ -6,6 +6,7 @@
 }: {
   services.nginx = {
     enable = true;
+    logError = "stderr debug";
     recommendedOptimisation = true;
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
