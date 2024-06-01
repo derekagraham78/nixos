@@ -13,15 +13,26 @@
       enableACME = true;
       root = "/var/www/papalpenguin.com";
       forceSSL = true;
-      locations."/".index = "index.php";
-      locations."/".extraConfig = ''
+      locations."~ \\.php$".index = "index.php";
+      locations."~ \\.php$".extraConfig = ''
         autoindex on;
         try_files $uri =404;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_split_path_info ^(.+\.php)(.*)$;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_index index.php;
       '';
+      #      locations."/".index = "index.php";
+      #      locations."/".extraConfig = ''
+      #        autoindex on;
+      #        try_files $uri =404;
+      #        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+      #        fastcgi_split_path_info ^(.+\.php)(.*)$;
+      #        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      #        fastcgi_index index.php;
+      #      '';
       serverAliases = ["www.papalpenguin.com"];
     };
   };
