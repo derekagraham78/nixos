@@ -62,8 +62,7 @@
         upload_max_filesize = 128M;
         opcache.validate_timestamps=0
         opcache.enable_cli=1
-  ''
-
+  '';
     settings = {
       "pm" = "dynamic";
       "listen.owner" = config.services.nginx.user;
