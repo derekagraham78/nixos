@@ -63,8 +63,8 @@
  
         opcache.validate_timestamps=0
         opcache.enable_cli=1
-    };
   ''
+    };
 
     settings = {
       "pm" = "dynamic";
