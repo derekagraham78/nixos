@@ -60,11 +60,9 @@
         opcache.interned_strings_buffer=64
         opcache.max_accelerated_files=32531
         upload_max_filesize = 128M;
- 
         opcache.validate_timestamps=0
         opcache.enable_cli=1
   ''
-    };
 
     settings = {
       "pm" = "dynamic";
