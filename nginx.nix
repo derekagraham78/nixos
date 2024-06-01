@@ -30,7 +30,12 @@
       serverAliases = ["www.papalpenguin.com"];
     };
   };
-  services.phpfpm.pools.mypool = {
+  services.phpfpm = { 
+phpOptions = ''
+  upload_max_filesize = 128M;
+''
+
+pools.mypool = {
     user = "nginx";
     phpPackage = pkgs.php82.buildEnv {
       extensions = {
@@ -69,4 +74,5 @@
       "pm.max_requests" = 500;
     };
   };
+};
 }
