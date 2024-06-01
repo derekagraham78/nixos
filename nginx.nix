@@ -72,5 +72,4 @@
       "pm.max_spare_servers" = 3;
       "pm.max_requests" = 500;
     };
-  };
 }
