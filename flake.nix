@@ -8,7 +8,7 @@
   outputs = {
     nixpkgs,
     ...
-  }: 
+  }: {
     nixosConfigurations = {
       "Mulder.papalpenguin.com" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
