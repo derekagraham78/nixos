@@ -46,11 +46,17 @@
           apcu
           bcmath
           zlib
+          iconv
+          mbstring
+          zip
+          curl
+          exif
           gmp
           imagick
           opcache
           pdo
           pdo_pgsql
+          redis
           memcache
         ]);
       extraConfig = ''
