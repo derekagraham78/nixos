@@ -7,7 +7,6 @@
   };
   outputs = {
     nixpkgs,
-    home-manager,
     ...
   }: {
     nixosConfigurations = {
@@ -17,5 +16,4 @@
           ./configuration.nix
         ];
       };
- };
 }
