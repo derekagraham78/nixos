@@ -5,10 +5,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # The nixpkgs entry in the flake registry.
   };
-  outputs = {
-    nixpkgs,
-    ...
-  }: {
+  outputs = {nixpkgs, ...}: {
     nixosConfigurations = {
       "Mulder.papalpenguin.com" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -16,5 +13,6 @@
           ./configuration.nix
         ];
       };
-};
-}	
+    };
+  };
+}
