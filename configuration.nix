@@ -63,10 +63,15 @@
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
-  services = {
-    vsftpd = {
+  programs.git = {
+    services = {
       enable = true;
-      writeEnable = true;
+      vsftpd = {
+        userName = "derekagraham78";
+        enable = true;
+        userEmail = "derekagraham78@icloud.com";
+        writeEnable = true;
+      };
       localUsers = true;
       userlist = ["dgraham" "root" "nginx"];
       userlistEnable = true;
