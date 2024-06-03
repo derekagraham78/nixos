@@ -7,11 +7,6 @@
   services.nginx = {
     enable = true;
     logError = "stderr error";
-    appendHttpConfig = {
-      “location ~* /uploads/.*\.php$ {
-    return 503;
-}”;
-};
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
@@ -20,27 +15,29 @@
     # Only allow PFS-enabled ciphers with AES256
     sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
     appendHttpConfig = ''
-      # Add HSTS header with preloading to HTTPS requests.
-      # Adding this header to HTTP requests is discouraged
-      map $scheme $hsts_header {
-          https   "max-age=31536000; includeSubdomains; preload";
+            # Add HSTS header with preloading to HTTPS requests.
+            # Adding this header to HTTP requests is discouraged
+            map $scheme $hsts_header {
+                https   "max-age=31536000; includeSubdomains; preload";
+            }
+            add_header Strict-Transport-Security $hsts_header;
+
+            # Enable CSP for your services.
+            #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
+      location ~* /uploads/.*\.php$ {
+          return 503;
       }
-      add_header Strict-Transport-Security $hsts_header;
+            # Minimize information leaked to other domains
+            add_header 'Referrer-Policy' 'origin-when-cross-origin';
 
-      # Enable CSP for your services.
-      #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
+            # Disable embedding as a frame
+            add_header X-Frame-Options DENY;
 
-      # Minimize information leaked to other domains
-      add_header 'Referrer-Policy' 'origin-when-cross-origin';
+            # Prevent injection of code in other mime types (XSS Attacks)
+            add_header X-Content-Type-Options nosniff;
 
-      # Disable embedding as a frame
-      add_header X-Frame-Options DENY;
-
-      # Prevent injection of code in other mime types (XSS Attacks)
-      add_header X-Content-Type-Options nosniff;
-
-      # This might create errors
-      proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
+            # This might create errors
+            proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
     '';
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
