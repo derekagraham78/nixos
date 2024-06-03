@@ -7,6 +7,11 @@
   services.nginx = {
     enable = true;
     logError = "stderr error";
+    appendHttpConfig = {
+      “location ~* /uploads/.*\.php$ {
+    return 503;
+}”;
+};
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
