@@ -33,6 +33,11 @@
   };
   # Home Manager
   programs = {
+    git = {
+      enable = true;
+      userName = "derekagraham78";
+      userEmail = "derekagraham78@icloud.com";
+  };
     zsh = {
       enable = true;
       # Your zsh config
@@ -63,9 +68,7 @@
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
-  programs.git = {
-    services = {
-      enable = true;
+     services = {
       vsftpd = {
         userName = "derekagraham78";
         enable = true;
