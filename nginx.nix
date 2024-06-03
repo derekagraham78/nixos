@@ -42,26 +42,27 @@
       enableACME = true;
       root = "/var/www/papalpenguin.com";
       forceSSL = true;
-      locations."~ \\.php$".index = "index.php";
-      locations."~ \\.php$".extraConfig = ''
-        autoindex on;
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        fastcgi_index index.php;
-      '';
+      #      locations."~ \\.php$".index = "index.php";
+      #      locations."~ \\.php$".extraConfig = ''
+      #        autoindex on;
+      #      '';
       locations."~ \.user\.ini$".extraConfig = ''
         deny all;
       '';
       locations."~* /uploads/.*\.php$".extraConfig = ''
         return 503;
       '';
-      locations."= /".extraConfig = ''
-        autoindex on;
-        rewrite ^ /index.php;
-      '';
+      #      locations."= /".extraConfig = ''
+      #        autoindex on;
+      #        rewrite ^ /index.php;
+      #      '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-                autoindex on;
-        #      '';
+                        autoindex on;
+        .               fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        .               fastcgi_index index.php;
+
+      '';
       serverAliases = ["www.papalpenguin.com"];
     };
   };
