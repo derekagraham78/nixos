@@ -6,7 +6,7 @@
 }: {
   services.nginx = {
     enable = true;
-    logError = "stderr error";
+    logError = "stderr debug";
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
