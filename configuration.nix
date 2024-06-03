@@ -71,7 +71,6 @@
   services = {
     vsftpd = {
       enable = true;
-      userEmail = "derekagraham78@icloud.com";
       writeEnable = true;
       localUsers = true;
       userlist = ["dgraham" "root" "nginx"];
