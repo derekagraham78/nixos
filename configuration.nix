@@ -37,7 +37,7 @@
       enable = true;
       userName = "derekagraham78";
       userEmail = "derekagraham78@icloud.com";
-    };
+  };
     zsh = {
       enable = true;
       # Your zsh config
@@ -68,78 +68,77 @@
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
-  services = {
-    vsftpd = {
-      userName = "derekagraham78";
-      enable = true;
-      userEmail = "derekagraham78@icloud.com";
-      writeEnable = true;
+     services = {
+      vsftpd = {
+        userName = "derekagraham78";
+        enable = true;
+        userEmail = "derekagraham78@icloud.com";
+        writeEnable = true;
+        localUsers = true;
+        userlist = ["dgraham" "root" "nginx"];
+        userlistEnable = true;
+        virtualUseLocalPrivs = true;
     };
-    localUsers = true;
-    userlist = ["dgraham" "root" "nginx"];
-    userlistEnable = true;
-    virtualUseLocalPrivs = true;
-  };
-  memcached.enable = true;
-  avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+    memcached.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
-  certmgr.renewInterval = "30m";
-  displayManager = {
-    defaultSession = "plasmax11";
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-      autoNumlock = true;
-    };
-    autoLogin = {
-      enable = true;
-      user = "dgraham";
-    };
-  };
-  cockpit = {
-    enable = true;
-    port = 9090;
-    settings = {
-      WebService = {
-        AllowUnencrypted = true;
+    certmgr.renewInterval = "30m";
+    displayManager = {
+      defaultSession = "plasmax11";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        autoNumlock = true;
+      };
+      autoLogin = {
+        enable = true;
+        user = "dgraham";
       };
     };
-  };
-  desktopManager.plasma6.enable = true;
-  tailscale.enable = true;
-  openssh = {
-    enable = true;
-    settings.PermitRootLogin = "yes";
-    allowSFTP = true;
-  };
-  flatpak.enable = true;
-  printing.enable = true;
-  pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
-  fwupd.enable = true;
-  xrdp.enable = true;
-  printing.drivers = [pkgs.brlaser];
-  plex = {
-    enable = true;
-    openFirewall = true;
-  };
-  libinput.enable = true;
+    cockpit = {
+      enable = true;
+      port = 9090;
+      settings = {
+        WebService = {
+          AllowUnencrypted = true;
+        };
+      };
+    };
+    desktopManager.plasma6.enable = true;
+    tailscale.enable = true;
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = "yes";
+      allowSFTP = true;
+    };
+    flatpak.enable = true;
+    printing.enable = true;
+    pipewire = {
+      enable = false;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      jack.enable = true;
+    };
+    fwupd.enable = true;
+    xrdp.enable = true;
+    printing.drivers = [pkgs.brlaser];
+    plex = {
+      enable = true;
+      openFirewall = true;
+    };
+    libinput.enable = true;
 
-  xserver = {
-    xkb.model = "Logitech K270";
-    enable = true;
-  };
-  # List services that you want to enable:
+    xserver = {
+      xkb.model = "Logitech K270";
+      enable = true;
+    };
+    # List services that you want to enable:
   systemd = {
     extraConfig = "DefaultTimeoutStopSec=10s";
   };
