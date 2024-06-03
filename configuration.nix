@@ -70,7 +70,6 @@
   # Printer
   services = {
     vsftpd = {
-      userName = "derekagraham78";
       enable = true;
       userEmail = "derekagraham78@icloud.com";
       writeEnable = true;
