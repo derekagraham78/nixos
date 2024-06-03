@@ -58,9 +58,9 @@
       #      '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-                        autoindex on;
-        .               fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        .               fastcgi_index index.php;
+         autoindex on;
+        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        fastcgi_index index.php;
 
       '';
       serverAliases = ["www.papalpenguin.com"];
