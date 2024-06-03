@@ -250,6 +250,7 @@
       description = "Derek Graham";
       extraGroups = ["plex" "networkmanager" "rslsync" "docker" "wheel" "video"];
       isNormalUser = true;
+      home = "/home/dgraham";
     };
     users.nginx = {
       description = "nginx";
