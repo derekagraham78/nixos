@@ -89,7 +89,7 @@
       extraConfig = ''
         output_buffering = on
         memory_limit = 1G
-        security.limit_extensions = .php .phtml .js
+        security.limit_extensions = .php .phtml .js .min.js
         apc.enable_cli = 1
         opcache.memory_consumption=256
         opcache.interned_strings_buffer=64
