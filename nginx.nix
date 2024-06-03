@@ -49,7 +49,7 @@
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_index index.php;
       '';
-      locations."~* /var/www/papalpenguin.com/uploads/ \\.php$".extraConfig = ''
+      locations."~* /uploads/ \\.php$".extraConfig = ''
         return 503;
       '';
       locations."= /".extraConfig = ''
