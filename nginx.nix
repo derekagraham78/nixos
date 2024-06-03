@@ -15,29 +15,26 @@
     # Only allow PFS-enabled ciphers with AES256
     sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
     appendHttpConfig = ''
-            # Add HSTS header with preloading to HTTPS requests.
-            # Adding this header to HTTP requests is discouraged
-            map $scheme $hsts_header {
-                https   "max-age=31536000; includeSubdomains; preload";
-            }
-            add_header Strict-Transport-Security $hsts_header;
-
-            # Enable CSP for your services.
-            #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
-      location ~* /uploads/.*\.php$ {
-          return 503;
+      # Add HSTS header with preloading to HTTPS requests.
+      # Adding this header to HTTP requests is discouraged
+      map $scheme $hsts_header {
+          https   "max-age=31536000; includeSubdomains; preload";
       }
-            # Minimize information leaked to other domains
-            add_header 'Referrer-Policy' 'origin-when-cross-origin';
+      add_header Strict-Transport-Security $hsts_header;
 
-            # Disable embedding as a frame
-            add_header X-Frame-Options DENY;
+      # Enable CSP for your services.
+      #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
+      # Minimize information leaked to other domains
+      add_header 'Referrer-Policy' 'origin-when-cross-origin';
 
-            # Prevent injection of code in other mime types (XSS Attacks)
-            add_header X-Content-Type-Options nosniff;
+      # Disable embedding as a frame
+      add_header X-Frame-Options DENY;
 
-            # This might create errors
-            proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
+      # Prevent injection of code in other mime types (XSS Attacks)
+      add_header X-Content-Type-Options nosniff;
+
+      # This might create errors
+      proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
     '';
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
@@ -51,9 +48,9 @@
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_index index.php;
       '';
-      #      locations."~* /uploads/.*\.php$".extraConfig = ''
-      #        return 503;
-      #      '';
+      locations."~* /uploads/.*\.php$".extraConfig = ''
+        return 503;
+      '';
       locations."= /".extraConfig = ''
         autoindex on;
         rewrite ^ /index.php;
