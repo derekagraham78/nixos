@@ -78,7 +78,7 @@
         userlist = ["dgraham" "root" "nginx"];
         userlistEnable = true;
         virtualUseLocalPrivs = true;
-    };
+        };
     memcached.enable = true;
     avahi = {
       enable = true;
@@ -98,7 +98,6 @@
         enable = true;
         user = "dgraham";
       };
-    };
     cockpit = {
       enable = true;
       port = 9090;
