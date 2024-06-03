@@ -37,7 +37,7 @@
       enable = true;
       userName = "derekagraham78";
       userEmail = "derekagraham78@icloud.com";
-  };
+    };
     zsh = {
       enable = true;
       # Your zsh config
@@ -68,17 +68,17 @@
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
-     services = {
-      vsftpd = {
-        userName = "derekagraham78";
-        enable = true;
-        userEmail = "derekagraham78@icloud.com";
-        writeEnable = true;
-        localUsers = true;
-        userlist = ["dgraham" "root" "nginx"];
-        userlistEnable = true;
-        virtualUseLocalPrivs = true;
-        };
+  services = {
+    vsftpd = {
+      userName = "derekagraham78";
+      enable = true;
+      userEmail = "derekagraham78@icloud.com";
+      writeEnable = true;
+      localUsers = true;
+      userlist = ["dgraham" "root" "nginx"];
+      userlistEnable = true;
+      virtualUseLocalPrivs = true;
+    };
     memcached.enable = true;
     avahi = {
       enable = true;
@@ -98,7 +98,7 @@
         enable = true;
         user = "dgraham";
       };
-};
+    };
     cockpit = {
       enable = true;
       port = 9090;
@@ -138,7 +138,8 @@
       xkb.model = "Logitech K270";
       enable = true;
     };
-    # List services that you want to enable:
+  };
+  # List services that you want to enable:
   systemd = {
     extraConfig = "DefaultTimeoutStopSec=10s";
   };
