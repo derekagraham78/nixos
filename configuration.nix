@@ -35,8 +35,8 @@
   programs = {
     git = {
       enable = true;
-      userName = "derekagraham78";
-      userEmail = "derekagraham78@icloud.com";
+      #  userName = "derekagraham78";
+      #  userEmail = "derekagraham78@icloud.com";
     };
     zsh = {
       enable = true;
@@ -135,7 +135,7 @@
     libinput.enable = true;
 
     xserver = {
-      xkb.model = "Logitech K270";
+      xkb.model = "Lo	gitech K270";
       enable = true;
     };
   };
