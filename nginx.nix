@@ -48,6 +48,9 @@
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_index index.php;
       '';
+      locations."~ \.user\.ini$".extraConfig = ''
+        deny all;
+      '';
       locations."~* /uploads/.*\.php$".extraConfig = ''
         return 503;
       '';
