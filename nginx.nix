@@ -89,7 +89,7 @@
       extraConfig = ''
         output_buffering = on
         memory_limit = 1G
-        security.limit_extensions = .php .php3 .php4 .php5 .php7 .html .htm .js .css .jpg .jpeg .gif .png .txt .ico
+        security.limit_extensions = .php .php3 .php4 .php5 .php7 .html .htm .js .css
         apc.enable_cli = 1
         opcache.memory_consumption=256
         opcache.interned_strings_buffer=64
@@ -103,11 +103,12 @@
     settings = {
       "pm" = "dynamic";
       "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 5;
+      "pm.max_children" = 500;
       "pm.start_servers" = 2;
       "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 3;
-      "pm.max_requests" = 500;
+      "pm.max_spare_servers" = 25;
+      "pm.process_idle_timeout" = 150;
+      "pm.max_requests" = 2000;
     };
   };
 }
