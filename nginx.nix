@@ -37,7 +37,6 @@
       # This might create errors
       proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
     '';
-    recommendedOptimisation = true;
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
