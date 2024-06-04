@@ -6,7 +6,7 @@
 }: {
   services.nginx = {
     enable = true;
-    logError = "stderr debug";
+    logError = "stderr error";
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
 
@@ -48,13 +48,13 @@
       '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-                                        autoindex on;
-                                #        try_files $Uri = 404;
-                                        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-                #                        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                                        fastcgi_index index.php;
-                        #                fastcgi_buffering on;
-        #                                fastcgi_param SCRIPT_FILENAME $request_filename;
+                                                autoindex on;
+                                        #        try_files $Uri = 404;
+        #                                        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+                        #                        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+         #                                       fastcgi_index index.php;
+                                #                fastcgi_buffering on;
+                #                                fastcgi_param SCRIPT_FILENAME $request_filename;
       '';
       #      locations."~* \.(?:css|js|map|jpe?g|gif|png)$".extraConfig = ''
       #        index  index.html index.htm index.php;
@@ -95,7 +95,7 @@
       extraConfig = ''
         #                output_buffering = on
                         memory_limit = 1G
-                        security.limit_extensions =         .php .php3 .php4 .php5 .php7 .html .htm .js .css .png
+                        security.limit_extensions =         .php .php3 .php4 .php5 .php7 .html .htm .js .css .png .webp
 
 
 
