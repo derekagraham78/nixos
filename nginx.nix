@@ -15,26 +15,26 @@
     # Only allow PFS-enabled ciphers with AES256
     #    sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
     appendHttpConfig = ''
-      # Add HSTS header with preloading to HTTPS requests.
-      # Adding this header to HTTP requests is discouraged
-      map $scheme $hsts_header {
-          https   "max-age=31536000; includeSubdomains; preload";
-      }
-      add_header Strict-Transport-Security $hsts_header;
+            # Add HSTS header with preloading to HTTPS requests.
+            # Adding this header to HTTP requests is discouraged
+            map $scheme $hsts_header {
+                https   "max-age=31536000; includeSubdomains; preload";
+            }
+            add_header Strict-Transport-Security $hsts_header;
 
-      # Enable CSP for your services.
-      #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
-      # Minimize information leaked to other domains
-      add_header 'Referrer-Policy' 'origin-when-cross-origin';
+            # Enable CSP for your services.
+            #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
+            # Minimize information leaked to other domains
+      #      add_header 'Referrer-Policy' 'origin-when-cross-origin';
 
-      # Disable embedding as a frame
-      add_header X-Frame-Options ALLOW;
+            # Disable embedding as a frame
+            add_header X-Frame-Options ALLOW;
 
-      # Prevent injection of code in other mime types (XSS Attacks)
-      add_header X-Content-Type-Options nosniff;
+            # Prevent injection of code in other mime types (XSS Attacks)
+       #     add_header X-Content-Type-Options nosniff;
 
-      # This might create errors
-      proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
+            # This might create errors
+        #    proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
     '';
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
@@ -88,20 +88,21 @@
           memcache
         ]);
       extraConfig = ''
-        output_buffering = on
-        memory_limit = 1G
-        security.limit_extensions = .php .php3 .php4 .php5 .php7 .html .htm .js .css .min.js
+                output_buffering = on
+                memory_limit = 1G
+                security.limit_extensions =
+        #.php .php3 .php4 .php5 .php7 .html .htm .js .css .min.js
 
 
-        cgi.fix_pathinfo = 0
-        apc.enable_cli = 1
-        opcache.memory_consumption=256
-        opcache.interned_strings_buffer=64
-        opcache.max_accelerated_files=32531
-        upload_max_filesize = 128M;
-        post_max_size = 128M;
-        opcache.validate_timestamps=0
-        opcache.enable_cli=1
+                cgi.fix_pathinfo = 0
+                apc.enable_cli = 1
+                opcache.memory_consumption=256
+                opcache.interned_strings_buffer=64
+                opcache.max_accelerated_files=32531
+                upload_max_filesize = 128M;
+                post_max_size = 128M;
+                opcache.validate_timestamps=0
+                opcache.enable_cli=1
       '';
     };
     settings = {
