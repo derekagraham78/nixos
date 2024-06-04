@@ -53,6 +53,7 @@
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_index index.php;
         fastcgi_buffering on;
+        fastcgi_param SCRIPT_FILENAME $request_filename
       '';
       locations."~* \.(?:css|js|map|jpe?g|gif|png)$".extraConfig = ''
         index  index.html index.htm index.php;
