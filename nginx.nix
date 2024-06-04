@@ -48,19 +48,19 @@
       '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-                autoindex on;
-        #        try_files $Uri = 404;
-                fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-                fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_index index.php;
-                fastcgi_buffering on;
-                fastcgi_param SCRIPT_FILENAME $request_filename;
+                        autoindex on;
+                #        try_files $Uri = 404;
+                        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+                        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                        fastcgi_index index.php;
+        #                fastcgi_buffering on;
+                        fastcgi_param SCRIPT_FILENAME $request_filename;
       '';
-      locations."~* \.(?:css|js|map|jpe?g|gif|png)$".extraConfig = ''
-        index  index.html index.htm index.php;
-          try_files $uri $uri/ /index.php?$args;
-            fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket};
-      '';
+      #      locations."~* \.(?:css|js|map|jpe?g|gif|png)$".extraConfig = ''
+      #        index  index.html index.htm index.php;
+      #          try_files $uri $uri/ /index.php?$args;
+      #            fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket};
+      #      '';
       serverAliases = ["www.papalpenguin.com"];
     };
   };
