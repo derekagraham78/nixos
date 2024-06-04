@@ -50,11 +50,11 @@
       '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-        #         autoindex on;
-                fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-                fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_index index.php;
-                fastcgi_buffering on;
+        autoindex on;
+        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_index index.php;
+        fastcgi_buffering on;
       '';
       serverAliases = ["www.papalpenguin.com"];
     };
@@ -91,6 +91,7 @@
         output_buffering = on
         memory_limit = 1G
         security.limit_extensions = .php .php3 .php4 .php5 .php7 .html .htm .js .css .min.js
+
 
         cgi.fix_pathinfo = 0
         apc.enable_cli = 1
