@@ -9,8 +9,6 @@
     logError = "stderr debug";
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
 
     # Only allow PFS-enabled ciphers with AES256
     #    sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
@@ -55,6 +53,11 @@
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_index index.php;
         fastcgi_buffering on;
+      '';
+      locations."~* \.(?:css|js|map|jpe?g|gif|png)$".extraConfig = ''
+        index  index.html index.htm index.php;
+          try_files $uri $uri/ /index.php?$args;
+            fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket};
       '';
       serverAliases = ["www.papalpenguin.com"];
     };
