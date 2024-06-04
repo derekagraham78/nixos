@@ -88,21 +88,21 @@
           memcache
         ]);
       extraConfig = ''
-                output_buffering = on
-                memory_limit = 1G
-                security.limit_extensions =
-        #.php .php3 .php4 .php5 .php7 .html .htm .js .css .min.js
+        #                output_buffering = on
+                        memory_limit = 1G
+                        security.limit_extensions = false
+        #.php .php3 .php4 .php5 .php7 .html .htm .js .css .png
 
 
-                cgi.fix_pathinfo = 0
-                apc.enable_cli = 1
-                opcache.memory_consumption=256
-                opcache.interned_strings_buffer=64
-                opcache.max_accelerated_files=32531
-                upload_max_filesize = 128M;
-                post_max_size = 128M;
-                opcache.validate_timestamps=0
-                opcache.enable_cli=1
+                        cgi.fix_pathinfo = 0
+                        apc.enable_cli = 1
+                        opcache.memory_consumption=256
+                        opcache.interned_strings_buffer=64
+                        opcache.max_accelerated_files=32531
+                        upload_max_filesize = 128M;
+                        post_max_size = 128M;
+                        opcache.validate_timestamps=0
+                        opcache.enable_cli=1
       '';
     };
     settings = {
