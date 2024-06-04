@@ -50,7 +50,6 @@
       locations."~ \.php$".extraConfig = ''
         autoindex on;
         try_files $Uri = 404;
-        include fastcgi_params;
         fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_index index.php;
