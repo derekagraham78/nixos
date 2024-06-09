@@ -69,10 +69,6 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
-    cockpit = {
-      enable = true;
-      port = "9090";
-    };
     vsftpd = {
       enable = true;
       writeEnable = true;
@@ -106,6 +102,8 @@
       port = 9090;
       settings = {
         WebService = {
+          Origins = https://papalpenguin.com; 
+          https://www.papalpenguin.com;
           AllowUnencrypted = true;
         };
       };
@@ -291,6 +289,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    packagekit
     filezilla
     microsoft-edge
     altserver-linux
