@@ -62,7 +62,6 @@
   boot.kernelParams = ["reboot=acpi" "coretemp"];
   networking = {
     hostName = "Mulder"; # Define your hostname.
-    nftables.enable = true;
     firewall = {
       enable = true;
       allowedTCPPorts = [80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 32400 5901 5938 8581 43148 8888 23421];
@@ -111,13 +110,6 @@
         user = "dgraham";
       };
     };
-    packagekit = {
-      enable = true;
-      settings = {
-        Daemon = {
-          UseNetworkManager = false;
-        };
-      };
     };
     cockpit = {
       enable = true;
