@@ -102,8 +102,7 @@
       port = 9090;
       settings = {
         WebService = {
-          Origins = https://papalpenguin.com; 
-          https://www.papalpenguin.com;
+          Origins = https://papalpenguin.com;
           AllowUnencrypted = true;
         };
       };
