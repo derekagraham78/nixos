@@ -133,7 +133,7 @@
     };
     desktopManager.plasma6.enable = true;
     openssh = {
-      enable = true;
+      enable = false;
       settings.PermitRootLogin = "yes";
       allowSFTP = true;
     };
