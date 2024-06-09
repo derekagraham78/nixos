@@ -69,6 +69,10 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    cockpit = {
+      enable = true;
+      port = "9090";
+    };
     vsftpd = {
       enable = true;
       writeEnable = true;
