@@ -103,6 +103,7 @@
       settings = {
         WebService = {
           Origins = https://papalpenguin.com;
+          ProtocolHeader = X-Forwarded-Proto;
           AllowUnencrypted = true;
         };
       };
