@@ -73,6 +73,7 @@
           to = 21117;
         }
       ];
+      allowedUDPPorts = [41641 3478];
       trustedInterfaces = ["tailscale0"];
     };
     networkmanager.enable = true;
