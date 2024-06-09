@@ -62,13 +62,23 @@
   boot.kernelParams = ["reboot=acpi" "coretemp"];
   networking = {
     hostName = "Mulder"; # Define your hostname.
-    firewall.enable = false;
+    firewall = { 
+       enable = true;
+       allowedTCPPorts = [ 80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 32400 5901 5938 21 8581 43148 8888 23421 ];
+       allowedTCPPortRanges = [
+         { from = 21115; to = 21117; }
+       ];
+       trustedInterfaces = [ "tailscale0" ];
+    };
     networkmanager.enable = true;
     enableIPv6 = false;
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    tailscale = {
+      enable = true; 
+
     vsftpd = {
       enable = true;
       writeEnable = true;
