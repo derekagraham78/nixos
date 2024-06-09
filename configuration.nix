@@ -110,7 +110,6 @@
         user = "dgraham";
       };
     };
-    };
     cockpit = {
       enable = true;
       port = 9090;
