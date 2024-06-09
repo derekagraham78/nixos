@@ -100,7 +100,7 @@
     packagekit = {
       enable = true;
       settings = {
-        UseNetworkManager = false;
+        "UseNetworkManager = false";
       };
     };
     cockpit = {
