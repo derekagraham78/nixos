@@ -100,7 +100,9 @@
     packagekit = {
       enable = true;
       settings = {
-        "UseNetworkManager = false";
+        Daemon = {
+          UseNetworkManager = false;
+        };
       };
     };
     cockpit = {
