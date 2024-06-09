@@ -102,14 +102,14 @@
       port = 9090;
       settings = {
         WebService = {
-          Origins = "https://papalpenguin.com";
+          Origins = "https://www.papalpenguin.com:9090";
           ProtocolHeader = "X-Forwarded-Proto";
+          ForwardedForHeader = "X-Forwarded-For";
           AllowUnencrypted = true;
         };
       };
     };
     desktopManager.plasma6.enable = true;
-    tailscale.enable = true;
     openssh = {
       enable = true;
       settings.PermitRootLogin = "yes";
