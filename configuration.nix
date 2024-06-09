@@ -102,8 +102,8 @@
       port = 9090;
       settings = {
         WebService = {
-          Origins = https://papalpenguin.com;
-          ProtocolHeader = X-Forwarded-Proto;
+          Origins = "https://papalpenguin.com";
+          ProtocolHeader = "X-Forwarded-Proto";
           AllowUnencrypted = true;
         };
       };
