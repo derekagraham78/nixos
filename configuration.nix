@@ -102,7 +102,7 @@
       port = 9090;
       settings = {
         WebService = {
-          Origins = "http://www.papalpenguin.com:9090";
+          Origins = "https://www.papalpenguin.com https://papalpenguin.com http://www.papalpenguin.com http://papalpenguin.com https://192.168.4.60 http://192.168.4.60";
           ProtocolHeader = "X-Forwarded-Proto";
           ForwardedForHeader = "X-Forwarded-For";
           AllowUnencrypted = true;
