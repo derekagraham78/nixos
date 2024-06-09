@@ -3,7 +3,7 @@
 
   inputs = {
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05-small";
     # The nixpkgs entry in the flake registry.
   };
   outputs = {nixpkgs, ...}: {

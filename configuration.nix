@@ -53,7 +53,7 @@
     nm-applet.enable = true;
   };
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -222,7 +222,7 @@
   hardware = {
     pulseaudio = {
       package = pkgs.pulseaudio;
-      enable = true;
+      enable = false;
       extraConfig = "load-module module-equalizer-sink";
     };
   };
@@ -287,6 +287,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nix-output-monitor
     filezilla
     microsoft-edge
     altserver-linux
