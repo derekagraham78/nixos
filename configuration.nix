@@ -99,6 +99,9 @@
     };
     packagekit = {
       enable = true;
+      settings = {
+        UseNetworkManager = false;
+      };
     };
     cockpit = {
       enable = true;
