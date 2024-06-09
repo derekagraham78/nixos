@@ -97,6 +97,9 @@
         user = "dgraham";
       };
     };
+    packagekit = {
+      enable = true;
+    };
     cockpit = {
       enable = true;
       port = 9090;
