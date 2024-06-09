@@ -64,7 +64,7 @@
     hostName = "Mulder"; # Define your hostname.
     firewall = {
       enable = true;
-      allowedTCPPorts = [80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 32400 5901 5938 21 8581 43148 8888 23421];
+      allowedTCPPorts = [80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 32400 5901 5938 8581 43148 8888 23421];
       allowedTCPPortRanges = [
         {
           from = 21115;
