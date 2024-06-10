@@ -62,7 +62,8 @@
                         # Pass ETag header from Cockpit to clients.
                         # See: https://github.com/cockpit-project/cockpit/issues/5239
         #                gzip off;
-                        #      '';
+      '';
+
       serverAliases = ["www.papalpenguin.com"];
     };
   };
