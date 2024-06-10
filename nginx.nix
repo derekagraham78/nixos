@@ -6,7 +6,6 @@
 }: {
   services.nginx = {
     enable = true;
-    addSSL = true;
     logError = "stderr info";
     recommendedOptimisation = true;
     appendHttpConfig = ''
@@ -35,6 +34,8 @@
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
+      addSSL = true;
+
       root = "/var/www/papalpenguin.com";
       forceSSL = false;
       locations."~ \\.php$".index = "index.php";
