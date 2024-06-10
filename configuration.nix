@@ -175,7 +175,7 @@
         webroot = "/var/lib/acme/acme-challenge/";
         email = "derek@papalpenguin.com";
         extraDomainNames = ["www.papalpenguin.com"];
-        group = config.services.cockpit.group;
+        group = "nginx";
       };
       defaults.renewInterval = "daily";
     };
