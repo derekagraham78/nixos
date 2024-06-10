@@ -77,7 +77,7 @@
       trustedInterfaces = ["tailscale0"];
     };
     networkmanager.enable = true;
-    enableIPv6 = false;
+    enableIPv6 = true;
   };
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
