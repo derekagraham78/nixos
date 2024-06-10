@@ -6,6 +6,7 @@
 }: {
   services.nginx = {
     enable = true;
+    addSSL = true;
     logError = "stderr info";
     recommendedOptimisation = true;
     appendHttpConfig = ''
