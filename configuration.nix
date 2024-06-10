@@ -125,7 +125,7 @@
       };
     };
     cockpit = {
-      enable = true;
+      enable = false;
       port = 9090;
       settings = {
         WebService = {
