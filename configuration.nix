@@ -171,7 +171,12 @@
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
-      certs."papalpenguin.com".group = config.services.cockpit.group;
+      certs."papalpenguin.com" = {
+        webroot = "/var/lib/acme/acme-challenge/";
+        email = "derek@papalpenguin.com";
+        extraDomainNames = ["www.papalpenguin.com"];
+        group = config.services.cockpit.group;
+      };
       defaults.renewInterval = "daily";
     };
     doas = {
