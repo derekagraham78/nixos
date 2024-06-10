@@ -171,12 +171,6 @@
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
-      certs."papalpenguin.com" = {
-        webroot = "/var/lib/acme/acme-challenge/";
-        email = "derek@papalpenguin.com";
-        extraDomainNames = ["www.papalpenguin.com"];
-        group = "nginx";
-      };
       defaults.renewInterval = "daily";
     };
     doas = {
