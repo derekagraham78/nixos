@@ -35,7 +35,7 @@
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
       root = "/var/www/papalpenguin.com";
-      forceSSL = false;
+      forceSSL = true;
       locations."~ \\.php$".index = "index.php";
       locations."~ \\.php$".extraConfig = ''
         autoindex on;
