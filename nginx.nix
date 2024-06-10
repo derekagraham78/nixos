@@ -6,38 +6,13 @@
 }: {
   services.nginx = {
     enable = true;
-    logError = "stderr info";
     recommendedOptimisation = true;
-    appendHttpConfig = ''
-                        # Add HSTS header with preloading to HTTPS requests.
-                        # Adding this header to HTTP requests is discouraged
-             #           map $scheme $hsts_header {
-              #              https   "max-age=31536000; includeSubdomains; preload";
-                        }
-            #            add_header Strict-Transport-Security $hsts_header;
-
-                        # Enable CSP for your services.
-                        #add_header Content-Security-Policy "script-src 'self'; object-src 'none'; base-uri 'none';" always;
-                        # Minimize information leaked to other domains
-                  #      add_header 'Referrer-Policy' 'origin-when-cross-origin';
-
-                        # Disable embedding as a frame
-      #                  add_header X-Frame-Options ALLOW;
-
-                        # Prevent injection of code in other mime types (XSS Attacks)
-                   #     add_header X-Content-Type-Options nosniff;
-
-                        # This might create errors
-                    #    proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
-    '';
     defaultListen = [{addr = "0.0.0.0";}];
     defaultSSLListenPort = 443;
     virtualHosts."papalpenguin.com" = {
       enableACME = true;
-      addSSL = true;
-
       root = "/var/www/papalpenguin.com";
-      forceSSL = false;
+      forceSSL = true;
       locations."~ \\.php$".index = "index.php";
       locations."~ \\.php$".extraConfig = ''
         autoindex on;
@@ -50,9 +25,8 @@
       '';
       locations."/".index = "index.php";
       locations."/".extraConfig = ''
-        autoindex on;
-      '';
-
+                autoindex on;
+        #      '';
       serverAliases = ["www.papalpenguin.com"];
     };
   };
