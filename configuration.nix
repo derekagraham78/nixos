@@ -171,6 +171,7 @@
     acme = {
       acceptTerms = true;
       defaults.email = "derek@papalpenguin.com";
+      certs."papalpenguin.com".group = config.services.cockpit.group;
       defaults.renewInterval = "daily";
     };
     doas = {
