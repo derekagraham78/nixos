@@ -82,6 +82,10 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    certbot = {
+      enable = true;
+      agreeTerms = true;
+    };
     resolved = {
       enable = true;
       dnssec = "true";
