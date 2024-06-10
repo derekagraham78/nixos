@@ -71,7 +71,7 @@
           apcu
           bcmath
           zlib
-          #  iconv
+          iconv
           mbstring
           zip
           curl
