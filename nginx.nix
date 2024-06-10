@@ -52,8 +52,8 @@
       locations."/".extraConfig = ''
                                 autoindex on;
                                 proxy_pass https://192.168.4.60:9090;
-        #                        proxy_set_header Host $host;
-        #                        proxy_set_header X-Forwarded-Proto $scheme;
+                                proxy_set_header Host $host;
+                                proxy_set_header X-Forwarded-Proto $scheme;
         #        proxy_http_version 1.1;
         #                proxy_buffering off;
         #                proxy_set_header Upgrade $http_upgrade;
