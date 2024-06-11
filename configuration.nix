@@ -44,7 +44,7 @@
       ohMyZsh = {
         enable = true;
         plugins = ["git" "python" "man" "1password"];
-        theme = "agnoster";
+        theme = "aussiegeek";
       };
     };
     dconf.enable = true;
@@ -66,14 +66,14 @@
     search = ["tail20553.ts.net"];
     firewall = {
       enable = true;
-      allowedTCPPorts = [21 80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 32400 5901 5938 8581 43148 8888 23421];
+      allowedTCPPorts = [21 80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 51827 32400 5901 5938 8581 43148 8888 23421 50707 51578];
       allowedTCPPortRanges = [
         {
-          from = 21115;
-          to = 21117;
+          from = 20000;
+          to = 28000;
         }
       ];
-      allowedUDPPorts = [41641 3478];
+      allowedUDPPorts = [1900 1901 137 136 138 41641 3478 21063 5353];
       trustedInterfaces = ["tailscale0"];
     };
     networkmanager.enable = true;
@@ -135,7 +135,11 @@
     desktopManager.plasma6.enable = true;
     openssh = {
       enable = true;
-      settings.PermitRootLogin = "yes";
+      openFirewall = false;
+      settings = {
+        PermitRootLogin = "yes";
+        AllowGroups = ["wheel" "root"];
+      };
       allowSFTP = true;
     };
     flatpak.enable = true;
@@ -312,6 +316,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    micro
     filezilla
     microsoft-edge
     altserver-linux
