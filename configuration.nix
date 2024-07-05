@@ -33,6 +33,10 @@
   };
   # Home Manager
   programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
     git = {
       enable = true;
       #  userName = "derekagraham78";
@@ -66,11 +70,15 @@
     search = ["tail20553.ts.net"];
     firewall = {
       enable = true;
-      allowedTCPPorts = [21 80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 51827 32400 5901 5938 8581 43148 8888 23421 50707 51578];
+      allowedTCPPorts = [21 57796 80 443 8181 3306 8000 8095 8123 1220 6969 8081 26648 9090 8080 3389 51820 51827 32400 5901 5938 8581 43148 8888 23421 50707 51578 5580];
       allowedTCPPortRanges = [
         {
           from = 20000;
           to = 28000;
+        }
+        {
+          from = 51000;
+          to = 59000;
         }
       ];
       allowedUDPPorts = [1900 1901 137 136 138 41641 3478 21063 5353];
@@ -82,6 +90,10 @@
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Printer
   services = {
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
     resolved = {
       enable = true;
       dnssec = "true";
@@ -125,7 +137,7 @@
       port = 9090;
       settings = {
         WebService = {
-          Origins = "https://www.papalpenguin.com:9090 https://papalpenguin.com:9090 http://www.papalpenguin.com:9090 http://papalpenguin.com:9090 https://192.168.4.60:9090 http://192.168.4.60:9090 ws://192.168.4.60:9090 ws://papalpenguin.com:9090 ws://www.papalpenguin.com:9090";
+          Origins = "https://www.papalpenguin.com:9090 https://papalpenguin.com:9090 http://www.papalpenguin.com:9090 http://papalpenguin.com:9090 https://192.168.4.60:9090 http://192.168.4.60:9090 ws://192.168.4.60:9090 ws://papalpenguin.com:9090 ws://www.papalpenguin.com:9090 http://mulder.tail20553.ts.net:9090 https://mulder.tail20553.ts.net:9090";
           ProtocolHeader = "X-Forwarded-Proto";
           ForwardedForHeader = "X-Forwarded-For";
           AllowUnencrypted = true;
@@ -260,6 +272,10 @@
     rPackages.trekfont
     noto-fonts
     noto-fonts-cjk
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    terminus-nerdfont
+    udev-gothic-nf
+    powerline-fonts
     noto-fonts-emoji
     liberation_ttf
     fira-code
@@ -269,7 +285,16 @@
     dina-font
     proggyfonts
   ];
-
+  console = {
+    earlySetup = true;
+    packages = with pkgs; [
+      nerdfonts
+      terminus_font
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      terminus-nerdfont
+    ];
+    keyMap = "us";
+  };
   # Enable touchpad support (enabled default in most desktopManager).
   hardware.opengl = {
     enable = true;
@@ -316,13 +341,19 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wineWowPackages.stable
+    wine
+    (wine.override {wineBuild = "wine64";})
+    wine64
+    wineWowPackages.staging
+    winetricks
+    wineWowPackages.waylandFull
+    emacs
+    helix
     micro
     filezilla
     microsoft-edge
     altserver-linux
-    element-desktop
-    element-desktop-wayland
-    element-web
     vivaldi
     vivaldi-ffmpeg-codecs
     imagemagick
